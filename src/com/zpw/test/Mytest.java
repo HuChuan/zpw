@@ -10,7 +10,8 @@ import com.zpw.util.MyBatisUtil;
 public class Mytest {
 
 	public static void main(String[] args) {
-		testRegister();
+		String t = new java.util.Date().toString();
+		System.out.println(t);
 	}
 	private static void testRegister(){
 		SqlSession session = null;

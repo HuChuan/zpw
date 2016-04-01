@@ -128,12 +128,13 @@ $(function() {
 			var d = $("#regist_f").serialize();
 			this.disabled = true;
 			this.value = "注 册 中"
-			$.post("test.jsp", d, function(data) {
+			$.post("register.do", d, function(data) {
 				if (data.success == true) {
-					$.cookie("username",data.username);
-					$.cookie("pow",data.pow);
-					$.cookie("token",data.token);
-					$("#regist_log").html("注册成功！正在转到 <a href='i'index.jsp'>首页</a>");
+					$.cookie("username",data.user.username);
+					alert(data.user.username);
+					$.cookie("pow",data.user.pow);
+					$.cookie("token",data.user.token);
+					$("#regist_log").html("注册成功！正在转到 <a href='index.jsp'>首页</a>");
 					$("#regist_log")[0].className = "ok";
 					setTimeout(function() {
 						location.href = "index.jsp";

@@ -1,6 +1,7 @@
 package com.zpw.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,33 +18,28 @@ import com.zpw.dao.IUserDao;
 import com.zpw.dao.UserDao;
 import com.zpw.po.User;
 import com.zpw.service.UserService;
+import com.zpw.util.MD5Util;
 
 @Controller
 @JsonIgnoreProperties(value={"hibernateLazyInitializer"})
 public class UserController {
-	@RequestMapping("regist.do")
+	@RequestMapping("register.do")
 	@ResponseBody
-	
 	public Map register(User user){
-//		System.out.println("aaaaaa");
-//		Map map = new HashMap();
-//		map.put("success", false);
-//		if(CheckUtil.registerCheck(user)){
-//			
-//			IUserDao u = DAOFactory.getUserDao();
-//			u.register(user);
-//			map.put("username", user.getUsername());
-//			map.put("token", user.getToken());
-//			map.put("pow", user.getPow());
-//			map.put("success", true);
-//		}	
-		IUserDao u = DAOFactory.getUserDao();
-		//u.register(user);
-		Map map = new HashMap();
-		map.put("user", user);
-		boolean success = true;
-		map.put("success", success);
 		
+		Map map = new HashMap();
+		map.put("success", false);
+
+		if(UserService.registerCheck(user)){
+			
+			String t = new Date().toString()+user.getUsername();
+			user.setToken(MD5Util.MD5(t));
+			IUserDao u = DAOFactory.getUserDao();
+			u.register(user);
+			
+			map.put("user", user);
+			map.put("success", true);
+		}	
 		return map;
 	}
 //	@RequestMapping("check_user.do")
@@ -59,12 +55,12 @@ public class UserController {
 	@RequestMapping("check_user.do")
 	@ResponseBody
 	public Model check_user(String username,Model model){
-		return model.addAttribute("success", false);
+		return model.addAttribute("success", UserService.isExistByUsername(username));
 	}
 	@RequestMapping("check_email.do")
 	@ResponseBody
 	public Model check_email(String email,Model model){
-		return model.addAttribute("success", false);
+		return model.addAttribute("success", UserService.isExistByEmail(email));
 	}
 	
 }
