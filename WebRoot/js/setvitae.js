@@ -1,5 +1,3 @@
-var CV_ID = -1;
-
 //判断是否登录
 $(function() {
 	if ($.cookie("username") == null || $.cookie("username") == "" || $.cookie("token") == null || $.cookie("token") == "" || $.cookie("pow") != "1") {
@@ -18,7 +16,6 @@ $(function() {
 		$("#vitae_f").addClass("change");
 		$("#vitae_f>h2").text("修改简历");
 	}
-	CV_ID = search.substr(search.indexOf("id=") + 3);
 });
 
 /*毕业年份注入*/

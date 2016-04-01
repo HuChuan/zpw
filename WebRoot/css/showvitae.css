@@ -1,0 +1,112 @@
+body {
+	background: #F1F4F6;
+}
+
+.mbutton {
+	padding: 7px 10px;
+	background: #2C91BF;
+	color: #fff;
+	border: 0;
+	margin-right: 7px;
+	cursor: pointer;
+	outline: none;
+	font-family: "微软雅黑";
+	display: none;
+}
+
+.mbutton:active {
+	background: #02A0E9;
+}
+
+#vitae_f {
+	border: 1px solid #ccc;
+	padding: 20px;
+	padding-bottom: 40px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	position: relative;
+}
+
+#vitae_f>h2 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-bottom: 2px dotted #e6e6e6;
+	padding: 10px;
+	color: #2C91BF;
+	font-weight: 400;
+}
+
+#user_img {
+	position: absolute;
+	right: 80px;
+	top: 110px;
+	width: 120px;
+	height: 140px;
+	background: #F1F4F6;
+	border: 1px solid #eee;
+	cursor: pointer;
+}
+
+#user_img:before {
+	position: absolute;
+	content: "照片";
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	margin-top: 55px;
+	color: #999;
+}
+
+#user_img img {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+}
+
+#vitae_f>div {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+#vitae_f>div span.tags {
+	display: inline-block;
+	width: 120px;
+	color: #666;
+	text-align: right;
+	margin-right: 20px;
+}
+
+#vitae_f>div span.tags.text {
+	vertical-align: top;
+}
+
+#vitae_f>div input[type="text"] {
+	width: 350px;
+	height: 28px;
+	padding: 0px 5px;
+	outline: none;
+	border: 1px solid #fff;
+	background: #fff;
+	font-family: Arial, "微软雅黑";
+	color: #333;
+	font-size: 16px;
+}
+
+#vitae_f>div .textarea {
+	width: 600px;
+	height: 60px;
+	padding: 10px;
+	font-family: Arial, "微软雅黑";
+	color: #333;
+	border: 1px dotted #ccc;
+	overflow: auto;
+	display: inline-block;
+}
+
+#vitae_f.mine #updateCV_btn {
+	display: inline;
+}

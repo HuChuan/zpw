@@ -72,19 +72,19 @@
 					</div>
 					<div class="cv">
 						<div id="cv_i" class="ellipsis">
-							<span>陈杰</span>
-							<span>男</span>
-							<span>19岁</span>
-							<span>重庆</span>
-							<span>本科</span>
-							<span>18883843195</span>
-							<span>1558267774@qq.com</span>
-							<span>重庆邮电大学</span>
-							<span>软件工程专业</span>
-							<span>JAVA开发</span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
 						</div>
 						<div id="cv_bars">
-							<a href="">查看/修改</a>
+							<a href="showvitae.jsp">查看/修改</a>
 						</div>
 					</div>
 				</div>
@@ -99,20 +99,7 @@
 				</div>
 				<!--已投职位-->
 				<div id="c_job">
-					<ul id="vote_list" class="unlist">
-						<li class="ellipsis">
-							<a href="">java开发工程师</a>
-							<span class="epname">tenxin公司</span>
-							<span class="status">未读</span>
-							<span class="time">2015-12-12</span>
-						</li>
-						<li class="ellipsis read">
-							<a href="">android开发工程师</a>
-							<span class="epname">baidu</span>
-							<span class="status">已读</span>
-							<span class="time">2015-12-12</span>
-						</li>
-					</ul>
+					<ul id="vote_list" class="unlist"></ul>
 				</div>
 			</div>
 			

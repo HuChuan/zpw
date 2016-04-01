@@ -100,6 +100,11 @@ $(function() {
 
 //个人简历
 $(function() {
+	//添加简历
+	$("#addCV_btn").click(function(){
+		location.href = "setvitae.jsp";
+	});
+	
 	//检查是否存在简历
 	$.post("check_vitae.do", {
 		username: $.cookie("username")
