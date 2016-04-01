@@ -1,0 +1,173 @@
+.form_header_nav {
+	background: #30C1BB;
+	height: 80px;
+	border-bottom: 3px solid #566475;
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px 10px 0 0;
+}
+
+.form_header_nav .active {
+	color: #566475;
+	font-size: 20px;
+	font-weight: 600;
+	position: absolute;
+	top: 10px;
+	left: 110px;
+	cursor: default;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form_header_nav a {
+	float: right;
+	color: #fcfcfc;
+	font-size: 18px;
+	margin-right: 10px;
+	margin-top: 45px;
+	text-decoration: none;
+	border-bottom: 2px solid #30C1BB;
+	padding: 2px;
+}
+
+.form_header_nav a:hover {
+	border-color: #FCFCFC;
+}
+
+.form_header_nav ._box {
+	background: #F1F4F6;
+	width: 100px;
+	height: 100px;
+	content: " ";
+	position: absolute;
+	left: 80px;
+	top: -52px;
+	border-radius: 5px;
+	opacity: 0.9;
+	transform: rotate(45deg);
+	box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.form_header_nav .find {
+	margin-right: 25px;
+}
+
+#login_log {
+	margin: 5px 50px;
+	padding: 12px 20px;
+	padding-left: 40px;
+	border-radius: 2px;
+	font-size: 16px;
+	display: none;
+}
+
+#login_log.ok {
+	display: block;
+	border: 1px solid #19E41F;
+	color: #5cb85c;
+	background: #E8FFEC;
+}
+
+#login_log.error {
+	display: block;
+	border: 1px solid #FFC728;
+	color: #FF2828;
+	background: #FFEEBF url(../images/waring.png) 15px center no-repeat;
+}
+
+#login_log.error a {
+	color: #C58E26;
+	font-size: 16px;
+}
+
+#login_f {
+	background: #fff;
+	margin-top: 30px;
+	padding-bottom: 40px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#login_f .form_content .form_log {
+	display: none;
+}
+
+#login_f .check_error input {
+	border-color: #F9A7A7;
+	background: #FFF6DE;
+}
+
+#login_f .check_error .form_log {
+	color: #FF2828;
+	display: block;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+#login_f>.form_content {
+	margin: 40px;
+	margin-left: 100px;
+}
+
+#login_f>.form_content>div {
+	margin-top: 25px;
+}
+
+#login_f>.form_content p:not(.form_log) {
+	margin-top: 2px;
+}
+
+#username,
+#psw {
+	width: 380px;
+	height: 40px;
+	color: #666;
+	outline: none;
+	font-size: 16px;
+	font-family: Arial, "微软雅黑";
+	border: 1px solid #999;
+	padding: 5px 10px;
+}
+
+#checkbox_box {
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#checkbox_bg {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #666;
+	border-radius: 50%;
+	position: relative;
+	top: 3px;
+	margin-right: 6px;
+}
+
+#checkbox_bg.active {
+	background: url(../images/checkbox_dot.png) center no-repeat;
+}
+
+#login_f #form_sub {
+	width: 402px;
+	height: 42px;
+	color: #fff;
+	font-family: "微软雅黑";
+	font-weight: 600;
+	font-size: 16px;
+	border: 0;
+	border-radius: 5px;
+	background: #02A0E9;
+	cursor: pointer;
+	outline: none;
+}
+
+#login_f #form_sub:active {
+	background: #1C7988;
+	outline: none;
+}
+
+#login_f #form_sub:disabled {
+	background: #bbb;
+	cursor: no-drop;
+}

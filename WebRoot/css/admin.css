@@ -1,0 +1,316 @@
+body {
+	background: #F1F4F6;
+}
+
+.mbutton {
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	background: #02A0E9;
+}
+
+.mbutton:active {
+	background: #2C91BF;
+}
+
+#content_header {
+	background: #566475;
+	margin-top: 30px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+#content_header .user_img {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 50%;
+	position: relative;
+}
+
+#content_header .user_img:after {
+	content: "上传照片";
+	background: rgba(0, 0, 0, .4);
+	position: absolute;
+	top: 125px;
+	font-size: 14px;
+	left: 0px;
+	width: 100%;
+	color: #fff;
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+
+#upload_user_img {
+	position: relative;
+}
+
+#upload_user_img>label {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	opacity: 1;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+#upload_user_img>label:hover {
+	opacity: 0.1;
+	background: #444;
+}
+
+#user_img {
+	width: 150px;
+	min-height: 150px;
+	max-height: 170px;
+}
+
+#content_header .user_name {
+	text-align: center;
+	margin-top: 20px;
+	font-weight: 600;
+	font-size: 18px;
+	color: #fff;
+}
+
+#content {
+	margin-top: 15px;
+	background: #fff;
+	position: relative;
+}
+
+#content_nav {
+	width: 1004px;
+	background: #566475;
+	overflow: hidden;
+	line-height: 50px;
+	padding: 5px 10px;
+}
+
+#content_nav>div {
+	display: inline-block;
+	position: relative;
+}
+
+#content_nav>div.active:after {
+	position: absolute;
+	z-index: 2;
+	top: 50px;
+	left: 35px;
+	width: 13px;
+	height: 13px;
+	content: " ";
+	background: #fff;
+	transform: rotate(45deg);
+}
+
+#content_nav a {
+	margin-left: 10px;
+	color: #F9F9F9;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+#content_nav>div.active a {
+	color: #30C1BB;
+}
+
+#content_nav a:hover {
+	text-shadow: 0 0 5px rgba(255, 255, 255, .4);
+}
+
+#content_c {
+	padding: 20px;
+	min-height: 300px;
+}
+
+#content_c>div {
+	display: none;
+}
+
+#content_c.info #c_info {
+	display: block;
+}
+
+#content_c.manage #c_manage {
+	display: block;
+}
+
+#content_c.psw #c_psw {
+	display: block;
+}
+
+#user_f {
+	border: 1px solid #e7e7e7;
+	padding: 20px;
+}
+
+#user_f>div {
+	margin-top: 15px;
+}
+
+#user_f.change>div {
+	margin-top: 15px;
+}
+
+#user_f>div>span {
+	display: inline-block;
+	width: 80px;
+	color: #666;
+	text-align: right;
+}
+
+#user_f>div input {
+	outline: none;
+	cursor: text;
+	border: 1px solid #fff;
+}
+
+#user_f>div input:disabled {
+	border-color: #fff;
+	background: #fff!important;
+	color: #666;
+	background: #E8E8E8;
+}
+
+#user_f.change>div input {
+	outline: none;
+	border: 1px solid #999;
+	color: #666;
+	padding: 2px 5px;
+	width: 300px;
+	height: 28px;
+}
+
+#user_f.change>div input:disabled {
+	outline: none;
+	border-color: #ccc;
+	background: #F1F1F1!important;
+	color: #666;
+	padding: 2px 5px;
+	width: 300px;
+	height: 28px;
+}
+
+#change_btn,
+#change_sub,
+#change_return {
+	background: #02A0E9;
+	color: #fff!important;
+	cursor: pointer!important;
+	outline: none;
+	border: 0!important;
+	width: 100px!important;
+	height: 28px;
+}
+
+#change_btn:active,
+#change_sub:active,
+#change_return:active {
+	background: #2C91BF;
+}
+
+#user_f.change #change_btn {
+	display: none;
+}
+
+#user_f.change #change_sub,
+#user_f.change #change_return {
+	display: inline-block;
+}
+
+#change_sub,
+#change_return {
+	display: none;
+}
+
+
+/*个人信息*/
+
+#psw_f {
+	margin-left: 30px;
+}
+
+#psw_f input[type="password"] {
+	width: 300px;
+	height: 30px;
+	display: block;
+	margin-top: 15px;
+	padding: 2px 10px;
+	outline: none;
+}
+
+#psw_btn {
+	padding: 10px 20px;
+	margin-top: 20px;
+}
+
+
+/*修改密码*/
+
+#c_manage table {
+	width: 100%;
+	border: 1px solid #aaa;
+}
+
+#c_manage table th {
+	
+	border: 1px solid #aaa;
+}
+
+#c_manage table td {
+	color: #666;
+	border: 1px solid #ccc;
+}
+
+#c_manage table .center{
+	text-align: center;
+}
+
+#c_manage table img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-top: 4px;
+}
+
+#c_manage table a {
+	cursor: pointer;
+	color: #FF2828;
+}
+#c_manage table a:hover {
+	text-decoration: underline;
+}
+
+/*会员管理*/
+
+#content>.log {
+	position: absolute;
+	top: 50px;
+	z-index: 10;
+	width: 100%;
+}
+
+#log_info {
+	display: none;
+	background: rgba(210, 253, 177, .7);
+	color: #566475;
+	padding: 10px;
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#log_info.error {
+	background: rgba(253, 219, 177, .7);
+}

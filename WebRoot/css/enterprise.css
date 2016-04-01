@@ -1,0 +1,542 @@
+body {
+	background: #F1F4F6;
+}
+
+.mbutton {
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	background: #02A0E9;
+}
+
+.mbutton:active {
+	background: #2C91BF;
+}
+
+#content_header {
+	background: #566475;
+	margin-top: 30px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+#content_header .user_img {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 50%;
+	position: relative;
+}
+
+#content_header .user_img:after {
+	content: "上传照片";
+	background: rgba(0, 0, 0, .4);
+	position: absolute;
+	top: 125px;
+	font-size: 14px;
+	left: 0px;
+	width: 100%;
+	color: #fff;
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+
+#upload_user_img {
+	position: relative;
+}
+
+#upload_user_img>label {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	opacity: 1;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+#upload_user_img>label:hover {
+	opacity: 0.1;
+	background: #444;
+}
+
+#user_img {
+	width: 150px;
+	min-height: 150px;
+	max-height: 170px;
+}
+
+#content_header .user_name {
+	text-align: center;
+	margin-top: 20px;
+	font-weight: 600;
+	font-size: 18px;
+	color: #fff;
+}
+
+#content {
+	margin-top: 15px;
+	background: #fff;
+	position: relative;
+}
+
+#content_nav {
+	width: 1004px;
+	background: #566475;
+	overflow: hidden;
+	line-height: 50px;
+	padding: 5px 10px;
+}
+
+#content_nav>div {
+	display: inline-block;
+	position: relative;
+}
+
+#content_nav>div.active:after {
+	position: absolute;
+	z-index: 2;
+	top: 50px;
+	left: 35px;
+	width: 13px;
+	height: 13px;
+	content: " ";
+	background: #fff;
+	transform: rotate(45deg);
+}
+
+#content_nav a {
+	margin-left: 10px;
+	color: #F9F9F9;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+#content_nav>div.active a {
+	color: #30C1BB;
+}
+
+#content_nav a:hover {
+	text-shadow: 0 0 5px rgba(255, 255, 255, .4);
+}
+
+#content_c {
+	padding: 20px;
+	min-height: 300px;
+}
+
+#content_c>div {
+	display: none;
+}
+
+#content_c.info #c_info {
+	display: block;
+}
+
+#content_c.ep #c_ep {
+	display: block;
+}
+
+#content_c.psw #c_psw {
+	display: block;
+}
+
+#content_c.job #c_job {
+	display: block;
+}
+
+#content_c.vitae #c_vitae {
+	display: block;
+}
+
+#user_f {
+	border: 1px solid #e7e7e7;
+	padding: 20px;
+}
+
+#user_f>div {
+	margin-top: 15px;
+}
+
+#user_f.change>div {
+	margin-top: 15px;
+}
+
+#user_f>div>span {
+	display: inline-block;
+	width: 80px;
+	color: #666;
+	text-align: right;
+}
+
+#user_f>div input {
+	outline: none;
+	cursor: text;
+	border: 1px solid #fff;
+}
+
+#user_f>div input:disabled {
+	border-color: #fff;
+	background: #fff!important;
+	color: #666;
+	background: #E8E8E8;
+}
+
+#user_f.change>div input {
+	outline: none;
+	border: 1px solid #999;
+	color: #666;
+	padding: 2px 5px;
+	width: 300px;
+	height: 28px;
+}
+
+#user_f.change>div input:disabled {
+	outline: none;
+	border-color: #ccc;
+	background: #F1F1F1!important;
+	color: #666;
+	padding: 2px 5px;
+	width: 300px;
+	height: 28px;
+}
+
+#change_btn,
+#change_sub,
+#change_return {
+	background: #02A0E9;
+	color: #fff!important;
+	cursor: pointer!important;
+	outline: none;
+	border: 0!important;
+	width: 100px!important;
+	height: 28px;
+}
+
+#change_btn:active,
+#change_sub:active,
+#change_return:active {
+	background: #2C91BF;
+}
+
+#user_f.change #change_btn {
+	display: none;
+}
+
+#user_f.change #change_sub,
+#user_f.change #change_return {
+	display: inline-block;
+}
+
+#change_sub,
+#change_return {
+	display: none;
+}
+
+
+/*个人信息*/
+
+#ep_f {
+	border: 1px solid #e7e7e7;
+	padding: 20px;
+}
+
+#ep_f>div {
+	margin-top: 15px;
+}
+
+#ep_f.change>div {
+	margin-top: 15px;
+}
+
+#ep_f>div>span {
+	display: inline-block;
+	width: 80px;
+	color: #666;
+	text-align: right;
+}
+
+#ep_f>div input {
+	outline: none;
+	cursor: text;
+	width: 500px;
+	border: 1px solid #fff;
+}
+
+#ep_f.change>div input {
+	outline: none;
+	border: 1px solid #999;
+	color: #666;
+	padding: 2px 5px;
+	height: 28px;
+}
+
+#ep_f textarea {
+	margin-top: 10px;
+	resize: none;
+	width: 920px;
+	height: 100px;
+	outline: none;
+	border: 1px solid #bbb;
+	padding: 10px;
+	font-family: Arial, "微软雅黑";
+}
+
+#change_ep_btn,
+#change_ep_sub,
+#change_ep_return {
+	background: #02A0E9;
+	color: #fff!important;
+	cursor: pointer!important;
+	outline: none;
+	border: 0!important;
+	width: 100px!important;
+	height: 28px;
+}
+
+#ep_f.change #change_ep_btn {
+	display: none;
+}
+
+#ep_f.change #change_ep_sub,
+#ep_f.change #change_ep_return {
+	display: inline-block;
+}
+
+#change_ep_sub,
+#change_ep_return {
+	display: none;
+}
+
+#c_ep.has .add {
+	display: none;
+}
+
+#c_ep #ep_f {
+	display: none;
+}
+
+#c_ep.has #ep_f {
+	display: block;
+}
+
+#c_ep .add {
+	text-align: center;
+}
+
+#addEP_btn {
+	padding: 20px 40px;
+	font-size: 22px;
+	color: #fff;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+
+
+/*企业信息*/
+
+#psw_f {
+	margin-left: 30px;
+}
+
+#psw_f input[type="password"] {
+	width: 300px;
+	height: 30px;
+	display: block;
+	margin-top: 15px;
+	padding: 2px 10px;
+	outline: none;
+}
+
+#psw_btn {
+	padding: 10px 20px;
+	margin-top: 20px;
+}
+
+
+/*修改密码*/
+
+#addJOB_btn {
+	width: 120px;
+	padding: 7px 10px;
+}
+
+#job_list li {
+	border: 1px solid #ccc;
+	background: #F1F1F1;
+	margin-top: 5px;
+	padding: 10px;
+	color: #888;
+	font-size: 14px;
+}
+
+#job_list li a {
+	color: #1C7988;
+}
+
+#job_list li span {
+	margin-left: 10px;
+}
+
+#job_list li input {
+	float: right;
+	padding: 5px 10px;
+}
+
+
+/*职位管理*/
+
+#vitae_list li {
+	border: 1px solid #ccc;
+	background: #F1F1F1;
+	margin-top: 5px;
+	padding: 10px;
+	color: #888;
+	font-size: 16px;
+}
+
+#vitae_list li span {
+	margin-left: 5px;
+}
+
+#vitae_list li input {
+	float: right;
+	padding: 5px 10px;
+}
+
+
+/*收到的简历*/
+
+#content>.log {
+	position: absolute;
+	top: 50px;
+	z-index: 1000;
+	width: 100%;
+}
+
+#log_info {
+	display: none;
+	background: rgba(210, 253, 177, .7);
+	color: #566475;
+	padding: 10px;
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#log_info.error {
+	background: rgba(253, 219, 177, .7);
+}
+
+#_window {
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	display: none;
+}
+
+#_window>.content {
+	width: 700px;
+	background: #F9F9F9;
+	margin: auto;
+	margin-top: 100px;
+	padding: 10px;
+	border-radius: 5px;
+	position: relative;
+	box-shadow: 0 0 10px rgba(255, 255, 255, .6);
+}
+
+#close_window {
+	display: block;
+	width: 34px;
+	height: 34px;
+	position: absolute;
+	top: 5px;
+	right: -40px;
+	background: url(../images/check_error.png) center no-repeat;
+	background-color: #3ABC9B;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+#close_window:hover {
+	background-color: #BBBBBB;
+}
+
+#addJOB_f {
+	border: 1px solid #e7e7e7;
+	padding: 20px;
+}
+
+#addJOB_f>h2 {
+	color: #666;
+	border-bottom: 2px dashed #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+#addJOB_f>div {
+	margin-top: 15px;
+}
+
+#addJOB_f>div>span {
+	display: inline-block;
+	width: 100px;
+	color: #666;
+	text-align: right;
+}
+
+#addJOB_f>div>input[type="text"] {
+	outline: none;
+	cursor: text;
+	width: 500px;
+	border: 1px solid #999;
+	height: 20px;
+	padding: 5px;
+}
+
+#addJOB_f>div textarea {
+	width: 554px;
+	height: 60px;
+	margin-top: 5px;
+	margin-left: 50px;
+	outline: none;
+	resize: none;
+	padding: 5px;
+}
+
+#addJOB_sub {
+	padding: 7px 10px;
+}
+
+#updateJOB_sub,
+#delJOB_sub {
+	padding: 7px 10px;
+	display: none;
+}
+
+#delJOB_sub {
+	background: #FF7272;
+}
+
+#addJOB_f.has #addJOB_sub {
+	display: none;
+}
+
+#addJOB_f.has #updateJOB_sub,
+#addJOB_f.has #delJOB_sub {
+	display: inline;
+}

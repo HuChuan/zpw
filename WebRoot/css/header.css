@@ -1,0 +1,197 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, "微软雅黑";
+	font-size: 16px;
+}
+
+img {
+	border: 0;
+}
+
+.container {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.unlist {
+	padding: 0;
+}
+
+.unlist>li {
+	list-style: none;
+}
+
+.hidden {
+	display: none!important;
+}
+
+.unuser_select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#header {
+	background: #48525e;
+	height: 60px;
+	overflow: hidden;
+	min-width: 1044px;
+}
+
+#header_content {
+	height: 60px;
+}
+
+#header_content a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#header_content>a {
+	font-size: 25px;
+	display: inline-block;
+	padding: 0 10px;
+	margin-right: 20px;
+	line-height: 60px;
+	float: left;
+	text-shadow: 2px 2px 2px #eee;
+}
+
+#header_content>ul {
+	margin: 0;
+	line-height: 60px;
+	padding: 0;
+}
+
+#header_content>ul li {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#header_nav {
+	float: left;
+	height: 60px;
+}
+
+#header_nav.index #index {
+	background: #3C444E;
+	color: #eee;
+	border-top: 4px solid #ddd;
+}
+
+#header_nav.find_job #find_job {
+	background: #3C444E;
+	color: #eee;
+	border-top: 4px solid #ddd;
+}
+
+#header_nav.find_man #find_man {
+	background: #3C444E;
+	color: #eee;
+	border-top: 4px solid #ddd;
+}
+
+#header_nav.personal #personal {
+	background: #3C444E;
+	color: #eee;
+	border-top: 4px solid #ddd;
+}
+
+#header_nav.cmuser #find_man {
+	display: none;
+}
+
+#header_nav.epuser #find_job {
+	display: none;
+}
+
+#header_nav.admin #admin {
+	display: block!important;
+}
+
+#header_nav a {
+	height: 100%;
+	display: block;
+	padding: 0 10px;
+	border-top: 4px solid #48525E;
+	color: #ddd;
+	font-size: 18px;
+}
+
+#header_nav a:hover {
+	background: #3C444E;
+	color: #eee;
+	border-top: 4px solid #ddd;
+}
+
+#header_info {
+	background: #02a0e9;
+	float: right;
+	padding: 0 2px!important;
+}
+
+#header_info a {
+	display: block;
+}
+
+#header_info a:hover {
+	color: #555;
+}
+
+#header_info li {
+	margin: 0!important;
+	padding: 0 10px;
+}
+
+#header_info li:first-child {
+	border-right: 1px dashed #fff;
+}
+
+#header_info.login li:not(.user) {
+	display: none;
+}
+
+#header_info li.user {
+	display: none;
+	position: relative;
+}
+
+#header_info.login li.user {
+	display: block;
+}
+
+#header_info.login li.user a {
+	max-width: 340px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	padding-right: 10px;
+}
+
+#header_info #exit {
+	border-left: 1px dashed #fff;
+	padding: 0 10px;
+	padding-right: 0;
+	color: #666;
+}
+
+#new_mess_dot {
+	position: absolute;
+	top: 12px;
+	right: 58px;
+	background: #FF2828;
+	display: block;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	z-index: 20;
+	box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}

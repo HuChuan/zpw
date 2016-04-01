@@ -1,0 +1,125 @@
+1.检查用户名是否存在
+	URL：check_user.do
+	参数：username
+	返回：success(boolean)
+
+2.检查Email是否存在
+	URL：check_email.do
+	参数：email
+	返回：success(boolean)
+
+3.用户注册
+	URL：regist.do
+	参数：username,password,email,pow
+	返回：success(boolean),username,token,pow
+
+4.用户名登录
+	URL：username_login.do
+	参数：username,password
+	返回：success(boolean),username,pow,token
+
+5.Email登录
+	URL：email_login.do
+	参数：email,password
+	返回：success(boolean),username,pow,token
+	
+6.检查是否登录
+	URL：check_login.do
+	参数：username,pow,token
+	返回：success(boolean)
+
+7.注销
+	URL：logout.do
+	参数：无
+	返回：无
+
+8.检查是否有新消息（不做）
+	URL：check_isNews.do
+	参数：username
+	返回：success(boolean)
+	
+9.加载用户基本信息
+	URL：load_userinfo.do
+	参数：username
+	返回：username,pow,email,phone
+	
+10.修改用户信息
+	URL：update_userinfo.do
+	参数：email,phone
+	返回：success(boolean)
+	
+11.检查是否存在简历
+	URL：check_viate.do
+	参数：username
+	返回：success(boolean)
+	
+12.加载用户个人简历
+	URL：load_vitae.do
+	参数：username
+	返回：vitae_id,name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal,user_img
+
+13.修改密码
+	URL：update_password.do
+	参数：username,old_psw,new_psw
+	返回：success(boolean),reason
+
+14.加载已投职位信息
+	URL：load_cv_job.do
+	参数：username
+	返回：list:[job_id,job_name,status,time]
+	
+15.检查是否存在企业信息
+	URL：check_enterprise.do
+	参数：username
+	返回：success(boolean)
+	
+16.加载企业信息
+	URL：load_enterprise.do
+	参数：username
+	返回：ep_name,ep_type,ep_web,ep_address,ep_scale,ep_slogan,ep_intro
+	
+17.修改企业信息
+	URL：update_enterprise.do
+	参数：username,ep_name,ep_type,ep_web,ep_address,ep_scale,ep_slogan,ep_intro
+	返回：success(boolean)
+
+18.添加职位信息
+	URL：add_job_list.do
+	参数：username,job_name,job_city,job_edu,job_exp,job_money,job_intro
+	返回：success(boolean)
+
+18.加载职位列表
+	URL：load_job_list.do
+	参数：username
+	返回：list:[id,name,city,time]
+
+19.加载职位信息
+	URL：load_job_info.do
+	参数：id
+	返回：id,name,city,edu,exp,money,intro
+	
+20.修改职位信息
+	URL：update_job_info.do
+	参数：username,job_name,job_city,job_edu,job_exp,job_money,job_intro
+	返回：success(boolean)
+	
+	
+20.删除职位信息
+	URL：delete_job_info.do
+	参数：id
+	返回：success(boolean)
+
+21.查看收到的简历
+	URL：load_vitae.do
+	参数：username
+	返回：list:[viate_id,name,sex,age,edu,job,time]
+
+22.加载所有会员信息
+	URL：load_all_user.do
+	参数：无
+	返回：list:[username,img,email,phone,pow,reg_time]
+	
+23.删除用户信息
+	URL：delete_user.do
+	参数：username
+	返回：success(boolean)

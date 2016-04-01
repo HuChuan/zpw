@@ -1,0 +1,311 @@
+.container_bg {
+	background: #f1f4f6;
+	padding: 10px;
+	min-width: 1024px;
+}
+
+#carousel {
+	background: #f9f9f9;
+	width: 1024px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+#carousel_img {
+	position: absolute;
+	z-index: 3;
+	width: 9999px;
+	left: 0;
+}
+
+#carousel_img a {
+	display: block;
+	float: left;
+}
+
+#carousel_img img {
+	width: 1024px;
+	max-height: 500px;
+	min-height: 300px;
+}
+
+#carousel_index {
+	position: absolute;
+	z-index: 4;
+	width: 1024px;
+	bottom: 20px;
+	text-align: center;
+}
+
+#carousel_index>span {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 5px;
+	background: url(../images/index_ie.png) 1px 0px no-repeat;
+	cursor: pointer;
+}
+
+#carousel_index>span.active {
+	background: url(../images/index_ie.png) -14px 0px no-repeat;
+}
+
+#carousel>button {
+	position: absolute;
+	z-index: 5;
+	width: 50px;
+	height: 50px;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	opacity: 0.6;
+	border-radius: 50%;
+	margin-top: -25px;
+	top: 50%;
+}
+
+#carousel>button:hover {
+	opacity: 1;
+}
+
+#carousel_pre {
+	background: url(../images/index_ico.png) 0px 0px no-repeat;
+	left: 30px;
+}
+
+#carousel_next {
+	background: url(../images/index_ico.png) -50px 0px no-repeat;
+	right: 30px;
+}
+
+#search_f {
+	padding: 20px 0;
+	background: #566475;
+}
+
+#search {
+	position: relative;
+	border: 2px solid #02a0e9;
+	width: 800px;
+	margin: 0 auto;
+}
+
+#search_t {
+	border: 0;
+	width: 650px;
+	height: 42px;
+	outline: none;
+	padding: 0 10px;
+	font-family: Arial, "微软雅黑";
+	color: #666;
+	font-size: 16px;
+}
+
+#search_t::selection {
+	background: #48525e;
+	color: #fff;
+}
+
+#search_sub {
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	background: #02a0e9;
+	color: #eee;
+	font-family: "微软雅黑", "幼圆";
+	width: 150px;
+	height: 42px;
+	position: absolute;
+	right: 0;
+	font-size: 16px;
+}
+
+#search_sub:hover {
+	color: #fff;
+}
+
+#search_holder {
+	position: absolute;
+	height: 42px;
+	line-height: 42px;
+	cursor: text;
+	padding-left: 11px;
+	font-size: 16px;
+	color: #000;
+	opacity: 0.6;
+}
+
+
+/* 以上为轮播器 搜索框 css */
+
+.container>h2 {
+	font-size: 25px;
+	color: #48525e;
+	font-weight: 500;
+	background: url(../images/dot_bg.jpg) center repeat-x;
+	margin: 40px 0 20px 0;
+}
+
+.container>h2>span {
+	margin-left: 40px;
+	padding: 0 10px;
+	background: #fff;
+	text-shadow: 2px 2px 2px #999;
+}
+
+#hot_ep_list li {
+	display: inline-block;
+	margin: 6px;
+	position: relative;
+	overflow: hidden;
+}
+
+#hot_ep_list a {
+	display: block;
+}
+
+#hot_ep_list img {
+	width: 110px;
+	height: 110px;
+	border: 1px solid #eee;
+}
+
+#hot_ep_list li span {
+	position: absolute;
+	top: 0;
+	left: -112px;
+	color: #fff;
+	font-size: 17px;
+	line-height: 102px;
+	font-weight: 600;
+	background: #4dd5ff;
+	background: rgba(72,82,94,.9);
+	display: block!important;
+	padding: 10px 0;
+	width: 112px;
+	height: 92px;
+	text-align: center;
+	word-break: break-all;
+	display: none;
+	white-space: nowrap;
+	overflow: hidden;
+	opacity: ;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 以上为热门企业 css */
+
+#hot_job>h2>span {
+	background: #f1f4f6;
+}
+
+#hot_job_list>li {
+	display: inline-block;
+	padding: 5px 20px;
+	background: #fff;
+	color: #666;
+	width: 460px;
+	margin-left: 6px;
+	margin-bottom: 10px;
+}
+
+#hot_job_list>li:hover {
+	box-shadow: 1px 4px 4px #ccc;
+}
+
+#hot_job_list>li>div {
+	display: inline-block;
+}
+
+#hot_job_list>li>div>p {
+	line-height: 20px;
+	width: 380px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#hot_job_list>li>div>p>span {
+	margin-right: 10px;
+}
+
+#hot_job_list>li img {
+	width: 70px;
+	height: 70px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	float: right;
+	margin-top: 27px;
+}
+
+#hot_job_list>li a {
+	color: #02A0E9;
+	text-decoration: none;
+}
+
+#hot_job_list>li a:hover {
+	text-decoration: underline;
+}
+
+#hot_job_list>li .job_name {
+	font-size: 20px;
+}
+
+#hot_job_list .city {
+	background: url(../images/gps_ico.png) no-repeat;
+	padding-left: 20px;
+}
+
+#hot_job_list .money {
+	background: url(../images/rmb_ico.png) no-repeat;
+	padding-left: 20px;
+}
+
+#hot_job_list .exp {
+	background: url(../images/timeout_ico.png) no-repeat;
+	padding-left: 20px;
+}
+
+#hot_job .showmore {
+	font-size: 16px;
+	text-align: right;
+	margin-bottom: 40px;
+}
+
+#hot_job .showmore a {
+	color: #3ABC9B;
+	text-decoration: none;
+	background: url(../images/icon-arrow-right.png) right center no-repeat;
+	padding: 10px;
+	padding-right: 23px;
+	margin-right: 7px;
+}
+
+#hot_job .showmore a:hover {
+	text-decoration: underline;
+}
+
+
+/* 以上为热门职位 css */
+
+#top_btn {
+	position: fixed;
+	right: 30px;
+	bottom: 100px;
+	width: 64px;
+	height: 64px;
+	border: 0;
+	background: url(../images/top.png);
+	outline: none;
+	cursor: pointer;
+	display: none;
+	opacity: 0.8;
+}
+
+#top_btn:hover {
+	opacity: 1;
+}
