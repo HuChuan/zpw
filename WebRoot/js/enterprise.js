@@ -229,6 +229,9 @@ $(function() {
 			var $span1 = $("<span>" + data[i].job + "</span>");
 			var $span1 = $("<span>" + data[i].time + "</span>");
 			var $input = $('<input type="button" class="mbutton" value="查看简历" />');
+			$input.click(function(){
+				location.href="showvitae.jsp?username="+data.username;
+			});
 			$li.append($input);
 			$li.append($span1);
 			$li.append($span2);

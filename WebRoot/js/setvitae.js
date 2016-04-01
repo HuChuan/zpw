@@ -37,9 +37,9 @@ $(function() {
 			setLog("真实姓名不能为空");
 		} else if (f.age.value.trim().length == 0) {
 			setLog("年龄不能为空");
-		} else if (f.name.city.trim().length == 0) {
+		} else if (f.city.value.trim().length == 0) {
 			setLog("居住城市不能为空");
-		} else if (f.edu.trim().length == 0) {
+		} else if (f.edu.value.trim().length == 0) {
 			setLog("学历不能为空");
 		} else if (f.school.value.trim().length == 0) {
 			setLog("毕业学校不能为空");
