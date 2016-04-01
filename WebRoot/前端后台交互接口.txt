@@ -120,7 +120,7 @@
 	返回：success(boolean)
 
 21.查看收到的简历
-	URL：load_vitae.do
+	URL：load_receive_vitae.do
 	参数：username
 	返回：list:[viate_id,name,sex,age,edu,job,time]
 

@@ -216,7 +216,7 @@ $(function() {
 
 //收到的简历
 $(function() {
-	$.post("load_vitae.do", {
+	$.post("load_receive_vitae.do", {
 		username: $.cookie("username")
 	}, function(data) {
 		data = data.list;
