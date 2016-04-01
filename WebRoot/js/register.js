@@ -131,7 +131,6 @@ $(function() {
 			$.post("register.do", d, function(data) {
 				if (data.success == true) {
 					$.cookie("username",data.user.username);
-					alert(data.user.username);
 					$.cookie("pow",data.user.pow);
 					$.cookie("token",data.user.token);
 					$("#regist_log").html("注册成功！正在转到 <a href='index.jsp'>首页</a>");

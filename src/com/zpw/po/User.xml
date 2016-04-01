@@ -26,11 +26,11 @@
   <update id="updateUser" parameterType="User">
   	update tb_user set 
 
-  	<if test="#{password}!=null">password=#{password}</if>
-  	<if test="#{email}!=null">email=#{email}</if>
-  	<if test="#{img}!=null">img=#{img}</if>
-  	<if test="#{phone}!=null">phone=#{phone}</if>
-  	<if test="#{token}!=null">token=#{token}</if>
+  	<if test="password=null">password=#{password} </if>
+  	<if test="email!=null">email=#{email} </if>
+  	<if test="img!=null">img=#{img} </if>
+  	<if test="phone!=null">phone=#{phone} </if>
+  	<if test="token!=null">token=#{token} </if>
   	where username=#{username}
   </update>
 </mapper>
