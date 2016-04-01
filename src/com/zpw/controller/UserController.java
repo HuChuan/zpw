@@ -30,13 +30,7 @@ public class UserController {
 		map.put("success", false);
 
 		if(UserService.registerCheck(user)){
-			
-			String t = new Date().toString()+user.getUsername();
-			user.setToken(MD5Util.MD5(t));
-			IUserDao u = DAOFactory.getUserDao();
-			u.register(user);
-			
-			map.put("user", user);
+			map.put("user", UserService.register(user));
 			map.put("success", true);
 		}	
 		return map;
@@ -57,15 +51,16 @@ public class UserController {
 	public Map username_login(User user){
 		Map map = new HashMap();
 		map.put("success", false);
-		IUserDao u = DAOFactory.getUserDao();
 		
-		if(u.loginByUsername(user)!=null){
-			
+		System.out.println(user.getPassword());
+		if(UserService.loginCheck(user.getUsername(), user.getPassword())){
 			String t = new Date().toString()+user.getUsername();
-			user.setToken(MD5Util.MD5(t));
+			UserService.updateToken(user.getUsername(),MD5Util.MD5(t));
+			user = UserService.getUserByUsername(user.getUsername());
 			map.put("user", user);
 			map.put("success", true);
 		}	
 		return map;
 	}
+	
 }

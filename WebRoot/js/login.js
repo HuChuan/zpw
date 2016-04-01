@@ -63,6 +63,8 @@ $(function() {
 					doLogin(data);
 				}, "json");
 			} else {
+				
+				
 				$.post("username_login.do", {
 					username: username,
 					password: psw

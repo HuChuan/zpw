@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zpw.po.User">
-  <insert id="register" parameterType="User">
+  <insert id="addUser" parameterType="User">
   	insert into tb_user (username,password,email,pow,reg_time)
 			values(#{username},#{password},#{email},#{pow},#{reg_time})
   </insert>
@@ -23,7 +23,14 @@
   	select * from tb_user where email=#{email} and password=#{password}
   </select>
   
-  <update id="updateToken" parameterType="User">
-  	update tb_user set token=#{token}
+  <update id="updateUser" parameterType="User">
+  	update tb_user set 
+
+  	<if test="#{password}!=null">password=#{password}</if>
+  	<if test="#{email}!=null">email=#{email}</if>
+  	<if test="#{img}!=null">img=#{img}</if>
+  	<if test="#{phone}!=null">phone=#{phone}</if>
+  	<if test="#{token}!=null">token=#{token}</if>
+  	where username=#{username}
   </update>
 </mapper>

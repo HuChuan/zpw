@@ -1,11 +1,13 @@
 package com.zpw.service;
 
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.zpw.dao.DAOFactory;
 import com.zpw.dao.IUserDao;
 import com.zpw.po.User;
+import com.zpw.util.MD5Util;
 
 public class UserService {
 	public static boolean isExistByUsername(String username) {
@@ -84,6 +86,59 @@ public class UserService {
 			flag = false;
 		}
 		return flag;
+	}
+	public static User register(User user){
+		String t = new Date().toString()+user.getUsername();
+		user.setToken(MD5Util.MD5(t));
+		IUserDao u = DAOFactory.getUserDao();
+		u.addUser(user);
+		return user;
+		
+	}
+	public static boolean loginCheck(String nameOrEmail, String password){
+		boolean flag = false;
+		IUserDao u = DAOFactory.getUserDao();
+		if (u.qByUsername(nameOrEmail)!=null) {
+			User user = new User();
+			user.setUsername(nameOrEmail);
+			user.setPassword(password);
+			System.out.println(user.getPassword());
+			if(u.loginByUsername(user)!=null){
+				flag = true;
+			}else{
+				flag = false;
+			}
+			
+		} else if(u.qByEmail(nameOrEmail)!=null) {
+			User user = new User();
+			user.setEmail(nameOrEmail);
+			user.setPassword(password);
+			if(u.loginByEmail(user)!=null){
+				flag = true;
+			}else{
+				flag = false;
+			}
+			
+		}else{
+			flag = false;
+		}
+		return flag;
+	}
+	
+	public static User getUserByUsername(String username){
+		IUserDao u = DAOFactory.getUserDao();
+		return u.qByUsername(username);
+	}
+	public static User getUserByEmail(String email){
+		IUserDao u = DAOFactory.getUserDao();
+		return u.qByUsername(email);
+	}
+	public static boolean updateToken(String username,String token){
+		IUserDao u = DAOFactory.getUserDao();	
+		User user = new User();
+		user.setToken(token);
+		user.setUsername(username);
+		return u.updateUser(user);
 	}
 
 }
