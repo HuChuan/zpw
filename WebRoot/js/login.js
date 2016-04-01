@@ -58,14 +58,14 @@ $(function() {
 			if (patt.test(username)) {
 				$.post("email_login.do", {
 					email: username,
-					psw: psw
+					password: psw
 				}, function(data) {
 					doLogin(data);
 				}, "json");
 			} else {
 				$.post("username_login.do", {
 					username: username,
-					psw: psw
+					password: psw
 				}, function(data) {
 					doLogin(data);
 				}, "json");

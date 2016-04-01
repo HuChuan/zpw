@@ -65,7 +65,7 @@
 					</form>
 				</div>
 				<!--企业信息-->
-				<div id="c_ep" class="has">
+				<div id="c_ep" class="">
 					<div class="add">
 						<div class="add">
 							<input id="addEP_btn" class="mbutton" type="button" value="添加企业信息" />
