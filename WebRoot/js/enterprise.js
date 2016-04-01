@@ -102,6 +102,14 @@ $(function() {
 
 //企业信息
 $(function() {
+	$("#addEP_btn").click(function() {
+		$("#ep_f").addClass("change");
+		$("#c_ep").addClass("has");
+		$("#ep_f").find("input[type='text']").each(function() {
+			this.readOnly = false;
+		});
+		$("#ep_f textarea")[0].readOnly = false;
+	});
 	$("#change_ep_btn").click(function() {
 		$("#ep_f").addClass("change");
 		$("#ep_f").find("input[type='text']").each(function() {
