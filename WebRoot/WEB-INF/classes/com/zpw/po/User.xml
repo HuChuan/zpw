@@ -15,4 +15,15 @@
   <select id="qByEmail" resultType="User">
   	select * from tb_user where email=#{email}
   </select>
+  
+  <select id="loginByUsername" resultType="User">
+  	select * from tb_user where username=#{username} and password=#{password}
+  </select>
+  <select id="loginByEmail" resultType="User">
+  	select * from tb_user where email=#{email} and password=#{password}
+  </select>
+  
+  <update id="updateToken" parameterType="User">
+  	update tb_user set token=#{token}
+  </update>
 </mapper>

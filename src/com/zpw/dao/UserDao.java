@@ -67,6 +67,43 @@ public class UserDao implements IUserDao {
 		
 		return user;
 	}
+
+	@Override
+	public User loginByUsername(User user) {
+		SqlSession session = null;
+		
+		try {
+			session = MyBatisUtil.createSession();
+			user = (User)session.selectOne(User.class.getName()+".loginByUsername", user);
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+				
+		
+		return user;
+	}
+
+	@Override
+	public boolean updateToken(String token) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.insert(User.class.getName()+".updateToken", token);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
 	
 
 }

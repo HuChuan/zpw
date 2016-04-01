@@ -25,8 +25,7 @@ import com.zpw.util.MD5Util;
 public class UserController {
 	@RequestMapping("register.do")
 	@ResponseBody
-	public Map register(User user){
-		
+	public Map register(User user){	
 		Map map = new HashMap();
 		map.put("success", false);
 
@@ -42,16 +41,7 @@ public class UserController {
 		}	
 		return map;
 	}
-//	@RequestMapping("check_user.do")
-//	@ResponseBody
-//	public Model check_user(String username,Model model){
-//		return model.addAttribute("success", CheckUtil.isExistByUsername(username));
-//	}
-//	@RequestMapping("check_email.do")
-//	@ResponseBody
-//	public Model check_email(String email,Model model){
-//		return model.addAttribute("success", CheckUtil.isExistByEmail(email));
-//	}
+
 	@RequestMapping("check_user.do")
 	@ResponseBody
 	public Model check_user(String username,Model model){
@@ -62,5 +52,20 @@ public class UserController {
 	public Model check_email(String email,Model model){
 		return model.addAttribute("success", UserService.isExistByEmail(email));
 	}
-	
+	@RequestMapping("username_login.do")
+	@ResponseBody
+	public Map username_login(User user){
+		Map map = new HashMap();
+		map.put("success", false);
+		IUserDao u = DAOFactory.getUserDao();
+		
+		if(u.loginByUsername(user)!=null){
+			
+			String t = new Date().toString()+user.getUsername();
+			user.setToken(MD5Util.MD5(t));
+			map.put("user", user);
+			map.put("success", true);
+		}	
+		return map;
+	}
 }
