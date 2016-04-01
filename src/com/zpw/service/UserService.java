@@ -131,7 +131,7 @@ public class UserService {
 	}
 	public static User getUserByEmail(String email){
 		IUserDao u = DAOFactory.getUserDao();
-		return u.qByUsername(email);
+		return u.qByEmail(email);
 	}
 	public static boolean updateToken(String username,String token){
 		IUserDao u = DAOFactory.getUserDao();	

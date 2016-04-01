@@ -21,7 +21,6 @@ import com.zpw.service.UserService;
 import com.zpw.util.MD5Util;
 
 @Controller
-@JsonIgnoreProperties(value={"hibernateLazyInitializer"})
 public class UserController {
 	@RequestMapping("register.do")
 	@ResponseBody
@@ -51,12 +50,27 @@ public class UserController {
 	public Map username_login(User user){
 		Map map = new HashMap();
 		map.put("success", false);
-		
-		System.out.println(user.getPassword());
 		if(UserService.loginCheck(user.getUsername(), user.getPassword())){
 			String t = new Date().toString()+user.getUsername();
 			UserService.updateToken(user.getUsername(),MD5Util.MD5(t));
 			user = UserService.getUserByUsername(user.getUsername());
+			map.put("user", user);
+			map.put("success", true);
+		}	
+		return map;
+	}
+	@RequestMapping("email_login.do")
+	@ResponseBody
+	public Map email_login(User user){
+		Map map = new HashMap();
+		map.put("success", false);
+		
+		if(UserService.loginCheck(user.getEmail(), user.getPassword())){
+			
+			user = UserService.getUserByEmail(user.getEmail());
+		
+			String t = new Date().toString()+user.getUsername();
+			UserService.updateToken(user.getUsername(),MD5Util.MD5(t));
 			map.put("user", user);
 			map.put("success", true);
 		}	
