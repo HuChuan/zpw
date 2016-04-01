@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zpw.po.User">
+  <insert id="register" parameterType="User">
+  	insert into tb_user (username,password,email,pow,reg_time)
+			values(#{username},#{password},#{email},#{pow},#{reg_time})
+  </insert>
+  
+  <select id="qByUsername" resultType="User">
+  	select * from tb_user where username=#{username}
+  </select>
+  
+  <select id="qByEmail" resultType="User">
+  	select * from tb_user where email=#{email}
+  </select>
+</mapper>
