@@ -4,12 +4,12 @@ $(function() {
 	var token = $.cookie("token");
 
 	//验证是否登录
-	/*if (username != null && username != "" && token != null && token != "") {
+	if (username != null && username != "" && token != null && token != "") {
 		$("#header_info").addClass("login");
 		$("#user").text(username);
 
 		//后台验证是否登录
-		$.post("check_login", {
+		$.post("check_login.do", {
 			username: username,
 			pow: pow,
 			token: token
@@ -37,14 +37,14 @@ $(function() {
 		}, "json");
 
 		//后台验证是否有新消息
-		$.post("check_isNews.do", {
+		/*$.post("check_isNews.do", {
 			username: username
 		}, function(data) {
 			if (data.success == true) {
 				$("#new_mess_dot").removeClass("hidden");
 			}
-		}, "json");
-	}*/
+		}, "json");*/
+	}
 });
 
 function logout() {

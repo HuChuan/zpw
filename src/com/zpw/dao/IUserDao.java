@@ -9,4 +9,5 @@ public interface IUserDao {
 	public User loginByUsername(User user);
 	public User loginByEmail(User user);
 	public boolean updateUser(User User);
+	public boolean check_login(User user);
 }

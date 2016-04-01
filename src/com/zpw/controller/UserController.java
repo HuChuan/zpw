@@ -68,12 +68,23 @@ public class UserController {
 		if(UserService.loginCheck(user.getEmail(), user.getPassword())){
 			
 			user = UserService.getUserByEmail(user.getEmail());
-		
+
 			String t = new Date().toString()+user.getUsername();
-			UserService.updateToken(user.getUsername(),MD5Util.MD5(t));
+			String token = MD5Util.MD5(t);
+			UserService.updateToken(user.getUsername(),token);
+			user.setToken(token);
 			map.put("user", user);
 			map.put("success", true);
+		
 		}	
+		return map;
+	}
+	
+	@RequestMapping("check_login")
+	@ResponseBody
+	public Map check_login(User user){
+		Map map = new HashMap();
+		map.put("success", UserService.check_login(user));
 		return map;
 	}
 	

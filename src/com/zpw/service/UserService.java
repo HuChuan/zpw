@@ -102,7 +102,6 @@ public class UserService {
 			User user = new User();
 			user.setUsername(nameOrEmail);
 			user.setPassword(password);
-			System.out.println(user.getPassword());
 			if(u.loginByUsername(user)!=null){
 				flag = true;
 			}else{
@@ -131,6 +130,7 @@ public class UserService {
 	}
 	public static User getUserByEmail(String email){
 		IUserDao u = DAOFactory.getUserDao();
+		
 		return u.qByEmail(email);
 	}
 	public static boolean updateToken(String username,String token){
@@ -140,5 +140,9 @@ public class UserService {
 		user.setUsername(username);
 		return u.updateUser(user);
 	}
-
+	
+	public static boolean check_login(User user){
+		IUserDao u = DAOFactory.getUserDao();
+		return u.check_login(user);
+	}
 }

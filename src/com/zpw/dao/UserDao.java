@@ -74,7 +74,6 @@ public class UserDao implements IUserDao {
 		
 		try {
 			session = MyBatisUtil.createSession();
-			System.out.println(user.getUsername()+user.getPassword());
 			user = (User)session.selectOne(User.class.getName()+".loginByUsername", user);
 			session.commit();
 			
@@ -119,6 +118,30 @@ public class UserDao implements IUserDao {
 			MyBatisUtil.closeSession(session);
 		}
 		return isSuccess;
+	}
+
+	@Override
+	public boolean check_login(User user) {
+		SqlSession session = null;
+		boolean flag = false;
+		try {
+			session = MyBatisUtil.createSession();
+			
+			user = (User)session.selectOne(User.class.getName()+".check_login", user);
+			session.commit();
+			
+			if(user!=null){
+				flag = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return flag;
+		
+		
 	}
 
 

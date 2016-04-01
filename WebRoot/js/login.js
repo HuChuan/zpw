@@ -96,19 +96,19 @@ $("body").css("background", "#F1F4F6 url(images/register_bg.jpg) repeat-x");
 function doLogin(data) {
 	if (data.success == true) {
 		if ($("#auto_login")[0].checked == true) {
-			$.cookie("username", data.username, {
+			$.cookie("username", data.user.username, {
 				expires: 7
 			});
-			$.cookie("pow", data.pow, {
+			$.cookie("pow", data.user.password, {
 				expires: 7
 			});
-			$.cookie("token", data.token, {
+			$.cookie("token", data.user.token, {
 				expires: 7
 			});
 		} else {
-			$.cookie("username", data.username);
-			$.cookie("pow", data.pow);
-			$.cookie("token", data.token);
+			$.cookie("username", data.user.username);
+			$.cookie("pow", data.user.pow);
+			$.cookie("token", data.user.token);
 		}
 		location.href = "index.jsp";
 	} else {

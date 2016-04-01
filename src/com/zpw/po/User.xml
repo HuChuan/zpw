@@ -22,6 +22,9 @@
   <select id="loginByEmail" resultType="User">
   	select * from tb_user where email=#{email} and password=#{password}
   </select>
+  <select id="check_login" resultType="User">
+  	select * from tb_user where username=#{username} and pow=#{pow} and token=#{token}
+  </select>
   
   <update id="updateUser" parameterType="User">
   	update tb_user set 
