@@ -2,17 +2,21 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zpw.po.User">
-  <insert id="register" parameterType="User">
-  	insert into tb_user (username,password,email,pow,reg_time)
-			values(#{username},#{password},#{email},#{pow},#{reg_time})
-  </insert>
-  
-  <select id="qByUsername" resultType="User">
-  	select * from tb_user where username=#{username}
-  </select>
-  
-  <select id="qByEmail" resultType="User">
-  	select * from tb_user where email=#{email}
-  </select>
+<mapper namespace="com.zpw.po.Vitae">
+	<insert id="insertVitae" parameterType="Vitae">
+		insert into tb_vitae
+		(username,name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal)
+		values(#{username},#{name},#{sex},#{city},#{age},#{edu},#{school},#{major},#{grad_year},#{phone},#{email},#{job},#{job_city},#{money},#{interest},#{skill},#{experience},#{personal})
+	</insert>
+
+	<select id="qByUsername" resultType="Vitae">
+		select * from tb_vitae where username=#{username}
+	</select>
+
+	<select id="updateVitae" resultType="vitae">
+		update tb_vitae set(name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal)
+		values(#{name},#{sex},#{city},#{age},#{edu},#{school},#{major},#{grad_year},#{phone},#{email},#{job},#{job_city},#{money},#{interest},#{skill},#{experience},#{personal})
+		where username=#{username}
+	</select>
+	
 </mapper>

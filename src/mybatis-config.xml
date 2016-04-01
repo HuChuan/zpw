@@ -20,5 +20,6 @@
 	<!-- 将mapper文件加入到配置文件中 -->
 	<mappers>
 		<mapper resource="com/zpw/po/User.xml"/>
+		<mapper resource="com/zpw/po/Vitae.xml"/>
 	</mappers>
 </configuration>
