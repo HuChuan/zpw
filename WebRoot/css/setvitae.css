@@ -1,0 +1,147 @@
+body {
+	background: #F1F4F6;
+}
+
+.mbutton {
+	padding: 7px 10px;
+	background: #2C91BF;
+	color: #fff;
+	border: 0;
+	margin-right: 7px;
+	cursor: pointer;
+	outline: none;
+	font-family: "微软雅黑";
+	display: none;
+}
+
+.mbutton:active {
+	background: #02A0E9;
+}
+
+#vitae_f {
+	border: 1px solid #ccc;
+	padding: 20px;
+	padding-bottom: 40px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	position: relative;
+}
+
+#vitae_f>h2 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-bottom: 2px dotted #e6e6e6;
+	padding: 10px;
+	color: #2C91BF;
+	font-weight: 400;
+}
+
+#user_img {
+	position: absolute;
+	right: 80px;
+	top: 110px;
+	width: 120px;
+	height: 140px;
+	background: #F1F4F6;
+	border: 1px solid #eee;
+	cursor: pointer;
+}
+
+#user_img:before {
+	position: absolute;
+	content: "照片";
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	margin-top: 55px;
+	color: #999;
+}
+
+#user_img img {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+}
+
+#vitae_f>div {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+#vitae_f>div span.tags {
+	display: inline-block;
+	width: 120px;
+	color: #666;
+	text-align: right;
+	margin-right: 20px;
+}
+
+#vitae_f>div span.tags.text {
+	vertical-align: top;
+}
+
+#vitae_f>div input[type="text"] {
+	width: 350px;
+	height: 28px;
+	padding: 0px 5px;
+	outline: none;
+	border: 1px solid #aaa;
+	font-family: Arial, "微软雅黑";
+	color: #333;
+}
+
+#vitae_f>div select {
+	width: 362px;
+	border: 1px solid #aaa;
+	height: 30px;
+	outline: none;
+}
+
+#vitae_f>div textarea {
+	width: 600px;
+	height: 60px;
+	resize: none;
+	padding: 10px;
+	font-family: Arial, "微软雅黑";
+	color: #333;
+	outline: none;
+}
+
+#addCV_sub {
+	display: inline;
+}
+
+#vitae_f.change #updateCV_btn {
+	display: inline;
+}
+
+#vitae_f.change #addCV_sub {
+	display: none;
+}
+
+#Logs {
+	position: fixed;
+	z-index: 999;
+	top: 200px;
+	left: 0;
+	width: 100%;
+}
+
+#log_info {
+	display: none;
+	background: rgba(210, 253, 177, .9);
+	color: #566475;
+	padding: 10px;
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#log_info.error {
+	background: rgba(253, 219, 177, .9);
+}

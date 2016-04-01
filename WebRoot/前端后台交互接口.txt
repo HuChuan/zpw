@@ -53,10 +53,20 @@
 	参数：username
 	返回：success(boolean)
 	
+11.添加简历信息
+	URL：add_vitae.do
+	参数：username,name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal,user_img
+	返回：success(boolean)
+	
 12.加载用户个人简历
 	URL：load_vitae.do
 	参数：username
 	返回：vitae_id,name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal,user_img
+
+13.修改个人简历
+	URL：update_vitae.do
+	参数：username,name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal,user_img
+	返回：success(boolean)
 
 13.修改密码
 	URL：update_password.do
