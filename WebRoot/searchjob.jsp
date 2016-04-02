@@ -16,7 +16,7 @@
 		
 		<div class="container">
 			<form id="search_f" action="searchjob.jsp" method="get">
-				<input type="text" name="kw" placeholder="请输入职位名称" />
+				<input id="search_kw" type="text" name="kw" placeholder="请输入职位名称" />
 				<input type="submit" value="搜索职位" />
 			</form>
 		</div>
@@ -56,102 +56,7 @@
 		
 		<div class="container">
 			<ul id="search_list" class="unlist">
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
-				<li>
-					<div>
-						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
-						<p><a class="ep_name" href="">公司名职位名 位名职位名职位名称</a></p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="money">3000-80000/月</span>
-						</p>
-					</div>
-					<a href=""><img src="images/source/ep3.jpg" /></a>
-				</li>
+				
 				<li>
 					<div>
 						<p><a class="job_name" href="">职位名职位名职位 职位名称</a></p>
@@ -166,7 +71,7 @@
 				</li>
 			</ul>
 			
-			<div id="load_more" class="">没有更多数据</div>
+			<div id="load_more" class="">正在加载中...</div>
 			
 			
 		</div>
