@@ -41,10 +41,10 @@
 			<!--
 				搜索框
 			-->
-			<form id="search_f" action="" method="get" class="container">
+			<form id="search_f" action="searchjob.jsp" method="get" class="container">
 				<div id="search">
 					<label id="search_holder" for="search_t" class="unuser_select">请输入职位名称 或 公司名称 或 人才简历</label>
-					<input id="search_t" name="keyword" type="search" autocomplete="off" />
+					<input id="search_t" name="kw" type="search" autocomplete="off" />
 					<input id="search_sub" type="submit" value="搜 索" />
 				</div>
 			</form>
@@ -236,13 +236,11 @@
 					</li>
 
 				</ul>
-				<div class="showmore"><a href="">查看更多</a></div>
+				<div class="showmore"><a href="searchjob.jsp">查看更多</a></div>
 			</div>
 		</div>
 		
-		<!--
-			返回顶部
-		-->
+		<!--返回顶部-->
 		<input id="top_btn" type="button" />
 
 		<!-- 引用footer -->

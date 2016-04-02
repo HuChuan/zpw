@@ -63,7 +63,7 @@ $(function() {
 		});
 	});
 	//加载基本信息
-	loadUserInfo();
+	var old_email = loadUserInfo();
 	//修改信息
 	$("#change_sub").click(function() {
 		var email = $("#user_f")[0].email.value;
@@ -74,6 +74,19 @@ $(function() {
 			setLog("Email格式错误", false);
 		} else if (!patt2.test(phone)) {
 			setLog("手机号码格式错误", false);
+		} else if (old_email == email) {
+			//修改
+			$.post("update_userinfo.do", {
+				username: $.cookie("username"),
+				email: email,
+				phone: phone
+			}, function(data) {
+				if (data.success == true) {
+					setLog("修改成功");
+				} else {
+					setLog("修改失败", false);
+				}
+			}, "json");
 		} else {
 			$.post("check_email.do", {
 				email: email
@@ -81,6 +94,7 @@ $(function() {
 				if (data.success == false) {
 					//修改
 					$.post("update_userinfo.do", {
+						username: $.cookie("username"),
 						email: email,
 						phone: phone
 					}, function(data) {
@@ -101,10 +115,10 @@ $(function() {
 //个人简历
 $(function() {
 	//添加简历
-	$("#addCV_btn").click(function(){
+	$("#addCV_btn").click(function() {
 		location.href = "setvitae.jsp";
 	});
-	
+
 	//检查是否存在简历
 	$.post("check_vitae.do", {
 		username: $.cookie("username")
@@ -213,6 +227,7 @@ function setLog(text, error) {
 
 //加载用户基本信息
 function loadUserInfo() {
+	var e;
 	$.post("load_userinfo.do", {
 		username: $.cookie("username")
 	}, function(data) {
@@ -221,5 +236,7 @@ function loadUserInfo() {
 		f.pow.value = data.pow;
 		f.email.value = data.email;
 		f.phone.value = data.phone;
+		e = data.email;
 	}, "json");
+	return e;
 }

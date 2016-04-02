@@ -1,0 +1,166 @@
+body {
+	background: #F1F4F6;
+}
+
+#search_f {
+	position: relative;
+	margin-top: 30px;
+	width: 704px;
+}
+
+#search_f input[type="text"] {
+	width: 550px;
+	height: 32px;
+	border: 2px solid #1C7988;
+	background: #F1F4F6;
+	font-size: 14px;
+	font-family: Arial, "微软雅黑";
+	padding: 0 5px;
+	outline: none;
+}
+
+#search_f input[type="submit"] {
+	position: absolute;
+	right: 0;
+	width: 140px;
+	height: 36px;
+	border: 0;
+	background: #1C7988;
+	color: #fff;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	outline: none;
+	cursor: pointer;
+}
+
+#search_filter {
+	margin-top: 20px;
+	background: #fff;
+	padding: 15px;
+	width: 674px;
+}
+
+#search_filter>h3 {
+	font-weight: 400;
+	font-size: 18px;
+	color: #1C7988;
+	margin-top: 0;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 5px;
+}
+
+#search_filter>div>div {
+	font-size: 14px;
+	color: #666;
+	margin-top: 10px;
+}
+
+#search_filter select {
+	width: 200px;
+	border: 1px solid #1C7988;
+	outline: none;
+}
+
+#search_list>li {
+	padding: 10px 20px;
+	background: #fff;
+	width: 664px;
+	border-bottom: 1px solid #eee;
+	color: #999;
+	font-size: 14px;
+}
+
+#search_list>li:hover {
+	background: #fafafa;
+}
+
+#search_list>li>div {
+	display: inline-block;
+}
+
+#search_list>li>div>p {
+	margin: 5px 0;
+	width: 590px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#search_list>li>div>p>span {
+	margin-right: 10px;
+}
+
+#search_list>li img {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	float: right;
+	margin-top: 15px;
+}
+
+#search_list>li a {
+	color: #1C7988;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+#search_list>li a:hover {
+	text-decoration: underline;
+}
+
+#search_list>li .job_name {
+	font-size: 16px;
+}
+
+#search_list .city {
+	background: url(../images/gps_ico.png) no-repeat;
+	padding-left: 20px;
+}
+
+#search_list .edu {
+	background: url(../images/edu.png) no-repeat;
+	padding-left: 20px;
+}
+
+#search_list .money {
+	background: url(../images/rmb_ico.png) no-repeat;
+	padding-left: 20px;
+}
+
+#load_more {
+	background: #FAFAFA;
+	width: 704px;
+	margin-bottom: 30px;
+	padding: 10px 0;
+	text-align: center;
+	color: #666;
+	cursor: text;
+	margin-bottom: 60px;
+}
+
+#load_more.load {
+	cursor: pointer;
+}
+
+#load_more.load:hover {
+	background: #fff;
+}
+
+#top_btn {
+	position: fixed;
+	right: 30px;
+	bottom: 100px;
+	width: 64px;
+	height: 64px;
+	border: 0;
+	background: url(../images/top.png);
+	outline: none;
+	cursor: pointer;
+	display: none;
+	opacity: 0.8;
+}
+
+#top_btn:hover {
+	opacity: 1;
+}

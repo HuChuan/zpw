@@ -45,7 +45,7 @@
 	
 10.修改用户信息
 	URL：update_userinfo.do
-	参数：email,phone
+	参数：username,email,phone
 	返回：success(boolean)
 	
 11.检查是否存在简历
@@ -133,3 +133,8 @@
 	URL：delete_user.do
 	参数：username
 	返回：success(boolean)
+	
+24.搜索职位信息
+	URL：load_add_job.do
+	参数：kw,city,edu,money,page
+	返回：job_

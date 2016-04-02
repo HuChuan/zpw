@@ -11,7 +11,7 @@
 		-->
 		<ul id="header_nav" class="unlist">
 			<li><a id="index" href="index.jsp">首页</a></li>
-			<li><a id="find_job" href="">找工作</a></li>
+			<li><a id="find_job" href="searchjob.jsp">找工作</a></li>
 			<li><a id="find_man" href="">发现人才</a></li>
 			<li><a id="personal" href="userspace.jsp">个人中心</a></li>
 			<li><a id="admin" href="" class="hidden">后台管理</a></li>

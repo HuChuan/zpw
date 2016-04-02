@@ -123,7 +123,6 @@ $(function() {
 //返回顶部
 $(function() {
 	var time = 500;
-
 	$(document).scroll(function(e) {
 		var top = $(document).scrollTop();
 		if (top >= 200) {
