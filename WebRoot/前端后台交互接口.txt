@@ -135,7 +135,11 @@
 	返回：success(boolean)
 	
 24.搜索职位信息
-	URL：load_add_job.do
+	URL：load_all_job.do
 	参数：kw,city,edu,money,page
 	返回：list:[job_id,job_name,job_edu,job_city,job_money,ep_id,ep_name,ep_img] , allpage
 	
+25.搜索简历
+	URL：load_all_vitae.do
+	参数：kw,city,edu,page
+	返回：list:[username,name,job,city,edu,major,user_img] , allpage
