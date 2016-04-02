@@ -223,11 +223,11 @@ $(function() {
 		for (var i = 0; i < data.length; i++) {
 			var $li = $("<li class='ellipsis'></li>");
 			var $span1 = $("<span>" + data[i].name + "</span>");
-			var $span1 = $("<span>" + data[i].sex + "</span>");
-			var $span1 = $("<span>" + data[i].age + "</span>");
-			var $span1 = $("<span>" + data[i].edu + "</span>");
-			var $span1 = $("<span>" + data[i].job + "</span>");
-			var $span1 = $("<span>" + data[i].time + "</span>");
+			var $span2 = $("<span>" + data[i].sex + "</span>");
+			var $span3 = $("<span>" + data[i].age + "</span>");
+			var $span4 = $("<span>" + data[i].edu + "</span>");
+			var $span5 = $("<span>" + data[i].job + "</span>");
+			var $span6 = $("<span>" + data[i].time + "</span>");
 			var $input = $('<input type="button" class="mbutton" value="查看简历" />');
 			$input.click(function(){
 				location.href="showvitae.jsp?username="+data.username;
