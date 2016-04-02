@@ -71,6 +71,10 @@ $(function() {
 
 //搜索框
 $(function() {
+	//改变action
+	if ($.cookie("pow") == 2) {
+		$("#search_f").attr("action", "searchvitae.jsp");
+	}
 	//输入框holder
 	$("#search_t").keyup(function() {
 		if (this.value.length > 0) {
