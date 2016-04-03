@@ -10,6 +10,11 @@ $(function() {
 	}
 });
 
+//header激活样式
+$(function(){
+	$("#header_nav").addClass("find_man");
+});
+
 //加载列表
 $(function() {
 	loadJob();

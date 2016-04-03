@@ -15,7 +15,7 @@
 		<%@include file="header.jsp"%>
 		
 		<div class="container">
-			<form id="search_f" action="searchjob.jsp" method="get">
+			<form id="search_f" action="searchvitae.jsp" method="get">
 				<input id="search_kw" type="text" name="kw" placeholder="请输入关键字" />
 				<input type="submit" value="搜索简历" />
 			</form>
