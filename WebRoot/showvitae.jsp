@@ -24,70 +24,70 @@
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">性别</span> <input type="text" name="sex"
+				<span class="tags">性别：</span> <input type="text" name="sex"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">年龄</span> <input type="text" name="age"
+				<span class="tags">年龄：</span> <input type="text" name="age"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">城市</span> <input type="text" name="city"
+				<span class="tags">城市：</span> <input type="text" name="city"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">学历</span> <input type="text" name="edu"
+				<span class="tags">学历：</span> <input type="text" name="edu"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">毕业学校</span> <input type="text" name="school"
+				<span class="tags">毕业学校：</span> <input type="text" name="school"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">专业</span> <input type="text" name="major"
+				<span class="tags">专业：</span> <input type="text" name="major"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">毕业年份</span> <input type="text" name="grad_year"
+				<span class="tags">毕业年份：</span> <input type="text" name="grad_year"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">手机号码</span> <input type="text" name="phone"
+				<span class="tags">手机号码：</span> <input type="text" name="phone"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">Email</span> <input type="text" name="email"
+				<span class="tags">Email：</span> <input type="text" name="email"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">期望职位</span> <input type="text" name="job"
+				<span class="tags">期望职位：</span> <input type="text" name="job"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">期望工作城市</span> <input type="text" name="job_city"
+				<span class="tags">期望工作城市：</span> <input type="text" name="job_city"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags">期望月薪</span> <input type="text" name="money"
+				<span class="tags">期望月薪：</span> <input type="text" name="money"
 					autocomplete="off" disabled />
 			</div>
 			<div>
-				<span class="tags text">专业技能</span>
+				<span class="tags text">专业技能：</span>
 				<div id="skill" class="textarea"></div>
 			</div>
 
 			<div>
-				<span class="tags text">工作经历</span>
+				<span class="tags text">工作经历：</span>
 				<div id="experience" class="textarea"></div>
 			</div>
 			<div>
-				<span class="tags text">兴趣爱好</span>
+				<span class="tags text">兴趣爱好：</span>
 				<div id="text" class="textarea"></div>
 			</div>
 
 			<div>
-				<span class="tags text">个人评价</span>
-				<div id="personal" class="textarea"></div>
+				<span class="tags text">个人评价：</span>
+				<div id="personal_c" class="textarea"></div>
 			</div>
 			<div>
 				<span class="tags"></span> <input class="mbutton" type="button"

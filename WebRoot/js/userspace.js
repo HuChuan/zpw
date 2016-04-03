@@ -77,6 +77,7 @@ $(function() {
 			}, function(data) {
 				if (data.success == true) {
 					setLog("修改成功");
+					$("#user_f").removeClass("change");
 				} else {
 					setLog("修改失败", false);
 				}
@@ -94,6 +95,7 @@ $(function() {
 					}, function(data) {
 						if (data.success == true) {
 							setLog("修改成功");
+							$("#user_f").removeClass("change");
 						} else {
 							setLog("修改失败", false);
 						}
@@ -178,6 +180,7 @@ $(function() {
 			}, function(data) {
 				if (data.success == true) {
 					setLog("修改成功");
+					$("#psw_f")[0].reset();
 				} else {
 					setLog(data.reason, false);
 				}
@@ -228,6 +231,8 @@ function setLog(text, error) {
 	$("#log_info").text(text);
 	if (error == false) {
 		$("#log_info").addClass("error");
+	} else {
+		$("#log_info").removeClass("error");
 	}
 	$("#log_info").fadeIn(200);
 	setTimeout(function() {

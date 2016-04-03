@@ -3,16 +3,16 @@ $(function() {
 	var pow = $.cookie("pow");
 	var token = $.cookie("token");
 
-	//验证是否登录
+	// 验证是否登录
 	if (username != null && username != "" && token != null && token != "") {
 		$("#header_info").addClass("login");
 		$("#user").text(username);
 
-		//后台验证是否登录
+		// 后台验证是否登录
 		$.post("check_login.do", {
-			username: username,
-			pow: pow,
-			token: token
+			username : username,
+			pow : pow,
+			token : token
 		}, function(data) {
 			if (data.success == false) {
 				$.removeCookie("username");
@@ -36,14 +36,12 @@ $(function() {
 			}
 		}, "json");
 
-		//后台验证是否有新消息
-		/*$.post("check_isNews.do", {
-			username: username
-		}, function(data) {
-			if (data.success == true) {
-				$("#new_mess_dot").removeClass("hidden");
-			}
-		}, "json");*/
+		// 后台验证是否有新消息
+		/*
+		 * $.post("check_isNews.do", { username: username }, function(data) { if
+		 * (data.success == true) { $("#new_mess_dot").removeClass("hidden"); } },
+		 * "json");
+		 */
 	}
 });
 
@@ -52,5 +50,5 @@ function logout() {
 	$.removeCookie("username");
 	$.removeCookie("pow");
 	$.removeCookie("token");
-	location.reload();
+	location.href = "login.jsp";
 }

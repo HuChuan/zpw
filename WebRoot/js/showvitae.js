@@ -1,16 +1,16 @@
 //加载并判断判断是否是自己的简历
 var _user;
 $(function() {
-	loadCV();
 	var search = location.search;
 	_user = search.substr(search.indexOf("username=") + 9);
+	loadCV();
 	$("head title").html(_user + " 的简历信息 - 招聘网");
 	if (_user == $.cookie("username")) {
 		$("#vitae_f").addClass("mine");
 	}
 });
 
-//修改简历
+// 修改简历
 $(function() {
 	var f = $("#vitae_f")[0];
 	$("#updateCV_btn").click(function() {
@@ -18,12 +18,11 @@ $(function() {
 	});
 });
 
-//加载简历
+// 加载简历
 function loadCV() {
-	$.post("test.jsp", {
-		username: _user
+	$.post("load_vitae.do", {
+		username : _user
 	}, function(data) {
-		data = data.vitae;
 		var f = $("#vitae_f")[0];
 		f.name.value = data.name;
 		f.sex.value = data.sex;
@@ -41,7 +40,7 @@ function loadCV() {
 		$("#skill").text(data.skill);
 		$("#experience").text(data.experience);
 		$("#interest").text(data.interest);
-		$("#personal").text(data.personal);
+		$("#personal_c").text(data.personal);
 		if (data.user_img.trim() != "") {
 			$img = $("<img src='" + data.user_img + "' />");
 			$("#user_img").append($img);
