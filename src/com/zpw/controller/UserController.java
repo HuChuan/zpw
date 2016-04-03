@@ -64,11 +64,9 @@ public class UserController {
 	public Map email_login(User user){
 		Map map = new HashMap();
 		map.put("success", false);
-		
 		if(UserService.loginCheck(user.getEmail(), user.getPassword())){
-			
 			user = UserService.getUserByEmail(user.getEmail());
-
+			
 			String t = new Date().toString()+user.getUsername();
 			String token = MD5Util.MD5(t);
 			UserService.updateToken(user.getUsername(),token);
@@ -87,5 +85,28 @@ public class UserController {
 		map.put("success", UserService.check_login(user));
 		return map;
 	}
-	
+	@RequestMapping("load_userinfo")
+	@ResponseBody
+	public User load_userinfo(User user){
+		return UserService.getUserByUsername(user.getUsername());
+	}
+	@RequestMapping("update_userinfo")
+	@ResponseBody
+	public Map update_userinfo(User user){
+		Map map = new HashMap();
+		map.put("success", UserService.updateUser(user));
+		return map;
+	}
+	@RequestMapping("update_password")
+	@ResponseBody
+	Map update_password(User user){
+		Map map = new HashMap();
+		map.put("success", UserService.updateUser(user));
+		if((boolean)map.get("success")==false){
+			map.put("reason", "原密码错误");
+		}else{
+			map.put("reason", null);
+		}
+		return map;
+	}
 }

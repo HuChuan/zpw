@@ -176,7 +176,7 @@ $(function() {
 		} else if (_new != re) {
 			setLog("密码不一致", false);
 		} else {
-			$.post("load_vitae.do", {
+			$.post("update_password.do", {
 				username: $.cookie("username"),
 				old_psw: old,
 				new_psw: _new

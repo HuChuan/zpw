@@ -140,9 +140,15 @@ public class UserService {
 		user.setUsername(username);
 		return u.updateUser(user);
 	}
+	public static boolean updateUser(User user){
+		IUserDao u = DAOFactory.getUserDao();
+		System.out.println(user.getUsername()+user.getEmail()+user.getPhone());
+		return u.updateUser(user);
+	}
 	
 	public static boolean check_login(User user){
 		IUserDao u = DAOFactory.getUserDao();
 		return u.check_login(user);
 	}
+	
 }
