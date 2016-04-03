@@ -129,18 +129,26 @@ $(function() {
 			$.post("load_vitae.do", {
 				username: $.cookie("username")
 			}, function(data) {
-				var str = "<span>" +
-					data.name + "</span><span>"
-				data.sex + "</span><span>"
-				data.age + "</span><span>"
-				data.city + "</span><span>"
-				data.edu + "</span><span>"
-				data.phone + "</span><span>"
-				data.email + "</span><span>"
-				data.school + "</span><span>"
-				data.major + "</span><span>"
-				data.job + "</span>";
-				$("#cv_i").html(str);
+				var $span1 = $("<span>" + data.name + "</span>");
+				var $span2 = $("<span>" + data.sex + "</span>");
+				var $span3 = $("<span>" + data.age + "</span>");
+				var $span4 = $("<span>" + data.city + "</span>");
+				var $span5 = $("<span>" + data.edu + "</span>");
+				var $span6 = $("<span>" + data.phone + "</span>");
+				var $span7 = $("<span>" + data.email + "</span>");
+				var $span8 = $("<span>" + data.school + "</span>");
+				var $span9 = $("<span>" + data.major + "</span>");
+				var $span10 = $("<span>" + data.job + "</span>");
+				$("#cv_i").append($span1);
+				$("#cv_i").append($span2);
+				$("#cv_i").append($span3);
+				$("#cv_i").append($span4);
+				$("#cv_i").append($span5);
+				$("#cv_i").append($span6);
+				$("#cv_i").append($span7);
+				$("#cv_i").append($span8);
+				$("#cv_i").append($span9);
+				$("#cv_i").append($span10);
 				$("#cv_bars a").attr("href", "showvitae.jsp?id=" + data.vitae_id);
 			}, "json");
 		}
