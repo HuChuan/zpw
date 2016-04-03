@@ -25,5 +25,40 @@ public class EnterpriseDao implements IEnterpriseDao{
 		}
 		return isSuccess;
 	}
+
+	@Override
+	public boolean updatEnterprise(Enterprise enterprise) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.update(Enterprise.class.getName()+".updateEnterprise", enterprise);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+
+	@Override
+	public Enterprise qByUsername(String username) {
+		SqlSession session = null;
+		Enterprise enterprise = null;
+		try {
+			session = MyBatisUtil.createSession();
+			enterprise = session.selectOne(Enterprise.class.getName()+".qByUsername", username);
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return enterprise;
+	}
 	
 }

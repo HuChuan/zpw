@@ -7,6 +7,23 @@
   	insert into tb_enterprise (username)
 			values(#{username})
   </insert>
+  <select id="qByUsername" parameterType="Enterprise" resultType="Enterprise">
+  	select * from tb_enterprise where username=#{username}
+  </select>
+  
+  
+  <update id="updateEnterprise" parameterType="Enterprise">
+  	update tb_user set 
+  	<if test="username!=null">username=#{username}</if>
+  	<if test="name!=null">,name=#{name}</if>
+  	<if test="type!=null">,type=#{type} </if>
+  	<if test="web!=null">,web=#{web}</if>
+  	<if test="address!=null">,address=#{address} </if>
+  	<if test="scale!=null">,scale=#{scale}</if>
+  	<if test="slogan!=null">,slogan=#{slogan}</if>
+  	<if test="intro!=null">,intro=#{intro}</if>
+  	where username=#{username}
+  </update>
   
   
   

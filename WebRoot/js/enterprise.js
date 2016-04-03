@@ -386,13 +386,13 @@ function loadEPInfo() {
 		username : $.cookie("username")
 	}, function(data) {
 		var f = $("#ep_f")[0];
-		f.ep_name.value = data.ep_name;
-		f.ep_type.value = data.ep_type;
-		f.ep_web.value = data.ep_web;
-		f.ep_address.value = data.ep_address;
-		f.ep_scale.value = data.ep_scale;
-		f.ep_slogan.value = data.ep_slogan;
-		f.ep_intro.value = data.ep_intro;
+		f.ep_name.value = data.name;
+		f.ep_type.value = data.type;
+		f.ep_web.value = data.web;
+		f.ep_address.value = data.address;
+		f.ep_scale.value = data.scale;
+		f.ep_slogan.value = data.slogan;
+		f.ep_intro.value = data.intro;
 	}, "json");
 }
 
