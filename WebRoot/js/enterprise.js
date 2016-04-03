@@ -136,7 +136,7 @@ $(function() {
 		$("#ep_f textarea")[0].readOnly = true;
 	});
 	// 检查是否存在企业信息
-	$.post("check_enterprise.do", {
+	/*$.post("check_enterprise.do", {
 		username : $.cookie("username")
 	}, function(data) {
 		if (data.success == true) {
@@ -144,7 +144,10 @@ $(function() {
 			// 加载企业信息
 			loadEPInfo();
 		}
-	}, "json");
+	}, "json");*/
+	$("#c_ep").addClass("has");
+	// 加载企业信息
+	loadEPInfo();
 	// 修改信息
 	$("#change_ep_sub").click(function() {
 		var ep = $("#ep_f")[0];
@@ -210,19 +213,17 @@ $(function() {
 						username : $.cookie("username")
 					},
 					function(data) {
-						data = data.list;
 						for (var i = 0; i < data.length; i++) {
 							var $li = $("<li class='ellipsis'></li>");
 							var $a = $("<a href='" + data[i].id + "'>"
 									+ data[i].name + "</a>");
 							var $span1 = $("<span class='city'>" + data[i].city
 									+ "</span>");
-							var $span2 = $("<span class='time'>" + data[i].time
-									+ "</span>");
-							var $input = $('<input type="button" class="mbutton" value="查看/修改" />');
-							$input.addEventListener("click", function() {
-								addJOB(data[i].id);
-							});
+							var $span2 = $("<span class='time'>"
+									+ data[i].pub_time + "</span>");
+							var $input = $('<input type="button" class="mbutton" onclick="addJOB('
+									+ data[i].id + ')" value="查看/修改" />');
+							var id = data
 							$li.append($input);
 							$li.append($a);
 							$li.append($span1);
@@ -241,7 +242,6 @@ $(function() {
 						username : $.cookie("username")
 					},
 					function(data) {
-						data = data.list;
 						for (var i = 0; i < data.length; i++) {
 							var $li = $("<li class='ellipsis'></li>");
 							var $span1 = $("<span>" + data[i].name + "</span>");
@@ -250,10 +250,9 @@ $(function() {
 							var $span4 = $("<span>" + data[i].edu + "</span>");
 							var $span5 = $("<span>" + data[i].job + "</span>");
 							var $span6 = $("<span>" + data[i].time + "</span>");
-							var $input = $('<input type="button" class="mbutton" value="查看简历" />');
+							var $input = $('<input type="button" class="mbutton" value="查看简历" hf="showvitae.jsp?username='+data[i].username+'" />');
 							$input.click(function() {
-								location.href = "showvitae.jsp?username="
-										+ data.username;
+								location.href = $(this).attr("hf");
 							});
 							$li.append($input);
 							$li.append($span1);
@@ -275,17 +274,17 @@ $(function() {
 	// 发布职位
 	$("#addJOB_sub").click(function() {
 		var f = $("#addJOB_f")[0];
-		if (f.job_name.value.trim().length == 0) {
+		if (f.name.value.trim().length == 0) {
 			setLog("职位名称不能为空", false);
-		} else if (f.job_city.value.trim().length == 0) {
+		} else if (f.city.value.trim().length == 0) {
 			setLog("工作城市不能为空", false);
-		} else if (f.job_edu.value.trim().length == 0) {
+		} else if (f.edu.value.trim().length == 0) {
 			setLog("学历要求不能为空", false);
-		} else if (f.job_exp.value.trim().length == 0) {
+		} else if (f.exp.value.trim().length == 0) {
 			setLog("经验要求不能为空", false);
-		} else if (f.job_money.value.trim().length == 0) {
+		} else if (f.money.value.trim().length == 0) {
 			setLog("薪酬不能为空", false);
-		} else if (f.job_intro.value.trim().length == 0) {
+		} else if (f.intro.value.trim().length == 0) {
 			setLog("职位描述不能为空", false);
 		} else {
 			var d = $("#addJOB_f").serialize();
@@ -303,17 +302,17 @@ $(function() {
 	// 修改职位
 	$("#updateJOB_sub").click(function() {
 		var f = $("#addJOB_f")[0];
-		if (f.job_name.value.trim().length == 0) {
+		if (f.name.value.trim().length == 0) {
 			setLog("职位名称不能为空", false);
-		} else if (f.job_city.value.trim().length == 0) {
+		} else if (f.city.value.trim().length == 0) {
 			setLog("工作城市不能为空", false);
-		} else if (f.job_edu.value.trim().length == 0) {
+		} else if (f.edu.value.trim().length == 0) {
 			setLog("学历要求不能为空", false);
-		} else if (f.job_exp.value.trim().length == 0) {
+		} else if (f.exp.value.trim().length == 0) {
 			setLog("经验要求不能为空", false);
-		} else if (f.job_money.value.trim().length == 0) {
+		} else if (f.money.value.trim().length == 0) {
 			setLog("薪酬不能为空", false);
-		} else if (f.job_intro.value.trim().length == 0) {
+		} else if (f.intro.value.trim().length == 0) {
 			setLog("职位描述不能为空", false);
 		} else {
 			var d = $("#addJOB_f").serialize();
@@ -411,13 +410,12 @@ function addJOB(id) {
 			id : id
 		}, function(data) {
 			var f = $("#addJOB_f")[0];
-			f.id = data.id;
-			f.name = data.name;
-			f.city = data.city;
-			f.edu = data.edu;
-			f.exp = data.exp;
-			f.money = data.money;
-			f.intro = data.intro;
+			f.name.value = data.name;
+			f.city.value = data.city;
+			f.edu.value = data.edu;
+			f.exp.value = data.experience;
+			f.money.value = data.money;
+			f.intro.value = data.intro;
 		}, "json");
 	}
 	$("#_window").fadeIn(200);

@@ -56,7 +56,7 @@
 		
 		<div class="container">
 			<ul id="search_list" class="unlist"></ul>
-			<div id="load_more" class="">正在加载中...</div>
+			<div id="load_more" class="unuser_select">正在加载中...</div>
 		</div>
 
 		<!--返回顶部-->
