@@ -17,7 +17,7 @@ $(function(){
 
 //加载列表
 $(function() {
-	loadJob();
+	loadCV();
 	$("#search_filter").on("change", "select", loadCV);
 });
 

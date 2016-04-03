@@ -5,8 +5,8 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>企业信息 - 招聘网</title>
-		<link rel="stylesheet" href="css/showenterprise.css" />
+		<title>职位信息 - 招聘网</title>
+		<link rel="stylesheet" href="css/showjob.css" />
 	</head>
 
 	<body>
@@ -26,35 +26,35 @@
 		<div id="content" class="container">
 			<div>
 				<span class="tags">企业名称：</span>
-				<p id="ep_name">腾讯公司</p>
+				<p id="job_name">腾讯公司</p>
 			</div>
 			<div>
 				<span class="tags">企业类型：</span>
-				<p id="ep_type">互联网</p>
+				<p id="job_city">互联网</p>
 			</div>
 			<div>
 				<span class="tags">企业官网：</span>
-				<p id="ep_web">www.qq.com</p>
+				<p id="job_edu">www.qq.com</p>
 			</div>
 			<div>
 				<span class="tags">企业地址：</span>
-				<p id="ep_address">中国重庆21号</p>
+				<p id="job_exp">中国重庆21号</p>
 			</div>
 			<div>
 				<span class="tags">企业规模：</span>
-				<p id="ep_scale">2000人<br></p>
+				<p id="job_money">2000人<br></p>
 			</div>
 			<div>
 				<span class="tags">企业口号：</span>
-				<p id="ep_slogan">加油，加油</p>
+				<p id="job_intro">很好的工作</p>
 			</div>
 			<div>
 				<span class="tags">企业简介：</span>
-				<p id="ep_intro">这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈</p>
+				<p id="job_time">2016-12-02</p>
 			</div>
 		</div>	
-		
-		<script src="js/showenterprise.js"></script>
+				
+		<script src="js/showjob.js"></script>
 	</body>
 
 </html>
