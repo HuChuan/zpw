@@ -34,13 +34,16 @@ $(function() {
 
 	//点击轮播器导航按钮
 	$("#carousel_index").on("click", "span", function() {
+
 		var n = this.getAttribute("num");
 		if (n != index) {
-			//clearInterval(timer);
+			index = n;
+			$("#carousel_img").stop();
+			clearInterval(timer);
 			carousel_go(n);
-			/*timer = setInterval(function() {
+			timer = setInterval(function() {
 				carousel_go(++index);
-			}, timeout);*/
+			}, timeout);
 		}
 	});
 
@@ -54,6 +57,7 @@ $(function() {
 			index = 0;
 		}
 		var go = n * 1024 * (-1);
+		$("#carousel_img").stop();
 		$("#carousel_img").animate({
 			left: go + "px"
 		}, speed);
@@ -85,6 +89,9 @@ $(function() {
 	});
 	//焦点改变样式
 	$("#search_t").focus(function() {
+		$("#search").stop();
+		$("#search_t").stop();
+		$("#search_f").stop();
 		$("#search").animate({
 			width: "840px"
 		}, 200);
@@ -96,6 +103,9 @@ $(function() {
 		}, 500);
 	});
 	$("#search_t").blur(function() {
+		$("#search").stop();
+		$("#search_t").stop();
+		$("#search_f").stop();
 		$("#search").animate({
 			width: "800px"
 		}, 200);
@@ -111,12 +121,14 @@ $(function() {
 //热门企业动画
 $(function() {
 	$("#hot_ep_list>li>a").mouseenter(function() {
+		$(this).find("span").stop();
 		$(this).find("span").css("left", "-112px");
 		$(this).find("span").animate({
 			left: "0"
 		}, 200);
 	});
 	$("#hot_ep_list>li>a").mouseleave(function() {
+		$(this).find("span").stop();
 		$(this).find("span").css("left", "0");
 		$(this).find("span").animate({
 			left: "112px"
