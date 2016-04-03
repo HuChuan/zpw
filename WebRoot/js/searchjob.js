@@ -65,7 +65,7 @@ function loadJobList(kw, city, edu, money, page) {
 	$.get("load_all_job.do", {
 		kw: kw,
 		city: city,
-		edt: edu,
+		edu: edu,
 		money: money,
 		page: page
 	}, function(data) {
