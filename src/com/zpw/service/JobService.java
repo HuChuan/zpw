@@ -34,4 +34,10 @@ public class JobService {
 		Job job = j.qById(id);
 		return job;
 	}
+	
+	public static boolean updateJob(Job job){
+		JobDao j = DAOFactory.getJobDao();
+		boolean flag = j.updateJob(job);
+		return flag;
+	}
 }

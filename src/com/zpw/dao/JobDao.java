@@ -75,4 +75,22 @@ public class JobDao implements IJobDao{
 		return job;
 	}
 
+	@Override
+	public boolean updateJob(Job job) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.update(Job.class.getName()+".updateJob", job);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+
 }

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,5 +41,13 @@ public class JobController {
 		Job job = null;
 		job = JobService.findJob(id);
 		return job;
+	}
+	
+	@RequestMapping("update_job_info")
+	@ResponseBody
+	public Model update_job_info(Job job,Model model){
+		boolean success = JobService.updateJob(job);
+		
+		return model.addAttribute("success", success);
 	}
 }

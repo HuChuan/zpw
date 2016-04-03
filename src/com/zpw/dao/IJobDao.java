@@ -15,5 +15,5 @@ public interface IJobDao {
 	
 	public Job qById (int id);
 	
-	
+	public boolean updateJob(Job job);
 }

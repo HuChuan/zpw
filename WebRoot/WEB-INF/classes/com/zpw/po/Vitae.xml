@@ -14,12 +14,12 @@
 		username=#{username}
 	</select>
 
-	<select id="updateVitae" resultType="Vitae">
+	<update id="updateVitae" resultType="Vitae">
 		update tb_vitae
 		set(name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal)
 		values(#{name},#{sex},#{city},#{age},#{edu},#{school},#{major},#{grad_year},#{phone},#{email},#{job},#{job_city},#{money},#{interest},#{skill},#{experience},#{personal})
 		where username=#{username}
-	</select>
+	</update>
 
 	<select id="qByUsernameList" resultType="Vitae_Job">
 		select * from

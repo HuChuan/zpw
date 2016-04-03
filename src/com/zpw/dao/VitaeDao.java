@@ -53,7 +53,7 @@ public class VitaeDao implements IVitaeDao{
 		boolean isSuccess = false;
 		try {
 			session = MyBatisUtil.createSession();
-			session.insert(Vitae.class.getName()+".updateVitae", vitae);
+			session.update(Vitae.class.getName()+".updateVitae", vitae);
 			session.commit();
 			isSuccess = true;
 		} catch (Exception e) {

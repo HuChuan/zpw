@@ -3,11 +3,18 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zpw.po.Job">
-	<insert id="insertJob" parameterType="Job">
+	<insert id="insertJob" >
 		insert into tb_job
 		(username,ep_name,name,city,edu,experience,money,intro,pub_time)
 		values(#{username},#{ep_name},#{name},#{city},#{edu},#{experience},#{money},#{intro},#{pub_time})
 	</insert>
+	
+	<update id="updateJob" >
+		update tb_job set
+		(name,city,edu,experience,money,intro,pub_time)
+		values(#{name},#{city},#{edu},#{experience},#{money},#{intro},#{pub_time})
+		where username = #{username}
+	</update>
 
 	<select id="qEp_name" resultType="Integer">
 		select tb_enterprise.name from
