@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.zpw.po.User;
 import com.zpw.po.Vitae;
+import com.zpw.po.VitaeCustom;
+import com.zpw.po.Vitae_Job;
 import com.zpw.util.MyBatisUtil;
 
 public class VitaeDao implements IVitaeDao{
@@ -64,12 +66,28 @@ public class VitaeDao implements IVitaeDao{
 	}
 
 	@Override
-	public List<Vitae> qByUsernameList(String username) {
+	public List<Vitae_Job> qByUsernameList(String username) {
+		SqlSession session = null;
+		List<Vitae_Job> list = null;
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(Vitae.class.getName()+".qByUsernameList", username);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return list;
+	}
+
+	@Override
+	public List<Vitae> qByKwList(VitaeCustom vc) {
 		SqlSession session = null;
 		List<Vitae> list = null;
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(Vitae.class.getName()+".qByUsernameList", username);
+			list = session.selectList(Vitae.class.getName()+".qByKwList", vc);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

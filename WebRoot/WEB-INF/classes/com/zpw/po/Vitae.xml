@@ -25,13 +25,28 @@
 		select * from
 		tb_vitae,tb_vitae_job
 		where tb_vitae_job.ep_username=#{username}
-		and tb_vitae_job.username = tb_vitae.username
+		and
+		tb_vitae_job.username = tb_vitae.username
 	</select>
-	
-	<select id="qByKwList" resultType="Vitae_Job">
-		select * from
-		tb_vitae,tb_vitae_job
-		where tb_vitae_job.ep_username=#{username}
-		and tb_vitae_job.username = tb_vitae.username
+
+	<select id="qByKwList" resultType="Vitae">
+		SELECT TOP ${num} *
+		FROM
+		(
+		SELECT
+		ROW_NUMBER() OVER (ORDER BY id) AS RowNumber,* FROM tb_vitae 
+		<where>  
+            <if test="kw != null">  
+                and job like '%${kw}%'
+            </if> 
+            <if test="city != null">  
+                and tb_vitae.city = #{city}
+            </if>
+            <if test="edu != null">  
+                tb_vitae.edu = #{edu}
+            </if>
+        </where>
+		) as A
+		WHERE RowNumber > ${num}*(${page}-1)
 	</select>
 </mapper>

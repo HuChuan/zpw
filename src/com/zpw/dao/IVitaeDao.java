@@ -3,6 +3,8 @@ package com.zpw.dao;
 import java.util.List;
 
 import com.zpw.po.Vitae;
+import com.zpw.po.VitaeCustom;
+import com.zpw.po.Vitae_Job;
 
 public interface IVitaeDao {
 	
@@ -12,6 +14,8 @@ public interface IVitaeDao {
 	
 	public boolean updateVitae(Vitae vitae);
 	
-	public List<Vitae> qByUsernameList(String username);
+	public List<Vitae_Job> qByUsernameList(String username);
+	
+	public List<Vitae> qByKwList(VitaeCustom vc);
 	
 }

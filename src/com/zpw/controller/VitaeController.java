@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zpw.po.Vitae;
+import com.zpw.po.VitaeCustom;
 import com.zpw.service.VitaeService;
 
 @Controller
@@ -62,6 +63,14 @@ public class VitaeController {
 		
 		return model.addAttribute("success", success);
 		
+	}
+	
+	@RequestMapping("load_all_vitae")
+	@ResponseBody
+	public List load_all_vitae(VitaeCustom vc){
+		List list = null;
+		list = VitaeService.findVitaeByKw(vc);
+		return list;
 	}
 	
 }

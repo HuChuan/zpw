@@ -5,9 +5,10 @@ import java.util.List;
 import com.zpw.dao.DAOFactory;
 import com.zpw.dao.IVitaeDao;
 import com.zpw.po.Vitae;
+import com.zpw.po.VitaeCustom;
+import com.zpw.po.Vitae_Job;
 
 public class VitaeService {
-	
 	
 	public static boolean isExistByUsername(String username){
 		IVitaeDao v = DAOFactory.getVitaeDao();
@@ -28,9 +29,9 @@ public class VitaeService {
 	}
 	
 	
-	public static List<Vitae> findVitaeList(String username){
+	public static List<Vitae_Job> findVitaeList(String username){
 		IVitaeDao v = DAOFactory.getVitaeDao();
-		List<Vitae> list = v.qByUsernameList(username);
+		List<Vitae_Job> list = v.qByUsernameList(username);
 		
 		return list;
 		
@@ -52,6 +53,20 @@ public class VitaeService {
 		Vitae vitae = v.qByUsername(username);
 		
 		return vitae;
+	}
+	
+	
+	public static List<Vitae> findVitaeByKw(VitaeCustom vc){
+		vc.setNum(10);
+		if(vc.getCity() != null && vc.getCity().equals("全国")){
+			vc.setCity(null);
+		}
+		if(vc.getEdu() != null && vc.getEdu().equals("不限")){
+			vc.setEdu(null);
+		}
+		IVitaeDao v = DAOFactory.getVitaeDao();
+		List<Vitae> list = v.qByKwList(vc);
+		return list;
 	}
 	
 }
