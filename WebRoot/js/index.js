@@ -15,79 +15,83 @@ $(function() {
 			$("#carousel_img").append($a);
 			$("#carousel_index").append($span);
 		}
+		play();
 	}, "json");
 
-	//配置播放时间间隔、播放速度
-	var timeout = 2500;
-	var speed = 300;
+	function play() {
+		//配置播放时间间隔、播放速度
+		var timeout = 2500;
+		var speed = 300;
 
-	var index = 0;
-	var count = $("#carousel_img>a").length - 1;
-	var index_count = $("#carousel_index>span");
-	var timer = null;
+		var index = 0;
+		var count = $("#carousel_img>a").length - 1;
+		var index_count = $("#carousel_index>span");
+		var timer = null;
 
-	//设置定时器
-	timer = setInterval(function() {
-		carousel_go(++index);
-	}, timeout);
-
-	//点击后翻
-	$("#carousel_pre").click(function() {
-		clearInterval(timer);
-		carousel_go(--index);
+		//设置定时器
 		timer = setInterval(function() {
 			carousel_go(++index);
 		}, timeout);
-	});
 
-	//点击前翻
-	$("#carousel_next").click(function() {
-		clearInterval(timer);
-		carousel_go(++index);
-		timer = setInterval(function() {
-			carousel_go(++index);
-		}, timeout);
-	});
-
-	//点击轮播器导航按钮
-	$("#carousel_index").on("click", "span", function() {
-
-		var n = this.getAttribute("num");
-		if (n != index) {
-			index = n;
-			$("#carousel_img").stop();
+		//点击后翻
+		$("#carousel_pre").click(function() {
 			clearInterval(timer);
-			carousel_go(n);
+			carousel_go(--index);
 			timer = setInterval(function() {
 				carousel_go(++index);
 			}, timeout);
-		}
-	});
+		});
 
-	//播放指定的轮播器位置
-	function carousel_go(n) {
-		if (n < 0) {
-			n = count;
-			index = count;
-		} else if (n > count) {
-			n = 0;
-			index = 0;
+		//点击前翻
+		$("#carousel_next").click(function() {
+			clearInterval(timer);
+			carousel_go(++index);
+			timer = setInterval(function() {
+				carousel_go(++index);
+			}, timeout);
+		});
+
+		//点击轮播器导航按钮
+		$("#carousel_index").on("click", "span", function() {
+
+			var n = this.getAttribute("num");
+			if (n != index) {
+				index = n;
+				$("#carousel_img").stop();
+				clearInterval(timer);
+				carousel_go(n);
+				timer = setInterval(function() {
+					carousel_go(++index);
+				}, timeout);
+			}
+		});
+
+		//播放指定的轮播器位置
+		function carousel_go(n) {
+			if (n < 0) {
+				n = count;
+				index = count;
+			} else if (n > count) {
+				n = 0;
+				index = 0;
+			}
+			var go = n * 1024 * (-1);
+			$("#carousel_img").stop();
+			$("#carousel_img").animate({
+				left: go + "px"
+			}, speed);
+			carousel_index(n)
 		}
-		var go = n * 1024 * (-1);
-		$("#carousel_img").stop();
-		$("#carousel_img").animate({
-			left: go + "px"
-		}, speed);
-		carousel_index(n)
+
+		//轮播导航按钮更改颜色
+		function carousel_index(n) {
+			for (var i = 0; i < index_count.length; i++) {
+				index_count[i].classList.remove("active");
+			}
+			index_count[n].classList.add("active");
+		}
 	}
 
-	//轮播导航按钮更改颜色
-	function carousel_index(n) {
-		for (var i = 0; i < index_count.length; i++) {
-			index_count[i].classList.remove("active");
-		}
-		index_count[n].classList.add("active");
-	}
 });
 
 //搜索框
@@ -135,8 +139,14 @@ $(function() {
 	});
 });
 
-//热门企业动画
+//热门企业
 $(function() {
+	//加载热门企业
+	$.get("load_hot_job.do", {}, function(data) {
+		
+	}, "json");
+
+	//动画效果
 	$("#hot_ep_list>li>a").mouseenter(function() {
 		$(this).find("span").stop();
 		$(this).find("span").css("left", "-112px");

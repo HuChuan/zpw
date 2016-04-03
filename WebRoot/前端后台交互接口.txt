@@ -61,7 +61,7 @@
 12.加载用户个人简历
 	URL：load_vitae.do
 	参数：username
-	返回：vitae_id,name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal,user_img
+	返回：id,name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal,user_img
 
 13.修改个人简历
 	URL：update_vitae.do
@@ -164,7 +164,7 @@
 	参数：username,id
 	返回：success(boolean)
 	
-30.加载主页轮播器内容
+30.加载主页轮播器内容(图片尺寸：1024*300)
 	URL：load_carousel.do
 	参数：无
 	返回：list:[url,img]

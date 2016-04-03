@@ -43,8 +43,8 @@
 			-->
 			<form id="search_f" action="searchjob.jsp" method="get" class="container">
 				<div id="search">
-					<label class="hidden" id="search_holder" for="search_t" class="unuser_select">请输入职位名称 或 公司名称 或 人才简历</label>
-					<input id="search_t" name="kw" type="search" autocomplete="off" />
+					<label class="hidden" id="search_holder" for="search_t" class="unuser_select">请输入职位名称 或 公司名称</label>
+					<input id="search_t" name="kw" type="search" autocomplete="off" placeholder="请输入职位名称 或 公司名称" />
 					<input id="search_sub" type="submit" value="搜 索" />
 				</div>
 			</form>
