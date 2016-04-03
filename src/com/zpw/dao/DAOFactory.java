@@ -5,6 +5,10 @@ public class DAOFactory {
 		return new UserDao();
 	}
 	
+	public static IEnterpriseDao getEnterpriseDao(){
+		return new EnterpriseDao();
+	}
+	
 	public static IVitaeDao getVitaeDao(){
 		return new VitaeDao();
 	}

@@ -5,7 +5,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.zpw.dao.DAOFactory;
+import com.zpw.dao.IEnterpriseDao;
 import com.zpw.dao.IUserDao;
+import com.zpw.po.Enterprise;
 import com.zpw.po.User;
 import com.zpw.util.MD5Util;
 
@@ -90,6 +92,13 @@ public class UserService {
 	public static User register(User user){
 		String t = new Date().toString()+user.getUsername();
 		user.setToken(MD5Util.MD5(t));
+		if(user.getPow()==2){
+			Enterprise enterprise = new Enterprise();
+			enterprise.setUsername(user.getUsername());
+			IEnterpriseDao e = DAOFactory.getEnterpriseDao();
+			e.addEnterprise(enterprise);			
+		}
+		
 		IUserDao u = DAOFactory.getUserDao();
 		u.addUser(user);
 		return user;
