@@ -173,27 +173,27 @@
 					<h2>发布职位</h2>
 					<div>
 						<span>职位名称：</span>
-						<input name="job_name" type="text" value=""/>
+						<input name="name" type="text" value=""/>
 					</div>
 					<div>
 						<span>工作城市：</span>
-						<input name="job_city" type="text" value=""/>
+						<input name="city" type="text" value=""/>
 					</div>
 					<div>
 						<span>学历要求：</span>
-						<input name="job_edu" type="text" value=""/>
+						<input name="edu" type="text" value=""/>
 					</div>
 					<div>
 						<span>经验要求：</span>
-						<input name="job_exp" type="text" value=""/>
+						<input name="exp" type="text" value=""/>
 					</div>
 					<div>
 						<span>薪酬：</span>
-						<input name="job_money" type="text" value=""/>
+						<input name="money" type="text" value=""/>
 					</div>
 					<div>
 						<span>职位描述：</span>
-						<textarea name="job_intro"></textarea>
+						<textarea name="intro"></textarea>
 					</div>
 					<div>
 						<input id="addJOB_sub" type="button" class="mbutton" value="发布职位信息" />

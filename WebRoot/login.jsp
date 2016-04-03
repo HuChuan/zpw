@@ -19,7 +19,7 @@
 				<span class="_box"></span>
 				<span class="active unuser_select">登录</span>
 				<a href="register.jsp">没有账号，去注册</a>
-				<a class="find" href="">找回密码</a>
+				<a class="find hidden" href="">找回密码</a>
 			</div>
 			<div id="login_log"></div>
 			<div class="form_content">

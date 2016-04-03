@@ -114,13 +114,13 @@ $(function() {
 		$("#search_t").stop();
 		$("#search_f").stop();
 		$("#search").animate({
-			width: "840px"
+			width: "+=40px"
 		}, 200);
 		$("#search_t").animate({
-			width: "690px"
+			width: "+=40px"
 		}, 200);
 		$("#search_f").animate({
-			backgroundColor: "#f1f4f6"
+			backgroundColor: "rgba(86,100,117,.1)"
 		}, 500);
 	});
 	$("#search_t").blur(function() {
@@ -128,13 +128,13 @@ $(function() {
 		$("#search_t").stop();
 		$("#search_f").stop();
 		$("#search").animate({
-			width: "800px"
+			width: "-=40px"
 		}, 200);
 		$("#search_t").animate({
-			width: "650px"
+			width: "-=40px"
 		}, 200);
 		$("#search_f").animate({
-			backgroundColor: "#566475"
+			backgroundColor: "rgba(86,100,117,1)"
 		}, 500);
 	});
 });

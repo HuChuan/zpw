@@ -7,39 +7,15 @@ $(function() {
 		var parent = this.parentNode.parentNode;
 		parent.className = "";
 	});
-	$("#username").blur(function() {
-		isUser = false;
-		var t = this.value;
-		var log = $(this).parent().prevAll(".form_log");
-		var parent = this.parentNode.parentNode;
-		if (t.trim().length == 0) {
-			parent.className = "check_error";
-			log.text("请输入用户名 或 Email");
-		} else {
-			parent.className = "";
-			isUser = true;
-		}
-	});
-
+	$("#username").blur(checkUser);
 	$("#psw").focus(function() {
 		var parent = this.parentNode.parentNode;
 		parent.className = "";
 	});
-	$("#psw").blur(function() {
-		isPsw = false;
-		var t = this.value;
-		var log = $(this).parent().prevAll(".form_log");
-		var parent = this.parentNode.parentNode;
-		if (t.length == 0) {
-			parent.className = "check_error";
-			log.text("请输入密码");
-		} else {
-			parent.className = "";
-			isPsw = true;
-		}
-	});
-
+	$("#psw").blur(checkPsw);
 	$("#form_sub").click(function() {
+		checkUser();
+		checkPsw();
 		var val = true;
 		if (!isUser) {
 			val = false;
@@ -63,8 +39,6 @@ $(function() {
 					doLogin(data);
 				}, "json");
 			} else {
-				
-				
 				$.post("username_login.do", {
 					username: username,
 					password: psw
@@ -73,7 +47,6 @@ $(function() {
 				}, "json");
 			}
 		}
-
 		return false;
 	});
 
@@ -86,6 +59,36 @@ $(function() {
 			$("#checkbox_bg").addClass("active");
 		}
 	});
+
+	function checkUser() {
+		isUser = false;
+		var _this = $("#username");
+		var t = _this.val();
+		var log = _this.parent().prevAll(".form_log");
+		var parent = _this.parent().parent();
+		if (t.trim().length == 0) {
+			parent.className = "check_error";
+			log.text("请输入用户名 或 Email");
+		} else {
+			parent.className = "";
+			isUser = true;
+		}
+	}
+
+	function checkPsw() {
+		isPsw = false;
+		var _this = $("#psw");
+		var t = _this.val();
+		var log = _this.parent().prevAll(".form_log");
+		var parent = _this.parent().parent();
+		if (t.length == 0) {
+			parent.className = "check_error";
+			log.text("请输入密码");
+		} else {
+			parent.className = "";
+			isPsw = true;
+		}
+	}
 
 });
 

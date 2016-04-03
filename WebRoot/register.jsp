@@ -53,7 +53,7 @@
 				</dt>
 				<div>
 					<p class="tags"></p>
-					<p><input type="submit" id="form_sub" value="注 册"></p>
+					<p><input type="button" id="form_sub" value="注 册"></p>
 				</dt>
 			</dl>
 		</form>
