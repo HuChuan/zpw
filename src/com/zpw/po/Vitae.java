@@ -1,6 +1,5 @@
 package com.zpw.po;
 
-import java.util.Date;
 
 public class Vitae {
 	private int id;

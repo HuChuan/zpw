@@ -10,13 +10,28 @@
 	</insert>
 
 	<select id="qByUsername" resultType="Vitae">
-		select * from tb_vitae where username=#{username}
+		select * from tb_vitae where
+		username=#{username}
 	</select>
 
-	<select id="updateVitae" resultType="vitae">
-		update tb_vitae set(name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal)
+	<select id="updateVitae" resultType="Vitae">
+		update tb_vitae
+		set(name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal)
 		values(#{name},#{sex},#{city},#{age},#{edu},#{school},#{major},#{grad_year},#{phone},#{email},#{job},#{job_city},#{money},#{interest},#{skill},#{experience},#{personal})
 		where username=#{username}
 	</select>
+
+	<select id="qByUsernameList" resultType="Vitae_Job">
+		select * from
+		tb_vitae,tb_vitae_job
+		where tb_vitae_job.ep_username=#{username}
+		and tb_vitae_job.username = tb_vitae.username
+	</select>
 	
+	<select id="qByKwList" resultType="Vitae_Job">
+		select * from
+		tb_vitae,tb_vitae_job
+		where tb_vitae_job.ep_username=#{username}
+		and tb_vitae_job.username = tb_vitae.username
+	</select>
 </mapper>

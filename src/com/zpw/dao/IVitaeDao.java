@@ -13,6 +13,5 @@ public interface IVitaeDao {
 	public boolean updateVitae(Vitae vitae);
 	
 	public List<Vitae> qByUsernameList(String username);
-
 	
 }

@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.zpw.po.User;
 import com.zpw.po.Vitae;
-import com.zpw.po.VitaeVo;
 import com.zpw.util.MyBatisUtil;
 
 public class VitaeDao implements IVitaeDao{
@@ -70,7 +69,7 @@ public class VitaeDao implements IVitaeDao{
 		List<Vitae> list = null;
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(VitaeVo.class.getName()+".qByUsernameList", username);
+			list = session.selectList(Vitae.class.getName()+".qByUsernameList", username);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -122,7 +122,7 @@
 21.查看收到的简历
 	URL：load_receive_vitae.do
 	参数：username
-	返回：list:[viate_id,name,sex,age,edu,job,time]
+	返回：list:[viate_id,name,sex,age,edu,job,time,job_name]
 
 22.加载所有会员信息
 	URL：load_all_user.do
