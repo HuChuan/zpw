@@ -9,7 +9,7 @@
 		values(#{username},#{ep_name},#{name},#{city},#{edu},#{experience},#{money},#{intro},#{pub_time})
 	</insert>
 
-	<select id="qEp_name" resultType="Interge">
+	<select id="qEp_name" resultType="Integer">
 		select tb_enterprise.name from
 		tb_enterprise where
 		username=#{username}
