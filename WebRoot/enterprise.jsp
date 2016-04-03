@@ -165,7 +165,7 @@
 			</div>
 		</div>
 		
-		<!--弹出窗口-->
+		<!--弹出职位窗口-->
 		<div id="_window">
 			<div class="content">
 				<span id="close_window"></span>
