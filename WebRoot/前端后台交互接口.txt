@@ -143,3 +143,8 @@
 	URL：load_all_vitae.do
 	参数：kw,city,edu,page
 	返回：list:[username,name,job,city,edu,major,user_img] , allpage
+	
+26.加载企业详细信息
+	URL：load_enterprise_info.do
+	参数：id
+	返回：name,img,web,intro,address,type,scale,slogan

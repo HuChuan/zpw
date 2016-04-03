@@ -61,7 +61,7 @@ function loadCV() {
 
 //加载搜索简历列表
 function loadCVList(kw, city, edu, page) {
-	$.get("load_all_job.do", {
+	$.get("load_all_vitae.do", {
 		kw: kw,
 		city: city,
 		edt: edu,
