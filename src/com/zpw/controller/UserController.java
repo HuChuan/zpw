@@ -99,13 +99,17 @@ public class UserController {
 	}
 	@RequestMapping("update_password")
 	@ResponseBody
-	Map update_password(User user){
+	Map update_password(String username, String old_psw, String new_psw){
 		Map map = new HashMap();
-		map.put("success", UserService.updateUser(user));
-		if((boolean)map.get("success")==false){
-			map.put("reason", "原密码错误");
-		}else{
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(old_psw);
+		if(UserService.loginCheck(username, old_psw)){
+			user.setPassword(new_psw);
+			map.put("success", UserService.updateUser(user));		
 			map.put("reason", null);
+		}else{
+			map.put("reason", "原密码错误");
 		}
 		return map;
 	}

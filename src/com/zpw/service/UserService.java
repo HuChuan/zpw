@@ -142,7 +142,6 @@ public class UserService {
 	}
 	public static boolean updateUser(User user){
 		IUserDao u = DAOFactory.getUserDao();
-		System.out.println(user.getUsername()+user.getEmail()+user.getPhone());
 		return u.updateUser(user);
 	}
 	
