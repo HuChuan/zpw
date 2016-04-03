@@ -142,29 +142,62 @@ $(function() {
 //热门企业
 $(function() {
 	//加载热门企业
-	$.get("load_hot_job.do", {}, function(data) {
+	$.get("load_hot_ep.do", {}, function(data) {
 		data = data.list;
 		for (var i = 0; i < data.length; i++) {
-			var $li =$("<li></li>");
-			var $a = $("<a href='showenterprise.jsp?id="+data[i].id+"'></a>")
+			var $li = $("<li></li>");
+			var $a = $("<a href='showenterprise.jsp?id=" + data[i].id + "'></a>");
+			var $img = $("<img src='" + data[i].img + "' />");
+			var $span = $("<span>" + data[i].name + "</span>");
+			$a.append($img);
+			$a.append($span);
+			$li.append($a);
+			$("#hot_ep_list").append($li);
+		}
+
+		//动画效果
+		$("#hot_ep_list>li>a").mouseenter(function() {
+			$(this).find("span").stop();
+			$(this).find("span").css("left", "-112px");
+			$(this).find("span").animate({
+				left: "0"
+			}, 200);
+		});
+		$("#hot_ep_list>li>a").mouseleave(function() {
+			$(this).find("span").stop();
+			$(this).find("span").css("left", "0");
+			$(this).find("span").animate({
+				left: "112px"
+			}, 200);
+		});
+	}, "json");
+});
+
+//热门职位
+$(function() {
+	$.get("load_hot_job.do", {}, function(data) {
+		data = data.list;
+		for (var i = 0; i < datalength; i++) {
+			var $li = $("<li></li>");
+			var $div = $("<div></div>");
+			var $p1 = $('<p><a class="job_name" href="showjob.jsp?id=' + data[i].id + '">' + data[i].name + '</a></p>');
+			var $p2 = $('<p><a class="ep_name" href="showenterprise.jsp?id=' + data[i].ep_id + '">' + data[i].ep_name + '</a></p>');
+			var $p3 = $('<p></p>');
+			var $span1 = $('<span class="city">' + data[i].city + '</span>');
+			var $span2 = $('<span class="money">' + data[i].money + '</span>');
+			var $span3 = $('<span class="exp">' + data[i].experience + '</span>');
+			var $a = $('<a href="showenterprise.jsp?id=' + data[i].ep_id + '"><img src="' + data[i].img + '" /></a>');
+			$p3.append($span1);
+			$p3.append($span2);
+			$p3.append($span3);
+			$div.append($p1);
+			$div.append($p2);
+			$div.append($p3);
+			$li.append($div);
+			$li.append($a);
+			$("#hot_job_list").append($li);
 		}
 	}, "json");
-
-	//动画效果
-	$("#hot_ep_list>li>a").mouseenter(function() {
-		$(this).find("span").stop();
-		$(this).find("span").css("left", "-112px");
-		$(this).find("span").animate({
-			left: "0"
-		}, 200);
-	});
-	$("#hot_ep_list>li>a").mouseleave(function() {
-		$(this).find("span").stop();
-		$(this).find("span").css("left", "0");
-		$(this).find("span").animate({
-			left: "112px"
-		}, 200);
-	});
 });
 
 //返回顶部

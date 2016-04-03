@@ -168,3 +168,14 @@
 	URL：load_carousel.do
 	参数：无
 	返回：list:[url,img]
+
+31.加载热门企业
+	URL：load_hot_ep.do
+	参数：无
+	返回：list:[ep_id,img,ep_name]
+	
+32.加载热门职位
+	URL：load_hot_job.do
+	参数：无
+	返回：list:[]
+	
