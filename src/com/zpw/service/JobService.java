@@ -11,11 +11,12 @@ public class JobService {
 
 	public static boolean addJob(Job job) {
 		JobDao j = DAOFactory.getJobDao();
-		String ep_name = j.qEp_name(job.getUsername());
+		if (job.getUsername() != null && !job.getUsername().equals("")) {
+			String ep_name = j.qEp_name(job.getUsername());
+			job.setEp_name(ep_name);
+		}
 		Date datatime = new Date(System.currentTimeMillis());
-
 		job.setPub_time(datatime);
-		job.setEp_name(ep_name);
 		boolean flag = j.insertJob(job);
 
 		return flag;
@@ -27,7 +28,7 @@ public class JobService {
 		List<Job> list = j.qByUsernameList(username);
 		return list;
 	}
-	
+
 	public static Job findJob(int id) {
 		JobDao j = DAOFactory.getJobDao();
 		Job job = j.qById(id);

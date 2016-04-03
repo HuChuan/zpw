@@ -16,7 +16,7 @@ import com.zpw.service.JobService;
 @JsonIgnoreProperties(value={"hibernateLazyInitializer"})
 public class JobController {
 	
-	@RequestMapping("add_job_list")
+	@RequestMapping("add_job_info")
 	@ResponseBody
 	public Map add_vitae(Job job){
 		Map map = new HashMap();

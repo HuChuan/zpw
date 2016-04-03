@@ -94,7 +94,7 @@
 	返回：success(boolean)
 
 18.添加职位信息
-	URL：add_job_list.do
+	URL：add_job_info.do
 	参数：username,job_name,job_city,job_edu,job_exp,job_money,job_intro
 	返回：success(boolean)
 
