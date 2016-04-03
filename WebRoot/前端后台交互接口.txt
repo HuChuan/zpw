@@ -177,5 +177,5 @@
 32.加载热门职位
 	URL：load_hot_job.do
 	参数：无
-	返回：list:[]
+	返回：list:[job_id,job_name,ep_id,ep_name,job_city,job_money,job_exp]
 	

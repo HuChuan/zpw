@@ -35,25 +35,25 @@
 				<div id="nav_manage"><a>会员管理</a></div>
 			</nav>
 			<!--个人信息-->
-			<div id="content_c" class="manage">
+			<div id="content_c" class="info">
 				<div id="c_info">
 					<form id="user_f">
 						<div>
 							<span>用户名：</span>
-							<input name="username" type="text" value="chen" disabled readonly/>
+							<input name="username" type="text" disabled readonly/>
 						</div>
 						<div>
 							<span>用户身份：</span>
 							
-							<input name="pow" type="text" value="普通会员" disabled readonly/>
+							<input name="pow" type="text" disabled readonly/>
 						</div>
 						<div>
 							<span>电子邮箱：</span>
-							<input name="email" type="text" value="1582674@qq.com" readonly/>
+							<input name="email" type="text" readonly/>
 						</div>
 						<div>
 							<span>手机号码：</span>
-							<input name="phone" type="text" value="18883843195" readonly/>
+							<input name="phone" type="text" readonly/>
 						</div>
 						<div>
 							<input id="change_btn" type="button" value="修改资料" />
@@ -83,7 +83,7 @@
 							<th style="width: 120px">注册时间</th>
 							<th style="width: 50px">操作</th>
 						</tr>
-						<tr>
+						<!--<tr>
 							<td class="center"><img src="images/check_ok_2.png"></td>
 							<td>chen</td>
 							<td>1555@ww.com</td>
@@ -91,7 +91,7 @@
 							<td class="center">管理员</td>
 							<td class="center">2013-12-15 12:12:12</td>
 							<td class="center"><a>删除</a></td>
-						</tr>
+						</tr>-->
 						
 					</table>
 				</div>

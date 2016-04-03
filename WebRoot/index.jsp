@@ -20,7 +20,7 @@
 			-->
 			<div id="carousel" class="container">
 				<div id="carousel_img">
-					<a num="0" href="">
+					<!--<a num="0" href="">
 						<img src="images/source/c1.png" alt="轮播图" />
 					</a>
 					<a num="1" href="">
@@ -28,12 +28,12 @@
 					</a>
 					<a num="2" href="">
 						<img src="images/source/c3.png" alt="轮播图" />
-					</a>
+					</a>-->
 				</div>
 				<div id="carousel_index">
-					<span num="0" class="active"></span>
+					<!--<span num="0" class="active"></span>
 					<span num="1"></span>
-					<span num="2"></span>
+					<span num="2"></span>-->
 				</div>
 				<button id="carousel_pre"></button>
 				<button id="carousel_next"></button>
@@ -56,7 +56,7 @@
 		<div id="hot_ep" class="container">
 			<h2><span>热门企业</span></h2>
 			<ul id="hot_ep_list" class="unlist">
-				<li>
+				<!--<li>
 					<a href="">
 						<img src="images/source/ep1.jpg" />
 						<span>小样乳酸 公</span>
@@ -151,7 +151,7 @@
 						<img src="images/source/ep3.jpg" />
 						<span>小样乳酸 公</span>
 					</a>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 
@@ -162,7 +162,7 @@
 			<div id="hot_job" class="container">
 				<h2><span>热门职位</span></h2>
 				<ul id="hot_job_list" class="unlist">
-					<li>
+					<!--<li>
 						<div>
 							<p><a class="job_name" href="">职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名称</a></p>
 							<p><a class="ep_name" href="">公司名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名职位名称</a></p>
@@ -233,7 +233,7 @@
 							</p>
 						</div>
 						<a href=""><img src="images/source/ep2.png" /></a>
-					</li>
+					</li>-->
 
 				</ul>
 				<div class="showmore"><a href="searchjob.jsp">查看更多</a></div>
