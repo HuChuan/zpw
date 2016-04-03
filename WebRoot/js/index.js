@@ -145,7 +145,8 @@ $(function() {
 	$.get("load_hot_job.do", {}, function(data) {
 		data = data.list;
 		for (var i = 0; i < data.length; i++) {
-			
+			var $li =$("<li></li>");
+			var $a = $("<a href='showenterprise.jsp?id="+data[i].id+"'></a>")
 		}
 	}, "json");
 

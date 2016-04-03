@@ -20,7 +20,7 @@ $(function() {
 
 //加载简历
 function loadCV() {
-	$.post("load_vitae.do", {
+	$.post("test.jsp", {
 		username: _user
 	}, function(data) {
 		data = data.vitae;
