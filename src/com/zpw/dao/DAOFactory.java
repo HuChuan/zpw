@@ -8,4 +8,8 @@ public class DAOFactory {
 	public static IVitaeDao getVitaeDao(){
 		return new VitaeDao();
 	}
+	
+	public static JobDao getJobDao(){
+		return new JobDao();
+	}
 }

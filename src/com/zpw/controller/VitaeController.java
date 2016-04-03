@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zpw.po.Vitae;
 import com.zpw.po.VitaeCustom;
+import com.zpw.po.Vitae_Job;
 import com.zpw.service.VitaeService;
 
 @Controller
@@ -48,8 +49,8 @@ public class VitaeController {
 	
 	@RequestMapping("load_receive_vitae")
 	@ResponseBody
-	public List load_receive_vitae(String username){
-		List list = null;
+	public List<Vitae_Job> load_receive_vitae(String username){
+		List<Vitae_Job> list = null;
 		list = VitaeService.findVitaeList(username);
 		return list;
 	}
@@ -67,8 +68,8 @@ public class VitaeController {
 	
 	@RequestMapping("load_all_vitae")
 	@ResponseBody
-	public List load_all_vitae(VitaeCustom vc){
-		List list = null;
+	public List<Vitae> load_all_vitae(VitaeCustom vc){
+		List<Vitae> list = null;
 		list = VitaeService.findVitaeByKw(vc);
 		return list;
 	}

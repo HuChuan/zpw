@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zpw.po.Job">
+	<insert id="insertJob" parameterType="Job">
+		insert into tb_job
+		(username,ep_name,name,city,edu,experience,money,intro,pub_time)
+		values(#{username},#{ep_name},#{name},#{city},#{edu},#{experience},#{money},#{intro},#{pub_time})
+	</insert>
+
+	<select id="qEp_name" resultType="Interge">
+		select tb_enterprise.name from
+		tb_enterprise where
+		username=#{username}
+	</select>
+
+	<select id="qByUsernameList" resultType="Job">
+		select * from
+		tb_job where
+		username=#{username}
+	</select>
+	
+	<select id="qById" resultType="Job">
+		select * from
+		tb_job where
+		id=#{id}
+	</select>
+</mapper>
