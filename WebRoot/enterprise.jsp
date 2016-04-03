@@ -42,20 +42,20 @@
 					<form id="user_f">
 						<div>
 							<span>用户名：</span>
-							<input name="username" type="text" value="chen" disabled readonly/>
+							<input name="username" type="text" disabled readonly/>
 						</div>
 						<div>
 							<span>用户身份：</span>
 							
-							<input name="pow" type="text" value="普通会员" disabled readonly/>
+							<input name="pow" type="text" disabled readonly/>
 						</div>
 						<div>
 							<span>电子邮箱：</span>
-							<input name="email" type="text" value="1582674@qq.com" readonly/>
+							<input name="email" type="text" readonly/>
 						</div>
 						<div>
 							<span>手机号码：</span>
-							<input name="phone" type="text" value="18883843195" readonly/>
+							<input name="phone" type="text" readonly/>
 						</div>
 						<div>
 							<input id="change_btn" type="button" value="修改资料" />
@@ -74,31 +74,31 @@
 					<form id="ep_f" class="">
 						<div>
 							<span>企业名称：</span>
-							<input name="ep_name" type="text" value="联想公司" readonly/>
+							<input name="ep_name" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业类型：</span>
-							<input name="ep_type" type="text" value="电子数码" readonly/>
+							<input name="ep_type" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业官网：</span>
-							<input name="ep_web" type="text" value="www.lozzweb.com" readonly/>
+							<input name="ep_web" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业地址：</span>
-							<input name="ep_address" type="text" value="重庆南岸区3号" readonly/>
+							<input name="ep_address" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业规模：</span>
-							<input name="ep_scale" type="text" value="300人" readonly/>
+							<input name="ep_scale" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业口号：</span>
-							<input name="ep_slogan" type="text" value="加油！come on" readonly/>
+							<input name="ep_slogan" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业简介：</span>
-							<textarea name="ep_intro" readonly>153</textarea>
+							<textarea name="ep_intro" readonly></textarea>
 						</div>
 						<div>
 							<input id="change_ep_btn" type="button" class="mbutton" value="修改资料" />
@@ -123,44 +123,11 @@
 					<div class="add">
 						<input type="button" id="addJOB_btn" class="mbutton" value="添加职位" />
 					</div>
-					<ul id="job_list" class="unlist">
-						<li class="ellipsis">
-							<input type="button" job_id="12" class="mbutton" value="查看/修改" />
-							<a href="">java开发工程师</a>
-							<span class="city">重庆</span>
-							<span class="time">2015-12-12</span>
-						</li>
-						<li class="ellipsis">
-							<input type="button" job_id="12" class="mbutton" value="查看/修改" />
-							<a href="">android开发工程师</a>
-							<span class="city">成都</span>
-							<span class="time">2015-12-12</span>
-						</li>
-					</ul>
+					<ul id="job_list" class="unlist"></ul>
 				</div>
 				<!--收到的简历-->
 				<div id="c_vitae">
-					<ul id="vitae_list" class="unlist">
-						<li class="ellipsis">
-							<input type="button" class="mbutton" value="查看简历" />
-							<span>陈杰</span>
-							<span>男</span>
-							<span>19</span>
-							<span>本科</span>
-							<span>JAVA开发工程师</span>
-							<span>2015-12-12</span>
-							
-						</li>
-						<li class="ellipsis">
-							<input type="button" class="mbutton" value="查看简历" />
-							<span>陈杰</span>
-							<span>男</span>
-							<span>22</span>
-							<span>本科</span>
-							<span>android测试</span>
-							<span>2016-12-30</span>
-						</li>
-					</ul>
+					<ul id="vitae_list" class="unlist"></ul>
 				</div>
 			</div>
 		</div>

@@ -19,38 +19,38 @@
 				<img id="user_img" src="images/register_bg.jpg"/>
 			</div>
 			<div class="user_name">
-				<span id="h_ep_name">腾讯公司</span>
+				<span id="h_ep_name"></span>
 			</div>
 		</div>
 		
 		<div id="content" class="container">
 			<div>
 				<span class="tags">企业名称：</span>
-				<p id="ep_name">腾讯公司</p>
+				<p id="ep_name"></p>
 			</div>
 			<div>
 				<span class="tags">企业类型：</span>
-				<p id="ep_type">互联网</p>
+				<p id="ep_type"></p>
 			</div>
 			<div>
 				<span class="tags">企业官网：</span>
-				<p id="ep_web">www.qq.com</p>
+				<p id="ep_web"></p>
 			</div>
 			<div>
 				<span class="tags">企业地址：</span>
-				<p id="ep_address">中国重庆21号</p>
+				<p id="ep_address"></p>
 			</div>
 			<div>
 				<span class="tags">企业规模：</span>
-				<p id="ep_scale">2000人<br></p>
+				<p id="ep_scale"></p>
 			</div>
 			<div>
 				<span class="tags">企业口号：</span>
-				<p id="ep_slogan">加油，加油</p>
+				<p id="ep_slogan"></p>
 			</div>
 			<div>
 				<span class="tags">企业简介：</span>
-				<p id="ep_intro">这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈这是一家很大的公司，2000人，哈哈哈</p>
+				<p id="ep_intro"></p>
 			</div>
 		</div>	
 		

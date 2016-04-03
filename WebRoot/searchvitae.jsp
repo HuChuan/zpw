@@ -44,25 +44,8 @@
 		</div>
 		
 		<div class="container">
-			<ul id="search_list" class="unlist">
-				
-				<li>
-					<div>
-						<p><a class="cv_name" href="">陈杰</a></p>
-						<p>JAVA开发工程师</p>
-						<p>
-							<span class="city">城市城市城市城市城市城市城市</span>
-							<span class="edu">本科</span>
-							<span class="major">软件工程专业</span>
-						</p>
-					</div>
-					<img src="images/source/ep3.jpg" />
-				</li>
-			</ul>
-			
+			<ul id="search_list" class="unlist"></ul>
 			<div id="load_more" class="">正在加载中...</div>
-			
-			
 		</div>
 
 		<!--返回顶部-->

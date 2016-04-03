@@ -42,20 +42,20 @@
 					<form id="user_f">
 						<div>
 							<span>用户名：</span>
-							<input name="username" type="text" value="chen" disabled readonly/>
+							<input name="username" type="text" disabled readonly/>
 						</div>
 						<div>
 							<span>用户身份：</span>
 							
-							<input name="pow" type="text" value="普通会员" disabled readonly/>
+							<input name="pow" type="text" disabled readonly/>
 						</div>
 						<div>
 							<span>电子邮箱：</span>
-							<input name="email" type="text" value="1582674@qq.com" readonly/>
+							<input name="email" type="text" readonly/>
 						</div>
 						<div>
 							<span>手机号码：</span>
-							<input name="phone" type="text" value="18883843195" readonly/>
+							<input name="phone" type="text" readonly/>
 						</div>
 						<div>
 							<input id="change_btn" type="button" value="修改资料" />
@@ -71,18 +71,7 @@
 						<input id="addCV_btn" class="mbutton" type="button" value="添加简历" />
 					</div>
 					<div class="cv">
-						<div id="cv_i" class="ellipsis">
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
+						<div id="cv_i" class="ellipsis"></div>
 						<div id="cv_bars">
 							<a href="showvitae.jsp">查看/修改</a>
 						</div>

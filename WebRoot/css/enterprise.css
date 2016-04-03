@@ -503,7 +503,7 @@ body {
 	outline: none;
 	cursor: text;
 	width: 500px;
-	border: 1px solid #999;
+	border: 1px solid #ddd;
 	height: 20px;
 	padding: 5px;
 }
@@ -516,6 +516,9 @@ body {
 	outline: none;
 	resize: none;
 	padding: 5px;
+	border: 1px solid #ddd;
+	font-size:14px;
+	font-family: Arial,"微软雅黑";
 }
 
 #addJOB_sub {

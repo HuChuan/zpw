@@ -239,9 +239,15 @@ function loadUserInfo() {
 	$.post("load_userinfo.do", {
 		username: $.cookie("username")
 	}, function(data) {
+		var pow = "个人用户";
 		var f = $("#user_f")[0];
+		if(data.pow == "2"){
+			pow="企业用户";
+		}else if(data.pow == "3"){
+			pow="管理员";
+		}
 		f.username.value = data.username;
-		f.pow.value = data.pow;
+		f.pow.value = pow;
 		f.email.value = data.email;
 		f.phone.value = data.phone;
 		e = data.email;

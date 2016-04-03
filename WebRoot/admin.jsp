@@ -83,15 +83,6 @@
 							<th style="width: 120px">注册时间</th>
 							<th style="width: 50px">操作</th>
 						</tr>
-						<!--<tr>
-							<td class="center"><img src="images/check_ok_2.png"></td>
-							<td>chen</td>
-							<td>1555@ww.com</td>
-							<td>1883486854</td>
-							<td class="center">管理员</td>
-							<td class="center">2013-12-15 12:12:12</td>
-							<td class="center"><a>删除</a></td>
-						</tr>-->
 						
 					</table>
 				</div>

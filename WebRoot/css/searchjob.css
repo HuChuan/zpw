@@ -57,8 +57,22 @@ body {
 
 #search_filter select {
 	width: 200px;
-	border: 1px solid #1C7988;
+	border: 1px solid #eee;
 	outline: none;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	padding: 2px 5px;
+	background: #FFFFE5;
+	color: #666;
+}
+
+#search_filter select::-ms-expand {
+	display: none;
+}
+
+#search_filter select option {
+	background: #FFFFE5;
 }
 
 #search_list>li {

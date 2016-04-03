@@ -19,7 +19,7 @@
 				<img id="user_img" src="images/register_bg.jpg"/>
 			</div>
 			<div class="user_name">
-				<span id="ep_name">腾讯公司</span>
+				<span id="ep_name"></span>
 			</div>
 		</div>
 		
@@ -29,31 +29,31 @@
 			</div>
 			<div>
 				<span class="tags">职位名称：</span>
-				<p id="job_name">JAVA开发工程师</p>
+				<p id="job_name"></p>
 			</div>
 			<div>
 				<span class="tags">工作城市：</span>
-				<p id="job_city">重庆</p>
+				<p id="job_city"></p>
 			</div>
 			<div>
 				<span class="tags">学历要求：</span>
-				<p id="job_edu">本科</p>
+				<p id="job_edu"></p>
 			</div>
 			<div>
 				<span class="tags">经验要求：</span>
-				<p id="job_exp">2年</p>
+				<p id="job_exp"></p>
 			</div>
 			<div>
 				<span class="tags">工作月薪：</span>
-				<p id="job_money">2000<br></p>
+				<p id="job_money"></p>
 			</div>
 			<div>
 				<span class="tags">职位介绍：</span>
-				<p id="job_intro">很好的工作，很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作，1</p>
+				<p id="job_intro"></p>
 			</div>
 			<div>
 				<span class="tags">发布时间：</span>
-				<p id="job_time">2016-12-02</p>
+				<p id="job_time"></p>
 			</div>
 			
 			<input id="apply" value="投递简历" type="button" class="mbutton" />
