@@ -3,13 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zpw.po.Job">
-	<insert id="insertJob" >
+	<insert id="insertJob" parameterType="Job">
 		insert into tb_job
 		(username,ep_name,name,city,edu,experience,money,intro,pub_time)
 		values(#{username},#{ep_name},#{name},#{city},#{edu},#{experience},#{money},#{intro},#{pub_time})
 	</insert>
 	
-	<update id="updateJob" >
+	<update id="updateJob" parameterType="Job">
 		update tb_job set
 		(name,city,edu,experience,money,intro,pub_time)
 		values(#{name},#{city},#{edu},#{experience},#{money},#{intro},#{pub_time})
@@ -32,5 +32,40 @@
 		select * from
 		tb_job where
 		id=#{id}
+	</select>
+	
+	<delete id="deleteJob">
+		delete from tb_job where id = #{id}
+	</delete>
+	
+	<select id="qByKwList" resultType="JobCustom">
+		SELECT TOP ${num} *
+		FROM
+		(
+		SELECT
+		ROW_NUMBER() OVER (ORDER BY tb_job.id) AS RowNumber,
+		tb_job.*,tb_enterprise.id ep_id,tb_enterprise.img ep_img
+		 FROM tb_job,tb_enterprise
+		<where>  
+            <if test="kw != null">  
+                and tb_job.name like '%${kw}%'
+            </if> 
+            <if test="city != null">  
+                and tb_job.city = #{city}
+            </if>
+            <if test="edu != null">  
+                tb_job.edu = #{edu}
+            </if>
+             <if test="money != null">  
+                tb_job.money = #{money}
+            </if>
+            	and tb_enterprise.username=tb_job.username
+        </where>
+		) as A
+		WHERE RowNumber > ${num}*(${page}-1)
+	</select>
+	
+	<select id="qAllCount" resultType="Integer">
+		select count(*) from tb_job
 	</select>
 </mapper>

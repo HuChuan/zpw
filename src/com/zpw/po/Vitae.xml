@@ -14,7 +14,7 @@
 		username=#{username}
 	</select>
 
-	<update id="updateVitae" resultType="Vitae">
+	<update id="updateVitae" parameterType="Vitae">
 		update tb_vitae
 		set(name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal)
 		values(#{name},#{sex},#{city},#{age},#{edu},#{school},#{major},#{grad_year},#{phone},#{email},#{job},#{job_city},#{money},#{interest},#{skill},#{experience},#{personal})
@@ -49,4 +49,9 @@
 		) as A
 		WHERE RowNumber > ${num}*(${page}-1)
 	</select>
+	
+	<select id="qAllCount" resultType="Integer">
+		select count(*) from tb_vitae
+	</select>
+	
 </mapper>

@@ -1,8 +1,10 @@
 package com.zpw.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.zpw.po.Job;
+import com.zpw.po.JobCustom;
 
 
 public interface IJobDao {
@@ -16,4 +18,8 @@ public interface IJobDao {
 	public Job qById (int id);
 	
 	public boolean updateJob(Job job);
+	
+	public boolean deleteJob(int id);
+	
+	public Map qByKwList(JobCustom jc);
 }

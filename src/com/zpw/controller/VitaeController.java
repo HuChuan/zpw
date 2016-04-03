@@ -68,10 +68,10 @@ public class VitaeController {
 	
 	@RequestMapping("load_all_vitae")
 	@ResponseBody
-	public List<Vitae> load_all_vitae(VitaeCustom vc){
-		List<Vitae> list = null;
-		list = VitaeService.findVitaeByKw(vc);
-		return list;
+	public Map load_all_vitae(VitaeCustom vc){
+		Map map = null;
+		map = VitaeService.findVitaeByKw(vc);
+		return map;
 	}
 	
 }

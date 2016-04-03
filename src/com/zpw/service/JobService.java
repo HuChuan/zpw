@@ -2,10 +2,12 @@ package com.zpw.service;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.zpw.dao.DAOFactory;
 import com.zpw.dao.JobDao;
 import com.zpw.po.Job;
+import com.zpw.po.JobCustom;
 
 public class JobService {
 
@@ -39,5 +41,27 @@ public class JobService {
 		JobDao j = DAOFactory.getJobDao();
 		boolean flag = j.updateJob(job);
 		return flag;
+	}
+	
+	public static boolean deleteJob(int id){
+		JobDao j = DAOFactory.getJobDao();
+		boolean flag = j.deleteJob(id);
+		return flag;
+	}
+	
+	public static Map findJobByKw(JobCustom jc){
+		jc.setNum(10);
+		if(jc.getCity() != null && jc.getCity().equals("全国")){
+			jc.setCity(null);
+		}
+		if(jc.getEdu() != null && jc.getEdu().equals("不限")){
+			jc.setEdu(null);
+		}
+		if(jc.getMoney() != null && jc.getMoney().equals("不限")){
+			jc.setMoney(null);
+		}
+		JobDao j = DAOFactory.getJobDao();
+		Map map = j.qByKwList(jc);
+		return map;
 	}
 }

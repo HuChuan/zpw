@@ -1,6 +1,7 @@
 package com.zpw.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.zpw.dao.DAOFactory;
 import com.zpw.dao.IVitaeDao;
@@ -56,7 +57,7 @@ public class VitaeService {
 	}
 	
 	
-	public static List<Vitae> findVitaeByKw(VitaeCustom vc){
+	public static Map findVitaeByKw(VitaeCustom vc){
 		vc.setNum(10);
 		if(vc.getCity() != null && vc.getCity().equals("全国")){
 			vc.setCity(null);
@@ -65,8 +66,8 @@ public class VitaeService {
 			vc.setEdu(null);
 		}
 		IVitaeDao v = DAOFactory.getVitaeDao();
-		List<Vitae> list = v.qByKwList(vc);
-		return list;
+		Map map = v.qByKwList(vc);
+		return map;
 	}
 	
 }

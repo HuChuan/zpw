@@ -1,6 +1,7 @@
 package com.zpw.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.zpw.po.Vitae;
 import com.zpw.po.VitaeCustom;
@@ -16,6 +17,6 @@ public interface IVitaeDao {
 	
 	public List<Vitae_Job> qByUsernameList(String username);
 	
-	public List<Vitae> qByKwList(VitaeCustom vc);
+	public Map qByKwList(VitaeCustom vc);
 	
 }

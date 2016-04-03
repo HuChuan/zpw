@@ -1,10 +1,13 @@
 package com.zpw.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.zpw.po.Job;
+import com.zpw.po.JobCustom;
 import com.zpw.util.MyBatisUtil;
 
 public class JobDao implements IJobDao{
@@ -92,5 +95,45 @@ public class JobDao implements IJobDao{
 		}
 		return isSuccess;
 	}
+
+	@Override
+	public boolean deleteJob(int id) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try{
+			session = MyBatisUtil.createSession();
+			session.delete(Job.class.getName()+"deleteJob", id);
+			session.commit();
+			isSuccess = true;
+		}catch(Exception e){
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+
+	@Override
+	public Map qByKwList(JobCustom jc) {
+		SqlSession session = null;
+		List<JobCustom> list = null;
+		Map map = new HashMap();
+		int count;
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(Job.class.getName()+".qByKwList", jc);
+			count = session.selectOne(Job.class.getName()+".qAllCount");
+			session.commit();
+			map.put("list", list);
+			map.put("allpage", 1+(count-1)/jc.getNum());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return map;
+	}
+	
 
 }

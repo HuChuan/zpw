@@ -1,7 +1,9 @@
 package com.zpw.dao;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -9,6 +11,7 @@ import com.zpw.po.User;
 import com.zpw.po.Vitae;
 import com.zpw.po.VitaeCustom;
 import com.zpw.po.Vitae_Job;
+import com.zpw.service.UserService;
 import com.zpw.util.MyBatisUtil;
 
 public class VitaeDao implements IVitaeDao{
@@ -82,19 +85,24 @@ public class VitaeDao implements IVitaeDao{
 	}
 
 	@Override
-	public List<Vitae> qByKwList(VitaeCustom vc) {
+	public Map qByKwList(VitaeCustom vc) {
 		SqlSession session = null;
 		List<Vitae> list = null;
+		Map map = new HashMap();
+		int count;
 		try {
 			session = MyBatisUtil.createSession();
 			list = session.selectList(Vitae.class.getName()+".qByKwList", vc);
+			count = session.selectOne(Vitae.class.getName()+".qAllCount");
 			session.commit();
+			map.put("list", list);
+			map.put("allpage", 1+(count-1)/vc.getNum());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
 			MyBatisUtil.closeSession(session);
 		}
-		return list;
+		return map;
 	}
 
 }

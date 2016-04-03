@@ -1,12 +1,13 @@
 package com.zpw.po;
 
-public class VitaeCustom extends Vitae{
+public class JobCustom extends Job{
 	
-	//简历分页扩展	
 	private String kw;
 	private int page;
 	private int num;
-
+	
+	private int ep_id;
+	private String ep_img;
 	public String getKw() {
 		return kw;
 	}
@@ -25,6 +26,19 @@ public class VitaeCustom extends Vitae{
 	public void setNum(int num) {
 		this.num = num;
 	}
+	public int getEp_id() {
+		return ep_id;
+	}
+	public void setEp_id(int ep_id) {
+		this.ep_id = ep_id;
+	}
+	public String getEp_img() {
+		return ep_img;
+	}
+	public void setEp_img(String ep_img) {
+		this.ep_img = ep_img;
+	}
+	
 	
 	
 }

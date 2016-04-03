@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zpw.po.Job;
+import com.zpw.po.JobCustom;
 import com.zpw.service.JobService;
 
 @Controller
@@ -49,5 +50,20 @@ public class JobController {
 		boolean success = JobService.updateJob(job);
 		
 		return model.addAttribute("success", success);
+	}
+	
+	@RequestMapping("delete_job_info")
+	@ResponseBody
+	public Model delete_job_info(int id,Model model){
+		boolean success = JobService.deleteJob(id);
+		return model.addAttribute("success", success);
+	}
+	
+	@RequestMapping("load_all_job")
+	@ResponseBody
+	public Map load_all_job(JobCustom jc){
+		Map map = null;
+		map = JobService.findJobByKw(jc);
+		return map;
 	}
 }
