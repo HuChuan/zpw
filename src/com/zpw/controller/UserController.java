@@ -27,8 +27,8 @@ public class UserController {
 	public Map register(User user){	
 		Map map = new HashMap();
 		map.put("success", false);
-
 		if(UserService.registerCheck(user)){
+			
 			map.put("user", UserService.register(user));
 			map.put("success", true);
 		}	
