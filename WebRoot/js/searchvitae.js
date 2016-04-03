@@ -64,7 +64,7 @@ function loadCVList(kw, city, edu, page) {
 	$.get("load_all_vitae.do", {
 		kw: kw,
 		city: city,
-		edt: edu,
+		edu: edu,
 		page: page
 	}, function(data) {
 		allPage = data.allpage;

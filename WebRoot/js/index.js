@@ -1,5 +1,22 @@
 //轮播器
 $(function() {
+	//加载主页轮播器
+	$.get("load_carousel.do", {}, function(data) {
+		data = data.list;
+		for (var i = 0; i < data.length; i++) {
+			var $a = $("<a href='" + data[i].url + "' num='" + i + "'></a>");
+			var $img = $("<img src='" + data[i].img + "' alt='轮播图' />");
+			if (i == 0) {
+				var $span = $("<span class='active' num='" + i + "'></span>");
+			} else {
+				var $span = $("<span num='" + i + "'></span>");
+			}
+			$img.append($a);
+			$("#carousel_img").append($a);
+			$("#carousel_index").append($span);
+		}
+	}, "json");
+
 	//配置播放时间间隔、播放速度
 	var timeout = 2500;
 	var speed = 300;
@@ -80,13 +97,13 @@ $(function() {
 		$("#search_f").attr("action", "searchvitae.jsp");
 	}
 	//输入框holder
-	$("#search_t").keyup(function() {
+	/*$("#search_t").keyup(function() {
 		if (this.value.length > 0) {
 			$("#search_holder").addClass("hidden");
 		} else {
 			$("#search_holder").removeClass("hidden");
 		}
-	});
+	});*/
 	//焦点改变样式
 	$("#search_t").focus(function() {
 		$("#search").stop();

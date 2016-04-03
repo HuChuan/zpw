@@ -163,3 +163,8 @@
 	URL：apply_job.do
 	参数：username,id
 	返回：success(boolean)
+	
+30.加载主页轮播器内容
+	URL：load_carousel.do
+	参数：无
+	返回：list:[url,img]
