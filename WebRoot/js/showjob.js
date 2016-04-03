@@ -2,19 +2,62 @@
 $(function() {
 	var search = location.search;
 	var id = search.substr(search.indexOf("id=") + 3);
-	$.get("load_enterprise_info.do", {
+	$.get("show_job_info.do", {
 		id: id
 	}, function(data) {
 		data = data.enterprise;
-		$("head title").html(data.name + "的企业信息 - 招聘网");
-		$("#h_ep_name").text(data.name);
-		$("#ep_name").text(data.name);
-		$("#ep_type").text(data.type);
-		$("#ep_web").text(data.web);
-		$("#ep_address").text(data.address);
-		$("#ep_scale").text(data.scale);
-		$("#ep_slogan").text(data.slogan);
-		$("#ep_intro").text(data.intro);
-		$("#user_img").attr("src", data.img);
+		$("head title").html(data.name + " - 职位信息 - 招聘网");
+		$("#job_name").text(data.name);
+		$("#job_city").text(data.name);
+		$("#job_edu").text(data.type);
+		$("#job_exp").text(data.web);
+		$("#job_money").text(data.address);
+		$("#job_intro").text(data.scale);
+		$("#job_time").text(data.slogan);
+		$("#ep_name").text(data.ep_name);
+		$("#user_img").attr("src", data.ep_img);
 	}, "json");
+
+	//投递简历
+	$("#apply").click(function() {
+		//判断是否登录
+		$(function() {
+			if ($.cookie("username") == null || $.cookie("username") == "" || $.cookie("token") == null || $.cookie("token") == "" || $.cookie("pow") != "1") {
+				setLog("个人用户登录后才能投递简历", false);
+			} else {
+				//验证是否投递了这个职位的简历
+				$.post("check_apply_job.do", {
+					username: $.cookie("username"),
+					id: id
+				}, function(data) {
+					if (data.success == true) {
+						$.post("apply_job.do", {
+							username: $.cookie("username"),
+							id: id
+						}, function(data) {
+							if (data.success == true) {
+								setLog("简历投递成功");
+							} else {
+								setLog("投递失败", false);
+							}
+						}, "json");
+					} else {
+						setLog("您已经申请了该职位", false);
+					}
+				}, "json");
+			}
+		});
+	});
 });
+
+//消息提示设置
+function setLog(text, error) {
+	$("#log_info").text(text);
+	if (error == false) {
+		$("#log_info").addClass("error");
+	}
+	$("#log_info").fadeIn(200);
+	setTimeout(function() {
+		$("#log_info").fadeOut(200);
+	}, 2000);
+}

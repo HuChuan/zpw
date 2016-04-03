@@ -148,3 +148,18 @@
 	URL：load_enterprise_info.do
 	参数：id
 	返回：name,img,web,intro,address,type,scale,slogan
+	
+27.加载职位详细信息
+	URL：show_job_info.do
+	参数：id
+	返回：name,city,edu,experience,money,intro,time,ep_img,ep_name
+		
+28.验证是否已经投递了该职位的简历
+	URL：check_apply_job.do
+	参数：username,id
+	返回：success(boolean)
+	
+29.投递简历
+	URL：apply_job.do
+	参数：username,id
+	返回：success(boolean)

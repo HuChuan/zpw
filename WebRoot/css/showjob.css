@@ -53,16 +53,48 @@ body {
 	min-height: 400px;
 }
 
-#content>div{
+#content>div {
 	margin-top: 12px;
 }
+
 #content>div>span.tags {
 	display: inline-block;
 }
+
 #content>div>p {
 	display: inline-block;
 	margin-top: 5px;
 	margin-bottom: 0;
 	color: #555;
 	text-indent: 2em;
+}
+
+#apply {
+	padding: 7px 20px;
+	margin-top: 40px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+#content>.log {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+	margin-left: -100px;
+}
+
+#log_info {
+	display: none;
+	background: rgba(210, 253, 177, .7);
+	color: #566475;
+	padding: 10px;
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#log_info.error {
+	background: rgba(253, 219, 177, .7);
 }

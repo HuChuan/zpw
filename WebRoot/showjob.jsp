@@ -19,39 +19,44 @@
 				<img id="user_img" src="images/register_bg.jpg"/>
 			</div>
 			<div class="user_name">
-				<span id="h_ep_name">腾讯公司</span>
+				<span id="ep_name">腾讯公司</span>
 			</div>
 		</div>
 		
 		<div id="content" class="container">
-			<div>
-				<span class="tags">企业名称：</span>
-				<p id="job_name">腾讯公司</p>
+			<div class="log">
+				<div id="log_info" class="">修改成功</div>
 			</div>
 			<div>
-				<span class="tags">企业类型：</span>
-				<p id="job_city">互联网</p>
+				<span class="tags">职位名称：</span>
+				<p id="job_name">JAVA开发工程师</p>
 			</div>
 			<div>
-				<span class="tags">企业官网：</span>
-				<p id="job_edu">www.qq.com</p>
+				<span class="tags">工作城市：</span>
+				<p id="job_city">重庆</p>
 			</div>
 			<div>
-				<span class="tags">企业地址：</span>
-				<p id="job_exp">中国重庆21号</p>
+				<span class="tags">学历要求：</span>
+				<p id="job_edu">本科</p>
 			</div>
 			<div>
-				<span class="tags">企业规模：</span>
-				<p id="job_money">2000人<br></p>
+				<span class="tags">经验要求：</span>
+				<p id="job_exp">2年</p>
 			</div>
 			<div>
-				<span class="tags">企业口号：</span>
-				<p id="job_intro">很好的工作</p>
+				<span class="tags">工作月薪：</span>
+				<p id="job_money">2000<br></p>
 			</div>
 			<div>
-				<span class="tags">企业简介：</span>
+				<span class="tags">职位介绍：</span>
+				<p id="job_intro">很好的工作，很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作很好的工作，1</p>
+			</div>
+			<div>
+				<span class="tags">发布时间：</span>
 				<p id="job_time">2016-12-02</p>
 			</div>
+			
+			<input id="apply" value="投递简历" type="button" class="mbutton" />
 		</div>	
 				
 		<script src="js/showjob.js"></script>
