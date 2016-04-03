@@ -149,7 +149,7 @@ $(function() {
 				$("#cv_i").append($span8);
 				$("#cv_i").append($span9);
 				$("#cv_i").append($span10);
-				$("#cv_bars a").attr("href", "showvitae.jsp?id=" + data.id);
+				$("#cv_bars a").attr("href", "showvitae.jsp?id=" + $.cookie("username"));
 			}, "json");
 		}
 	}, "json");

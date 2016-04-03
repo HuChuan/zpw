@@ -143,7 +143,10 @@ $(function() {
 $(function() {
 	//加载热门企业
 	$.get("load_hot_job.do", {}, function(data) {
-		
+		data = data.list;
+		for (var i = 0; i < data.length; i++) {
+			
+		}
 	}, "json");
 
 	//动画效果
