@@ -16,7 +16,7 @@
 		
 		<div class="container">
 			<form id="search_f" action="searchvitae.jsp" method="get">
-				<input id="search_kw" type="text" name="kw" placeholder="请输入关键字" />
+				<input id="search_kw" type="text" name="kw" placeholder="请输入TA的期望职位" />
 				<input type="submit" value="搜索简历" />
 			</form>
 		</div>
