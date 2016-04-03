@@ -161,7 +161,7 @@ $(function() {
 			setLog("企业规模不能为空", false);
 		} else {
 			var d = $("ep_f").serialize();
-			$.post("check_enterprise.do", d, function(data) {
+			$.post("update_enterprise.do", d, function(data) {
 				if (data.success == true) {
 					setLog("修改成功");
 				} else {
@@ -184,7 +184,7 @@ $(function() {
 		} else if (_new != re) {
 			setLog("密码不一致", false);
 		} else {
-			$.post("load_vitae.do", {
+			$.post("update_password.do", {
 				username : $.cookie("username"),
 				old_psw : old,
 				new_psw : _new
