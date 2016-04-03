@@ -4,12 +4,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zpw.po.Job;
 import com.zpw.service.JobService;
 
+@Controller
+@JsonIgnoreProperties(value={"hibernateLazyInitializer"})
 public class JobController {
 	
 	@RequestMapping("add_job_list")
