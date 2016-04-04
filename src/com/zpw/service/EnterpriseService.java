@@ -13,4 +13,8 @@ public class EnterpriseService {
 		IEnterpriseDao e = DAOFactory.getEnterpriseDao();
 		return e.qByUsername(username);
 	}
+	public static Enterprise getEnterpriseById(int id){
+		IEnterpriseDao e = DAOFactory.getEnterpriseDao();
+		return e.qById(id);
+	}
 }
