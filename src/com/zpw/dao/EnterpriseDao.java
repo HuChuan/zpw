@@ -60,5 +60,23 @@ public class EnterpriseDao implements IEnterpriseDao{
 		}
 		return enterprise;
 	}
+
+	@Override
+	public boolean delByUsername(String username) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.delete(Enterprise.class.getName()+".delByUsername", username);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
 	
 }

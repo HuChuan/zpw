@@ -23,6 +23,5 @@
 		<mapper resource="com/zpw/po/Enterprise.xml"/>
 		<mapper resource="com/zpw/po/Vitae.xml"/>
 		<mapper resource="com/zpw/po/Job.xml"/>
-		<mapper resource="com/zpw/po/Enterprise.xml"/>
 	</mappers>
 </configuration>
