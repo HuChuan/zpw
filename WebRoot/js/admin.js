@@ -159,7 +159,7 @@ $(function() {
 							var $td5 = $('<td class="center">' + pow + '</td>');
 							var $td6 = $('<td class="center">'
 									+ data[i].reg_time + '</td>');
-							var $td7 = $('<td class="center"><a onclick="deleteUser(this)">删除</a></td>');
+							var $td7 = $('<td class="center"><a onclick="deleteUser(this,'+data[i].username+')">删除</a></td>');
 
 							$tr.append($td1);
 							$tr.append($td2);
@@ -211,14 +211,15 @@ function loadUserInfo() {
 }
 
 // 删除用户
-function deleteUser(obj) {
-	var username = $(obj).parent().parent().find("td")[1].text();
+function deleteUser(obj,username) {
+	/*var username = $(obj).parent().parent().find("td")[1].text();*/
 	// 删除用户
 	$.post("delete_user.do", {
 		username : username
 	}, function(data) {
 		if (data.success == true) {
 			setLog("删除成功");
+			$(obj).parent().parent().remove();
 		} else {
 			setLog("删除失败", false);
 		}

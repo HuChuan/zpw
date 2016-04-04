@@ -14,7 +14,7 @@
 			<li><a id="find_job" href="searchjob.jsp">找工作</a></li>
 			<li><a id="find_man" href="searchvitae.jsp">发现人才</a></li>
 			<li><a id="personal" href="userspace.jsp">个人中心</a></li>
-			<li><a id="admin" href="" class="hidden">后台管理</a></li>
+			<li><a id="admin" href="admin.jsp?manage=true" class="hidden">后台管理</a></li>
 		</ul>
 		<!--
 			添加.login到ul的class，登录效果
