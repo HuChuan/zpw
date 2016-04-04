@@ -24,23 +24,6 @@ $(function() {
 
 });
 
-// 上传照片
-$(function() {
-	/*$("#upload_img").change(function() {
-		if (this.files[0].type.indexOf("image") == 0) {
-			
-			 * $.ajaxFileUpload({ url: "test.jsp", type: "post", secureuri:
-			 * false, fileElementId: "upload_img", data: { username:"chen" },
-			 * success: function(data) { console.log(data) }, error:
-			 * function(data) { console.log("***********:"+data) } });
-			 
-		} else {
-			setLog("只能上传图片", false);
-		}
-
-	});*/
-});
-
 // 基本信息
 $(function() {
 	$("#change_btn").click(function() {

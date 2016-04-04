@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<title>个人中心 - 招聘网</title>
 		<link rel="stylesheet" href="css/enterprise.css" />
+		<link rel="stylesheet" href="css/cropper.min.css" />
 	</head>
 
 	<body>
@@ -16,7 +17,7 @@
 		
 		<div id="content_header" class="container">
 			<div id="upload_user_img" class="user_img unuser_select">
-				<img id="user_img" src="images/register_bg.jpg"/>
+				<img id="user_img" src="images/user_default.png"/>
 				<label for="upload_img"></label>
 				<input id="upload_img" type="file" class="hidden" />
 			</div>
@@ -174,6 +175,9 @@
 		</div>
 
 		<script src="js/enterprise.js"></script>
+		<script src="layer/layer.js"></script>
+		<script src="js/cropper.min.js"></script>
+		<script src="js/upload_img.js"></script>
 	</body>
 
 </html>

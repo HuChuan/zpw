@@ -1,12 +1,3 @@
-$("#content_header").click(function() {
-	/*
-	 * layer.open({ type : 1, area : [ '600px', 'auto' ], scrollbar : false,
-	 * moveType:1, title:"上传图片", content : '<div id="upload_box>">123<br></div>',
-	 * btn:["确定上传","取消"], yes:function(){ alert() layer.closeAll(); } });
-	 */
-
-});
-
 $("#upload_img")
 		.change(
 				function() {
@@ -44,6 +35,7 @@ $("#upload_img")
 									img.cropper({
 										aspectRatio : 1,
 										dragCrop : false,
+										strict:false,
 										crop:function(b){
 											var cvs = img.cropper('getCroppedCanvas', {
 												width : 150,
