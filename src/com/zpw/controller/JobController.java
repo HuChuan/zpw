@@ -87,4 +87,12 @@ public class JobController {
 		
 		return map;
 	}
+	
+	@RequestMapping("load_cv_job")
+	@ResponseBody
+	public List<Vitae_Job> load_cv_job(String username){
+		List<Vitae_Job> list = null;
+		list = JobService.findVJList(username);
+		return list;
+	}
 }
