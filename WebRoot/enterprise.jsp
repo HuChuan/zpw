@@ -153,7 +153,7 @@
 					</div>
 					<div>
 						<span>经验要求：</span>
-						<input name="exp" type="text" value=""/>
+						<input name="experience" type="text" value=""/>
 					</div>
 					<div>
 						<span>薪酬：</span>

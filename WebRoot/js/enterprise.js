@@ -397,7 +397,7 @@ function addJOB(id) {
 			f.name.value = data.name;
 			f.city.value = data.city;
 			f.edu.value = data.edu;
-			f.exp.value = data.experience;
+			f.experience.value = data.experience;
 			f.money.value = data.money;
 			f.intro.value = data.intro;
 			/*f.id.value = data.id;*/
