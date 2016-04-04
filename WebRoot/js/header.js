@@ -28,10 +28,12 @@ $(function() {
 					$("#header_nav").addClass("epuser");
 					$("#user").attr("href", "enterprise.jsp");
 					$("#personal").attr("href", "enterprise.jsp");
+					$("#find_man").attr("href","searchvitae.jsp");
 				} else if (pow == 3) {
 					$("#header_nav").addClass("admin");
 					$("#user").attr("href", "admin.jsp");
 					$("#personal").attr("href", "admin.jsp");
+					$("#find_man").attr("href","searchvitae.jsp");
 				}
 			}
 		}, "json");

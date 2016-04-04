@@ -1,4 +1,4 @@
-//保存页数
+// 保存页数
 var currentPage = 1;
 var allPage = 0;
 

@@ -4,7 +4,7 @@ $(function() {
 	if ($.cookie("username") == null || $.cookie("username") == ""
 			|| $.cookie("token") == null || $.cookie("token") == ""
 			|| $.cookie("pow") != "2") {
-		// location.href = "login.jsp";
+		location.href = "login.jsp";
 		$("#ep_f input[name='username']").val($.cookie("username"));
 		$("#addJOB_f input[name='username']").val($.cookie("username"));
 	} else {

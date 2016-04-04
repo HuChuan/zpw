@@ -4,7 +4,7 @@ $(function() {
 	if ($.cookie("username") == null || $.cookie("username") == ""
 			|| $.cookie("token") == null || $.cookie("token") == ""
 			|| $.cookie("pow") != "3") {
-		// location.href = "login.jsp";
+		location.href = "login.jsp";
 	} else {
 		$("#username").text($.cookie("username"));
 	}
