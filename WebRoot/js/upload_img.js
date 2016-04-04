@@ -17,6 +17,7 @@ $("#upload_img")
 								content : '<div id="upload_box>" style="float:left;width:400px;height:400px;"><img id="upload_view_img" src="" /></div><p style="color:#999;margin:5px;margin-left:10px;">预览:</p><img style="display:block;float:left;border:1px solid #eee;width:150px;height:150px;margin-left:22px;" id="upload_view_img_v" src="" />',
 								btn : [ "确定上传", "取消" ],
 								yes : function() {
+									
 									$.post("upload_img.do",{
 										username:$.cookie("username"),
 										img:$("#upload_view_img_v").attr("src")

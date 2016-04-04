@@ -359,6 +359,7 @@ function loadUserInfo() {
 		f.pow.value = pow;
 		f.email.value = data.email;
 		f.phone.value = data.phone;
+		$("#user_img").attr("src",data.img);
 		old_email = data.email;
 	}, "json");
 }
@@ -399,6 +400,7 @@ function addJOB(id) {
 			f.exp.value = data.experience;
 			f.money.value = data.money;
 			f.intro.value = data.intro;
+			f.job_id.value = data.id;
 		}, "json");
 	}
 	$("#_window").fadeIn(200);

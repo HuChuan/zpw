@@ -239,6 +239,7 @@ function loadUserInfo() {
 		f.pow.value = pow;
 		f.email.value = data.email;
 		f.phone.value = data.phone;
+		$("#user_img").attr("src",data.img);
 		old_email = data.email;
 	}, "json");
 }
