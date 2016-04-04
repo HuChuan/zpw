@@ -1,5 +1,7 @@
 package com.zpw.test;
 
+import java.io.File;
+import java.net.URI;
 import java.sql.Date;
 
 import org.apache.ibatis.session.SqlSession;
@@ -11,7 +13,20 @@ public class Mytest {
 
 	public static void main(String[] args) {
 		
+		new Mytest().test();
+	}
+	public void test(){
+		try {
+			//URI uri = new URI(this.getClass().getResource("")+"../../../../../images/upload/1.txt");
+			
+			//File file =new File();
+			System.out.println(System.getProperty("user.dir"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
+		
+		System.out.println(this.getClass().getResource("")+"../../../../../images/upload");
 	}
 	private static void testRegister(){
 		SqlSession session = null;

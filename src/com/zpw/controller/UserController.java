@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.catalina.core.ApplicationContext;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,7 @@ import com.zpw.dao.UserDao;
 import com.zpw.po.User;
 import com.zpw.service.UserService;
 import com.zpw.util.MD5Util;
+import com.zpw.util.SaveImage;
 
 @Controller
 public class UserController {
@@ -131,6 +135,22 @@ public class UserController {
 		map.put("success", UserService.delete_user(username));
 		return map;
 		
+	}
+	@RequestMapping("upload_img")
+	@ResponseBody
+	public Map upload_img(User user, HttpServletRequest request){
+		Map map = new HashMap();
+		String name = MD5Util.MD5(user.getUsername()+new Date().toString())+".png";
+		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaa");
+		String p = request.getSession().getServletContext().getRealPath("/images/upload")+"/";
+		if(SaveImage.saveImage(user.getImg(),p, name)){
+			user.setImg("images/upload/"+name);
+			map.put("success", UserService.updateUser(user));
+			map.put("src", user.getImg());
+		}else{
+			map.put("success",false);
+		}
+		return map;	
 	}
 	
 }
