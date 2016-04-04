@@ -203,7 +203,7 @@ $(function() {
 							var $span1 = $("<span class='city'>" + data[i].city
 									+ "</span>");
 							var $span2 = $("<span class='time'>"
-									+ data[i].pub_time + "</span>");
+									+ formatDate(data[i].pub_time) + "</span>");
 							var $input = $('<input type="button" class="mbutton" onclick="addJOB('
 									+ data[i].id + ')" value="查看/修改" />');
 							var id = data
