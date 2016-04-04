@@ -14,6 +14,9 @@
   	select * from tb_enterprise where id=#{id}
   </select>
   
+  <delete id="delByUsername" parameterType="Enterprise">
+  	delete from tb_enterprise where username=#{username}
+  </delete>
   
   <update id="updateEnterprise" parameterType="Enterprise">
   	update tb_user set 

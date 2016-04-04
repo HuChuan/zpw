@@ -103,9 +103,11 @@ public class UserController {
 		Map map = new HashMap();
 		User user = new User();
 		user.setUsername(username);
-		user.setPassword(old_psw);
-		if(UserService.loginCheck(username, old_psw)){
-			user.setPassword(new_psw);
+		user.setPassword(MD5Util.MD5(old_psw));
+		if(new_psw.length()>18||new_psw.length()<6){
+			map.put("reason", "请输入6~18为密码");
+		}else if(UserService.loginCheck(username, old_psw)){
+			user.setPassword(MD5Util.MD5(new_psw));
 			map.put("success", UserService.updateUser(user));		
 			map.put("reason", null);
 		}else{
@@ -125,7 +127,7 @@ public class UserController {
 	@RequestMapping("delete_user")
 	@ResponseBody
 	public Map delete_user(String username){
-		Map map = new HashMap();
+		Map map = new HashMap();		
 		map.put("success", UserService.delete_user(username));
 		return map;
 		

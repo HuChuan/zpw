@@ -59,7 +59,7 @@ public class UserService {
 	}
 	public static boolean checkPassword(String password) {
 		boolean flag = false;
-		if (password.length()<6) {
+		if (password.length()<6||password.length()>18) {
 			flag = false;
 		} else {
 			flag = true;
@@ -93,6 +93,7 @@ public class UserService {
 	public static User register(User user){
 		String t = new Date().toString()+user.getUsername();
 		user.setToken(MD5Util.MD5(t));
+		user.setPassword(MD5Util.MD5(user.getPassword()));
 		if(user.getPow()==2){
 			Enterprise enterprise = new Enterprise();
 			enterprise.setUsername(user.getUsername());
@@ -111,7 +112,7 @@ public class UserService {
 		if (u.qByUsername(nameOrEmail)!=null) {
 			User user = new User();
 			user.setUsername(nameOrEmail);
-			user.setPassword(password);
+			user.setPassword(MD5Util.MD5(password));
 			if(u.loginByUsername(user)!=null){
 				flag = true;
 			}else{
@@ -166,8 +167,16 @@ public class UserService {
 	}
 	
 	public static boolean delete_user(String username){
+		boolean flag = false;
 		IUserDao u = DAOFactory.getUserDao();
-		return u.delByUsername(username);		
+		if(u.qByUsername(username).getPow()==2){
+			IEnterpriseDao e = DAOFactory.getEnterpriseDao();
+			flag = e.delByUsername(username)&&u.delByUsername(username);
+		}else{
+			flag = u.delByUsername(username);
+		}
+		
+		return flag;		
 	}
 	
 }
