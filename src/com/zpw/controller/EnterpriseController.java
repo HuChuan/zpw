@@ -24,4 +24,10 @@ public class EnterpriseController {
 	public Enterprise load_enterprise(String username){
 		return EnterpriseService.getEnterpriseByName(username);
 	}
+	@RequestMapping("load_enterprise_info")
+	@ResponseBody
+	public Enterprise load_enterprise_info(int ep_id){
+		
+		return EnterpriseService.getEnterpriseById(ep_id);
+	}
 }

@@ -60,7 +60,22 @@ public class EnterpriseDao implements IEnterpriseDao{
 		}
 		return enterprise;
 	}
-
+	@Override
+	public Enterprise qById(int id) {
+		SqlSession session = null;
+		Enterprise enterprise = null;
+		try {
+			session = MyBatisUtil.createSession();
+			enterprise = session.selectOne(Enterprise.class.getName()+".qById", id);
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return enterprise;
+	}
 	@Override
 	public boolean delByUsername(String username) {
 		SqlSession session = null;
@@ -78,5 +93,7 @@ public class EnterpriseDao implements IEnterpriseDao{
 		}
 		return isSuccess;
 	}
+
+	
 	
 }
