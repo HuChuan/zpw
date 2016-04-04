@@ -5,15 +5,14 @@ $(function() {
 	$.get("show_job_info.do", {
 		id: id
 	}, function(data) {
-		data = data.enterprise;
 		$("head title").html(data.name + " - 职位信息 - 招聘网");
 		$("#job_name").text(data.name);
-		$("#job_city").text(data.name);
-		$("#job_edu").text(data.type);
-		$("#job_exp").text(data.web);
-		$("#job_money").text(data.address);
-		$("#job_intro").text(data.scale);
-		$("#job_time").text(data.slogan);
+		$("#job_city").text(data.city);
+		$("#job_edu").text(data.edu);
+		$("#job_exp").text(data.experience);
+		$("#job_money").text(data.money);
+		$("#job_intro").text(data.intro);
+		$("#job_time").text(data.pub_time);
 		$("#ep_name").text(data.ep_name);
 		$("#user_img").attr("src", data.ep_img);
 	}, "json");

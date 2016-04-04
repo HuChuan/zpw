@@ -48,7 +48,7 @@ $(function() {
 });
 
 function logout() {
-	$.get("logout.do");
+	//$.get("logout.do");
 	$.removeCookie("username");
 	$.removeCookie("pow");
 	$.removeCookie("token");

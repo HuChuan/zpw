@@ -313,7 +313,7 @@ $(function() {
 	// 删除职位
 	$("#delJOB_sub").click(function() {
 		$.post("delete_job_info.do", {
-			id : $("#addJOB_f")[0].job_id.value
+			id : $(this).attr("_id")
 		}, function(data) {
 			if (data.success == true) {
 				setLog("删除成功");
@@ -400,7 +400,8 @@ function addJOB(id) {
 			f.exp.value = data.experience;
 			f.money.value = data.money;
 			f.intro.value = data.intro;
-			f.id.value = data.id;
+			/*f.id.value = data.id;*/
+			$("#delJOB_sub").attr("_id",data.id);
 		}, "json");
 	}
 	$("#_window").fadeIn(200);

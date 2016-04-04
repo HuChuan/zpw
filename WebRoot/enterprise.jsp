@@ -168,7 +168,7 @@
 						<input id="updateJOB_sub" type="button" class="mbutton" value="修改职位信息" />
 						<input id="delJOB_sub" type="button" class="mbutton" value="删除" />
 					</div>
-					<input type="hidden" name="id" value="" />
+					<!-- <input type="hidden" name="id" value="" /> -->
 					<input type="hidden" name="username" value="" />
 				</form>
 			</div>
