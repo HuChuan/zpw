@@ -7,7 +7,12 @@
   	insert into tb_user (username,password,email,pow,token,reg_time)
 			values(#{username},#{password},#{email},#{pow},#{token},#{reg_time})
   </insert>
-  
+  <delete id="delByUsername" parameterType="User">
+  	delete from tb_user where username=#{username}
+  </delete>
+  <select id="getAllUser" resultType="User">
+  	select * from tb_user
+  </select>
   <select id="qByUsername" resultType="User">
   	select * from tb_user where username=#{username}
   </select>

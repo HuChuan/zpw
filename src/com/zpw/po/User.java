@@ -2,10 +2,12 @@ package com.zpw.po;
 
 import java.sql.Date;
 
+import com.zpw.util.MD5Util;
+
 public class User {
 	private int id;
 	private String username;
-	private String Password;
+	private String password;
 	private String email;
 	private int pow;
 	private String img;
@@ -26,10 +28,10 @@ public class User {
 		this.username = username;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	public String getEmail() {
 		return email;

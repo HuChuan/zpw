@@ -35,7 +35,7 @@ public class UserController {
 		return map;
 	}
 
-	@RequestMapping("check_user.do")
+	@RequestMapping("check_user")
 	@ResponseBody
 	public Model check_user(String username,Model model){
 		return model.addAttribute("success", UserService.isExistByUsername(username));
@@ -45,7 +45,7 @@ public class UserController {
 	public Model check_email(String email,Model model){
 		return model.addAttribute("success", UserService.isExistByEmail(email));
 	}
-	@RequestMapping("username_login.do")
+	@RequestMapping("username_login")
 	@ResponseBody
 	public Map username_login(User user){
 		Map map = new HashMap();
@@ -59,7 +59,7 @@ public class UserController {
 		}	
 		return map;
 	}
-	@RequestMapping("email_login.do")
+	@RequestMapping("email_login")
 	@ResponseBody
 	public Map email_login(User user){
 		Map map = new HashMap();
@@ -113,4 +113,22 @@ public class UserController {
 		}
 		return map;
 	}
+	
+	@RequestMapping("load_all_user")
+	@ResponseBody
+	public Map load_all_user(){
+		Map map = new HashMap();
+		map.put("list", UserService.getAllUser());
+		return map;
+		
+	}
+	@RequestMapping("delete_user")
+	@ResponseBody
+	public Map delete_user(String username){
+		Map map = new HashMap();
+		map.put("success", UserService.delete_user(username));
+		return map;
+		
+	}
+	
 }

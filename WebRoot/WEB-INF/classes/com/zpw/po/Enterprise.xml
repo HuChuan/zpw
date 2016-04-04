@@ -10,6 +10,9 @@
   <select id="qByUsername" parameterType="Enterprise" resultType="Enterprise">
   	select * from tb_enterprise where username=#{username}
   </select>
+  <select id="qById" parameterType="Enterprise" resultType="Enterprise">
+  	select * from tb_enterprise where id=#{id}
+  </select>
   
   
   <update id="updateEnterprise" parameterType="Enterprise">
