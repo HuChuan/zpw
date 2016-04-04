@@ -169,6 +169,8 @@ public class UserService {
 	public static boolean delete_user(String username){
 		boolean flag = false;
 		IUserDao u = DAOFactory.getUserDao();
+		System.out.println("aaaa");
+		System.out.println(u.qByUsername(username).getPow());
 		if(u.qByUsername(username).getPow()==2){
 			IEnterpriseDao e = DAOFactory.getEnterpriseDao();
 			flag = e.delByUsername(username)&&u.delByUsername(username);
