@@ -105,7 +105,7 @@ public class JobDao implements IJobDao {
 		boolean isSuccess = false;
 		try {
 			session = MyBatisUtil.createSession();
-			session.delete(Job.class.getName() + "deleteJob", id);
+			session.delete(Job.class.getName() + ".deleteJob", id);
 			session.commit();
 			isSuccess = true;
 		} catch (Exception e) {

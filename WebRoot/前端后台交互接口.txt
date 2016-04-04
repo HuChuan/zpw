@@ -74,7 +74,6 @@
 	返回：success(boolean),reason
 
 14.加载已投职位信息
-	URL：load_cv_job.do
 	参数：username
 	返回：list:[job_id,job_name,status,time]
 	
