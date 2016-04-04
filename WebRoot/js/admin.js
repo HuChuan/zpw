@@ -159,7 +159,7 @@ $(function() {
 							var $td5 = $('<td class="center">' + pow + '</td>');
 							var $td6 = $('<td class="center">'
 									+ data[i].reg_time + '</td>');
-							var $td7 = $('<td class="center"><a onclick="deleteUser(this,'+data[i].username+')">删除</a></td>');
+							var $td7 = $('<td class="center"><a onclick="deleteUser(this,\''+data[i].username+'\')">删除</a></td>');
 
 							$tr.append($td1);
 							$tr.append($td2);

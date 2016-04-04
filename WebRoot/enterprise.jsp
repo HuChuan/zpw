@@ -172,8 +172,7 @@
 				</form>
 			</div>
 		</div>
-		
-		<script src="js/ajaxfileupload.js"></script>
+
 		<script src="js/enterprise.js"></script>
 	</body>
 

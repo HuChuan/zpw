@@ -89,8 +89,7 @@
 			</div>
 			
 		</div>
-		
-		<script src="js/ajaxfileupload.js"></script>
+
 		<script src="js/admin.js"></script>
 	</body>
 

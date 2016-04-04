@@ -94,8 +94,7 @@
 			</div>
 			
 		</div>
-		
-		<script src="js/ajaxfileupload.js"></script>
+
 		<script src="js/userspace.js"></script>
 		<script src="layer/layer.js"></script>
 		<script src="js/cropper.min.js"></script>
