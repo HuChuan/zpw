@@ -1,6 +1,8 @@
 package com.zpw.dao;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -28,6 +30,23 @@ public class UserDao implements IUserDao {
 		}
 		return isSuccess;
 	}
+	@Override
+	public boolean delByUsername(String username) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.delete(User.class.getName()+".delByUsername", username);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	};
 
 	@Override
 	public User qByUsername(String username) {
@@ -66,6 +85,23 @@ public class UserDao implements IUserDao {
 				
 		
 		return user;
+	}
+	@Override
+	public List<User> getAllUser() {
+		SqlSession session = null;
+		List<User> list = new ArrayList<User>();
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(User.class.getName()+".getAllUser");
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		
+		return list;
 	}
 
 	@Override
@@ -143,6 +179,9 @@ public class UserDao implements IUserDao {
 		
 		
 	}
+
+	
+	
 
 
 	

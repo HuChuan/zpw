@@ -1,6 +1,7 @@
 package com.zpw.po;
 
 public class Enterprise {
+	private int id;
 	private String username;
 	private String name;
 	private String img;
@@ -10,6 +11,12 @@ public class Enterprise {
 	private String type;
 	private String scale ;
 	private String slogan;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getUsername() {
 		return username;
 	}

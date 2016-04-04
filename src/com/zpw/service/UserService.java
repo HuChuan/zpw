@@ -1,6 +1,7 @@
 package com.zpw.service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -133,6 +134,11 @@ public class UserService {
 		return flag;
 	}
 	
+	public static List<User> getAllUser(){
+		IUserDao u = DAOFactory.getUserDao();
+		return u.getAllUser();
+		
+	}
 	public static User getUserByUsername(String username){
 		IUserDao u = DAOFactory.getUserDao();
 		return u.qByUsername(username);
@@ -157,6 +163,11 @@ public class UserService {
 	public static boolean check_login(User user){
 		IUserDao u = DAOFactory.getUserDao();
 		return u.check_login(user);
+	}
+	
+	public static boolean delete_user(String username){
+		IUserDao u = DAOFactory.getUserDao();
+		return u.delByUsername(username);		
 	}
 	
 }
