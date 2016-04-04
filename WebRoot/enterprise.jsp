@@ -74,31 +74,31 @@
 					<form id="ep_f" class="">
 						<div>
 							<span>企业名称：</span>
-							<input name="ep_name" type="text" readonly/>
+							<input name="name" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业类型：</span>
-							<input name="ep_type" type="text" readonly/>
+							<input name="type" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业官网：</span>
-							<input name="ep_web" type="text" readonly/>
+							<input name="web" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业地址：</span>
-							<input name="ep_address" type="text" readonly/>
+							<input name="address" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业规模：</span>
-							<input name="ep_scale" type="text" readonly/>
+							<input name="scale" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业口号：</span>
-							<input name="ep_slogan" type="text" readonly/>
+							<input name="slogan" type="text" readonly/>
 						</div>
 						<div>
 							<span>企业简介：</span>
-							<textarea name="ep_intro" readonly></textarea>
+							<textarea name="intro" readonly></textarea>
 						</div>
 						<div>
 							<input id="change_ep_btn" type="button" class="mbutton" value="修改资料" />

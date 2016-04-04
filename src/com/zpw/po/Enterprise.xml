@@ -19,7 +19,7 @@
   </delete>
   
   <update id="updateEnterprise" parameterType="Enterprise">
-  	update tb_user set 
+  	update tb_enterprise set 
   	<if test="username!=null">username=#{username}</if>
   	<if test="name!=null">,name=#{name}</if>
   	<if test="type!=null">,type=#{type} </if>

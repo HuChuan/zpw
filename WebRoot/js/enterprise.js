@@ -5,10 +5,10 @@ $(function() {
 			|| $.cookie("token") == null || $.cookie("token") == ""
 			|| $.cookie("pow") != "2") {
 		location.href = "login.jsp";
-		$("#ep_f input[name='username']").val($.cookie("username"));
-		$("#addJOB_f input[name='username']").val($.cookie("username"));
 	} else {
 		$("#username").text($.cookie("username"));
+		$("#ep_f input[name='username']").val($.cookie("username"));
+		$("#addJOB_f input[name='username']").val($.cookie("username"));
 	}
 });
 
@@ -151,16 +151,16 @@ $(function() {
 	// 修改信息
 	$("#change_ep_sub").click(function() {
 		var ep = $("#ep_f")[0];
-		if (ep.ep_name.value.trim().length == 0) {
+		if (ep.name.value.trim().length == 0) {
 			setLog("企业名称不能为空", false);
-		} else if (ep.ep_type.value.trim().length == 0) {
+		} else if (ep.type.value.trim().length == 0) {
 			setLog("企业类型不能为空", false);
-		} else if (ep.ep_address.value.trim().length == 0) {
+		} else if (ep.address.value.trim().length == 0) {
 			setLog("企业地址不能为空", false);
-		} else if (ep.ep_scale.value.trim().length == 0) {
+		} else if (ep.scale.value.trim().length == 0) {
 			setLog("企业规模不能为空", false);
 		} else {
-			var d = $("ep_f").serialize();
+			var d = $("#ep_f").serialize();
 			$.post("update_enterprise.do", d, function(data) {
 				if (data.success == true) {
 					setLog("修改成功");
@@ -386,13 +386,13 @@ function loadEPInfo() {
 		username : $.cookie("username")
 	}, function(data) {
 		var f = $("#ep_f")[0];
-		f.ep_name.value = data.name;
-		f.ep_type.value = data.type;
-		f.ep_web.value = data.web;
-		f.ep_address.value = data.address;
-		f.ep_scale.value = data.scale;
-		f.ep_slogan.value = data.slogan;
-		f.ep_intro.value = data.intro;
+		f.name.value = data.name;
+		f.type.value = data.type;
+		f.web.value = data.web;
+		f.address.value = data.address;
+		f.scale.value = data.scale;
+		f.slogan.value = data.slogan;
+		f.intro.value = data.intro;
 	}, "json");
 }
 

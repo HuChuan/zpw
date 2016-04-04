@@ -171,7 +171,9 @@ public class UserService {
 		IUserDao u = DAOFactory.getUserDao();
 		System.out.println("aaaa");
 		System.out.println(u.qByUsername(username).getPow());
-		if(u.qByUsername(username).getPow()==2){
+		if(u.qByUsername(username).getPow()==3){
+			return flag;
+		}else if(u.qByUsername(username).getPow()==2){
 			IEnterpriseDao e = DAOFactory.getEnterpriseDao();
 			flag = e.delByUsername(username)&&u.delByUsername(username);
 		}else{
