@@ -69,5 +69,11 @@
 	<select id="qAllCount" resultType="Integer">
 		select count(*) from tb_vitae
 	</select>
+	
+	<insert id="insertVitaeJob" parameterType="Vitae_Job">
+		insert into tb_vitae_job
+		(username,ep_username,job_id,job_name,time)
+		values(#{username},#{ep_username},#{id},#{job_name},#{time})
+	</insert>
 
 </mapper>

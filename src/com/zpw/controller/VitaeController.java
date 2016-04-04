@@ -30,7 +30,7 @@ public class VitaeController {
 	
 	@RequestMapping("add_vitae")
 	@ResponseBody
-	public Map add_vitae(Vitae vitae,Model model){
+	public Map add_vitae(Vitae vitae){
 		Map map = new HashMap();
 		boolean success = VitaeService.addAitae(vitae);
 		map.put("success", success);
@@ -73,6 +73,17 @@ public class VitaeController {
 		Map map = null;
 		map = VitaeService.findVitaeByKw(vc);
 		return map;
+	}
+	
+	@RequestMapping("apply_job")
+	@ResponseBody
+	public Map apply_job(Vitae_Job vj){
+		Map map = new HashMap();
+		boolean success = VitaeService.addAitaeJob(vj);
+		map.put("success", success);
+		
+		return map;
+		
 	}
 	
 }

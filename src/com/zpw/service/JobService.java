@@ -8,6 +8,7 @@ import com.zpw.dao.DAOFactory;
 import com.zpw.dao.JobDao;
 import com.zpw.po.Job;
 import com.zpw.po.JobCustom;
+import com.zpw.po.Vitae_Job;
 
 public class JobService {
 
@@ -63,5 +64,17 @@ public class JobService {
 		JobDao j = DAOFactory.getJobDao();
 		Map map = j.qByKwList(jc);
 		return map;
+	}
+
+	public static JobCustom ShowJob(int id) {
+		JobDao j = DAOFactory.getJobDao();
+		JobCustom jobCustom = j.qCById(id);
+		return jobCustom;
+	}
+	
+	public static boolean checkJob(Vitae_Job vj){
+		JobDao j = DAOFactory.getJobDao();
+		boolean flag = j.qByIdAndUsername(vj);
+		return flag;
 	}
 }

@@ -19,4 +19,6 @@ public interface IVitaeDao {
 	
 	public Map qByKwList(VitaeCustom vc);
 	
+	public boolean insertVitaeJob(Vitae_Job vj);
+	
 }

@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.zpw.po.Job;
 import com.zpw.po.User;
 import com.zpw.po.Vitae;
 import com.zpw.po.VitaeCustom;
@@ -104,5 +105,29 @@ public class VitaeDao implements IVitaeDao{
 		}
 		return map;
 	}
+
+	@Override
+	public boolean insertVitaeJob(Vitae_Job vj) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		Job job = null;
+		try {
+			session = MyBatisUtil.createSession();
+			job = session.selectOne(Job.class.getName()+".qById", vj);
+			vj.setEp_username(job.getUsername());
+			vj.setJob_name(job.getName());
+			session.insert(Vitae.class.getName()+".insertVitaeJob", vj);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+	
+	
 
 }

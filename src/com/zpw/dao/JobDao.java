@@ -8,9 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.zpw.po.Job;
 import com.zpw.po.JobCustom;
+import com.zpw.po.Vitae_Job;
 import com.zpw.util.MyBatisUtil;
 
-public class JobDao implements IJobDao{
+public class JobDao implements IJobDao {
 
 	@Override
 	public boolean insertJob(Job job) {
@@ -18,13 +19,13 @@ public class JobDao implements IJobDao{
 		boolean isSuccess = false;
 		try {
 			session = MyBatisUtil.createSession();
-			session.insert(Job.class.getName()+".insertJob", job);
+			session.insert(Job.class.getName() + ".insertJob", job);
 			session.commit();
 			isSuccess = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.rollback();
-		}finally{
+		} finally {
 			MyBatisUtil.closeSession(session);
 		}
 		return isSuccess;
@@ -36,11 +37,12 @@ public class JobDao implements IJobDao{
 		String ep_name = null;
 		try {
 			session = MyBatisUtil.createSession();
-			ep_name = session.selectOne(Job.class.getName()+".qEp_name", username);
+			ep_name = session.selectOne(Job.class.getName() + ".qEp_name",
+					username);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			MyBatisUtil.closeSession(session);
 		}
 		return ep_name;
@@ -52,11 +54,12 @@ public class JobDao implements IJobDao{
 		List<Job> list = null;
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(Job.class.getName()+".qByUsernameList", username);
+			list = session.selectList(Job.class.getName() + ".qByUsernameList",
+					username);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			MyBatisUtil.closeSession(session);
 		}
 		return list;
@@ -68,11 +71,11 @@ public class JobDao implements IJobDao{
 		Job job = null;
 		try {
 			session = MyBatisUtil.createSession();
-			job = session.selectOne(Job.class.getName()+".qById", id);
+			job = session.selectOne(Job.class.getName() + ".qById", id);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			MyBatisUtil.closeSession(session);
 		}
 		return job;
@@ -84,13 +87,13 @@ public class JobDao implements IJobDao{
 		boolean isSuccess = false;
 		try {
 			session = MyBatisUtil.createSession();
-			session.update(Job.class.getName()+".updateJob", job);
+			session.update(Job.class.getName() + ".updateJob", job);
 			session.commit();
 			isSuccess = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.rollback();
-		}finally{
+		} finally {
 			MyBatisUtil.closeSession(session);
 		}
 		return isSuccess;
@@ -100,15 +103,15 @@ public class JobDao implements IJobDao{
 	public boolean deleteJob(int id) {
 		SqlSession session = null;
 		boolean isSuccess = false;
-		try{
+		try {
 			session = MyBatisUtil.createSession();
-			session.delete(Job.class.getName()+"deleteJob", id);
+			session.delete(Job.class.getName() + "deleteJob", id);
 			session.commit();
 			isSuccess = true;
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 			session.rollback();
-		}finally{
+		} finally {
 			MyBatisUtil.closeSession(session);
 		}
 		return isSuccess;
@@ -122,18 +125,56 @@ public class JobDao implements IJobDao{
 		int count;
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(Job.class.getName()+".qByKwList", jc);
-			count = session.selectOne(Job.class.getName()+".qAllCount");
+			list = session.selectList(Job.class.getName() + ".qByKwList", jc);
+			count = session.selectOne(Job.class.getName() + ".qAllCount");
 			session.commit();
 			map.put("list", list);
-			map.put("allpage", 1+(count-1)/jc.getNum());
+			map.put("allpage", 1 + (count - 1) / jc.getNum());
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			MyBatisUtil.closeSession(session);
 		}
 		return map;
 	}
-	
+
+	public JobCustom qCById(int id) {
+		SqlSession session = null;
+		JobCustom jobCustom = null;
+		try {
+			session = MyBatisUtil.createSession();
+			jobCustom = session.selectOne(Job.class.getName() + ".qCById", id);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			MyBatisUtil.closeSession(session);
+		}
+		return jobCustom;
+	}
+
+	@Override
+	public boolean qByIdAndUsername(Vitae_Job vj) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		Vitae_Job vitae_job = null;
+		try {
+			session = MyBatisUtil.createSession();
+			vitae_job =	session.selectOne(Job.class.getName()
+					+ ".qByIdAndUsername", vj);
+			session.commit();
+			if (vitae_job != null) {
+				isSuccess = false;
+			} else {
+				isSuccess = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		} finally {
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
 
 }

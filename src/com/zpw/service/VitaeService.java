@@ -1,5 +1,6 @@
 package com.zpw.service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -68,6 +69,16 @@ public class VitaeService {
 		IVitaeDao v = DAOFactory.getVitaeDao();
 		Map map = v.qByKwList(vc);
 		return map;
+	}
+	
+	public static boolean addAitaeJob(Vitae_Job vj){
+		IVitaeDao v = DAOFactory.getVitaeDao();
+		Date datatime = new Date(System.currentTimeMillis());
+		vj.setTime(datatime);
+		boolean flag = v.insertVitaeJob(vj);
+		
+		return flag;
+		
 	}
 	
 }

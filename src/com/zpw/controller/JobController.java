@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zpw.po.Job;
 import com.zpw.po.JobCustom;
+import com.zpw.po.Vitae_Job;
 import com.zpw.service.JobService;
 
 @Controller
@@ -66,6 +67,24 @@ public class JobController {
 	public Map load_all_job(JobCustom jc){
 		Map map = null;
 		map = JobService.findJobByKw(jc);
+		return map;
+	}
+	
+	@RequestMapping("show_job_info")
+	@ResponseBody
+	public JobCustom show_job_info(int id){
+		JobCustom jobCustom = null;
+		jobCustom = JobService.ShowJob(id);
+		return jobCustom;
+	}
+	
+	@RequestMapping("check_apply_job")
+	@ResponseBody
+	public Map check_apply_job(Vitae_Job vj){
+		Map map = new HashMap();
+		boolean success = JobService.checkJob(vj);
+		map.put("success", success);
+		
 		return map;
 	}
 }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.zpw.po.Job;
 import com.zpw.po.JobCustom;
+import com.zpw.po.Vitae_Job;
 
 
 public interface IJobDao {
@@ -22,4 +23,8 @@ public interface IJobDao {
 	public boolean deleteJob(int id);
 	
 	public Map qByKwList(JobCustom jc);
+	
+	public JobCustom qCById(int id);
+	
+	public boolean qByIdAndUsername(Vitae_Job vj);
 }
