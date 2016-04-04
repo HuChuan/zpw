@@ -12,13 +12,13 @@ public class Job {
 	private String experience;
 	private String money;
 	private String intro;
+	private Date pub_time;
 	public String getIntro() {
 		return intro;
 	}
 	public void setIntro(String intro) {
 		this.intro = intro;
 	}
-	private Date pub_time;
 	public int getId() {
 		return id;
 	}
