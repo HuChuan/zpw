@@ -400,7 +400,7 @@ function addJOB(id) {
 			f.exp.value = data.experience;
 			f.money.value = data.money;
 			f.intro.value = data.intro;
-			f.job_id.value = data.id;
+			f.id.value = data.id;
 		}, "json");
 	}
 	$("#_window").fadeIn(200);
