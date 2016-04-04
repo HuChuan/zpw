@@ -21,7 +21,7 @@
 		where id=#{id}
 	</update>
 
-	<select id="qEp_name" resultType="Integer">
+	<select id="qEp_name" resultType="String">
 		select tb_enterprise.name from
 		tb_enterprise where
 		username=#{username}
@@ -48,7 +48,7 @@
 		and tb_enterprise.username=tb_job.username
 	</select>
 
-	<delete id="deleteJob">
+	<delete id="deleteJob" parameterType="Integer">
 		delete from tb_job where id = #{id}
 	</delete>
 
