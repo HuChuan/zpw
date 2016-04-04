@@ -263,7 +263,7 @@ $(function() {
 			setLog("工作城市不能为空", false);
 		} else if (f.edu.value.trim().length == 0) {
 			setLog("学历要求不能为空", false);
-		} else if (f.exp.value.trim().length == 0) {
+		} else if (f.experience.value.trim().length == 0) {
 			setLog("经验要求不能为空", false);
 		} else if (f.money.value.trim().length == 0) {
 			setLog("薪酬不能为空", false);
@@ -291,7 +291,7 @@ $(function() {
 			setLog("工作城市不能为空", false);
 		} else if (f.edu.value.trim().length == 0) {
 			setLog("学历要求不能为空", false);
-		} else if (f.exp.value.trim().length == 0) {
+		} else if (f.experience.value.trim().length == 0) {
 			setLog("经验要求不能为空", false);
 		} else if (f.money.value.trim().length == 0) {
 			setLog("薪酬不能为空", false);
