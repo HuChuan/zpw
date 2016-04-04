@@ -181,5 +181,5 @@
 	
 33.上传图片
 	URL：upload_img.do
-	参数：img
+	参数：username,img
 	返回：success(boolean),src

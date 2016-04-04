@@ -27,14 +27,16 @@ $("#upload_img")
 								btn : [ "确定上传", "取消" ],
 								yes : function() {
 									$.post("upload_img.do",{
+										username:$.cookie("username"),
 										img:$("#upload_view_img_v").attr("src")
 									},function(data){
 										if(data.success == true){
 											$("#user_img").attr("src",data.src);
-											layer.closeAll();
+										}else {
+											layer.alert("上传失败");
 										}
+										layer.closeAll();
 									},"json");
-									layer.closeAll();
 								},
 								success : function() {
 									var img = $("#upload_view_img");
