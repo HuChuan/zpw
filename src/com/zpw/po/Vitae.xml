@@ -15,9 +15,24 @@
 	</select>
 
 	<update id="updateVitae" parameterType="Vitae">
-		update tb_vitae
-		set(name,sex,city,age,edu,school,major,grad_year,phone,email,job,job_city,money,interest,skill,experience,personal)
-		values(#{name},#{sex},#{city},#{age},#{edu},#{school},#{major},#{grad_year},#{phone},#{email},#{job},#{job_city},#{money},#{interest},#{skill},#{experience},#{personal})
+		update tb_vitae set
+		<if test="name!=null">name=#{name}</if>
+		<if test="sex!=null">,sex=#{sex}</if>
+		<if test="city!=null">,city=#{city} </if>
+		<if test="age!=null">,age=#{age}</if>
+		<if test="edu!=null">,edu=#{edu} </if>
+		<if test="school!=null">,school=#{school}</if>
+		<if test="major!=null">,major=#{major}</if>
+		<if test="grad_year!=null">,grad_year=#{grad_year}</if>
+		<if test="phone!=null">,phone=#{phone} </if>
+		<if test="email!=null">,email=#{email}</if>
+		<if test="job!=null">,job=#{job} </if>
+		<if test="job_city!=null">,job_city=#{job_city}</if>
+		<if test="money!=null">,money=#{money}</if>
+		<if test="interest!=null">,interest=#{interest}</if>
+		<if test="skill!=null">,skill=#{skill} </if>
+		<if test="experience!=null">,experience=#{experience}</if>
+		<if test="personal">,personal=#{personal} </if>
 		where username=#{username}
 	</update>
 
@@ -34,24 +49,25 @@
 		FROM
 		(
 		SELECT
-		ROW_NUMBER() OVER (ORDER BY id) AS RowNumber,* FROM tb_vitae 
-		<where>  
-            <if test="kw != null">  
-                and job like '%${kw}%'
-            </if> 
-            <if test="city != null">  
-                and tb_vitae.city = #{city}
-            </if>
-            <if test="edu != null">  
-                tb_vitae.edu = #{edu}
-            </if>
-        </where>
+		ROW_NUMBER() OVER (ORDER BY id) AS
+		RowNumber,* FROM tb_vitae
+		<where>
+			<if test="kw != null">
+				and job like '%${kw}%'
+			</if>
+			<if test="city != null">
+				and tb_vitae.city = #{city}
+			</if>
+			<if test="edu != null">
+				tb_vitae.edu = #{edu}
+			</if>
+		</where>
 		) as A
 		WHERE RowNumber > ${num}*(${page}-1)
 	</select>
-	
+
 	<select id="qAllCount" resultType="Integer">
 		select count(*) from tb_vitae
 	</select>
-	
+
 </mapper>
