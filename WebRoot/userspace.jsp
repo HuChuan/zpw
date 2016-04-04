@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<title>个人中心 - 招聘网</title>
 		<link rel="stylesheet" href="css/userspace.css" />
+		<link rel="stylesheet" href="css/cropper.min.css" />
 	</head>
 
 	<body>
@@ -94,8 +95,11 @@
 			
 		</div>
 		
-		<script src="js/ajaxfileupload.js"></script>		
+		<script src="js/ajaxfileupload.js"></script>
 		<script src="js/userspace.js"></script>
+		<script src="layer/layer.js"></script>
+		<script src="js/cropper.min.js"></script>
+		<script src="js/upload_img.js"></script>
 	</body>
 
 </html>

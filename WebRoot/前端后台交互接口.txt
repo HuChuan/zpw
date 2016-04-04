@@ -179,3 +179,7 @@
 	参数：无
 	返回：list:[job_id,job_name,ep_id,ep_name,job_city,job_money,job_exp]
 	
+33.上传图片
+	URL：upload_img.do
+	参数：img
+	返回：success(boolean),src
