@@ -59,7 +59,7 @@ public class UserService {
 	}
 	public static boolean checkPassword(String password) {
 		boolean flag = false;
-		if (password.length()==0||password.length()>6) {
+		if (password.length()<6) {
 			flag = false;
 		} else {
 			flag = true;
