@@ -11,9 +11,14 @@
 	
 	<update id="updateJob" parameterType="Job">
 		update tb_job set
-		(name,city,edu,experience,money,intro,pub_time)
-		values(#{name},#{city},#{edu},#{experience},#{money},#{intro},#{pub_time})
-		where username = #{username}
+		<if test="name!=null">name=#{name}</if>
+		<if test="city!=null">,city=#{city} </if>
+		<if test="edu!=null">,edu=#{edu} </if>
+		<if test="experience!=null">,experience=#{experience}</if>
+		<if test="money!=null">,money=#{money}</if>
+		<if test="intro!=null">,intro=#{intro}</if>
+		<if test="pub_time!=null">,pub_time=#{pub_time} </if>
+		where id=#{id}
 	</update>
 
 	<select id="qEp_name" resultType="Integer">

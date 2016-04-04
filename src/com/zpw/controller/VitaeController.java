@@ -59,10 +59,11 @@ public class VitaeController {
 	
 	@RequestMapping("update_vitae")
 	@ResponseBody
-	public Model update_vitae(Vitae vitae,Model model){
+	public Map update_vitae(Vitae vitae){
+		Map map = new HashMap();
 		boolean success = VitaeService.updateVitae(vitae);
-		
-		return model.addAttribute("success", success);
+		map.put("success", success);
+		return map;
 		
 	}
 	

@@ -46,10 +46,12 @@ public class JobController {
 	
 	@RequestMapping("update_job_info")
 	@ResponseBody
-	public Model update_job_info(Job job,Model model){
+	public Map update_job_info(Job job){
+		Map map = new HashMap();
 		boolean success = JobService.updateJob(job);
+		map.put("success", success);
 		
-		return model.addAttribute("success", success);
+		return map;
 	}
 	
 	@RequestMapping("delete_job_info")
