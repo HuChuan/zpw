@@ -77,4 +77,10 @@ public class JobService {
 		boolean flag = j.qByIdAndUsername(vj);
 		return flag;
 	}
+	
+	public static List<Vitae_Job> findVJList(String username) {
+		JobDao j = DAOFactory.getJobDao();
+		List<Vitae_Job> list = j.qVJByUsername(username);
+		return list;
+	}
 }

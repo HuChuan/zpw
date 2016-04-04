@@ -160,7 +160,7 @@ public class JobDao implements IJobDao {
 		Vitae_Job vitae_job = null;
 		try {
 			session = MyBatisUtil.createSession();
-			vitae_job =	session.selectOne(Job.class.getName()
+			vitae_job = session.selectOne(Job.class.getName()
 					+ ".qByIdAndUsername", vj);
 			session.commit();
 			if (vitae_job != null) {
@@ -175,6 +175,23 @@ public class JobDao implements IJobDao {
 			MyBatisUtil.closeSession(session);
 		}
 		return isSuccess;
+	}
+
+	@Override
+	public List<Vitae_Job> qVJByUsername(String username) {
+		SqlSession session = null;
+		List<Vitae_Job> list = null;
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(Job.class.getName() + ".qVJByUsername",
+					username);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			MyBatisUtil.closeSession(session);
+		}
+		return list;
 	}
 
 }

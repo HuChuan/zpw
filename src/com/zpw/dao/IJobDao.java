@@ -27,4 +27,6 @@ public interface IJobDao {
 	public JobCustom qCById(int id);
 	
 	public boolean qByIdAndUsername(Vitae_Job vj);
+	
+	public List<Vitae_Job> qVJByUsername(String username);
 }

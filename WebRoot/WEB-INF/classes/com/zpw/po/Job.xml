@@ -90,5 +90,11 @@
 		job_id=#{id} and username=#{username}
 	</select>
 	
+	<select id="qVJByUsername" resultType="Vitae_Job">
+		select * from
+		tb_vitae_job where
+		username=#{username}
+	</select>
+	
 	
 </mapper>
