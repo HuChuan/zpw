@@ -1,5 +1,4 @@
 $(function() {
-
 	//表单验证
 	var isUser = false;
 	var isPsw = false;
@@ -102,7 +101,7 @@ function doLogin(data) {
 			$.cookie("username", data.user.username, {
 				expires: 7
 			});
-			$.cookie("pow", data.user.password, {
+			$.cookie("pow", data.user.pow, {
 				expires: 7
 			});
 			$.cookie("token", data.user.token, {
