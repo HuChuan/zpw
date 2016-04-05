@@ -29,4 +29,6 @@ public interface IJobDao {
 	public boolean qByIdAndUsername(Vitae_Job vj);
 	
 	public List<Vitae_Job> qVJByUsername(String username);
+	
+	public void updateStatus(Vitae_Job vj);
 }

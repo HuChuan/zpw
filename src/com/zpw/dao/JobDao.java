@@ -194,4 +194,19 @@ public class JobDao implements IJobDao {
 		return list;
 	}
 
+	@Override
+	public void updateStatus(Vitae_Job vj) {
+		SqlSession session = null;
+		try {
+			session = MyBatisUtil.createSession();
+			session.update(Job.class.getName() + ".updateStatus", vj);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		} finally {
+			MyBatisUtil.closeSession(session);
+		}
+	}
+
 }

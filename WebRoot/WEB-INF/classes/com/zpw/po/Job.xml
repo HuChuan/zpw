@@ -96,5 +96,9 @@
 		username=#{username}
 	</select>
 	
+	<update id="updateStatus" parameterType="Vitae_Job">
+		update tb_vitae_job set status = 1
+		where id=#{id}
+	</update>
 	
 </mapper>
