@@ -3,18 +3,19 @@ package com.zpw.po;
 import java.util.Date;
 
 public class Vitae_Job extends Vitae{
-	private int id;
+	private int vj_id;
 	private String username;
 	private String ep_username;
 	private int job_id;
 	private String job_name;
 	private Date time;
 	private int status;
-	public int getId() {
-		return id;
+	
+	public int getVj_id() {
+		return vj_id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setVj_id(int vj_id) {
+		this.vj_id = vj_id;
 	}
 	public String getUsername() {
 		return username;

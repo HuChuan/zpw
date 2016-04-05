@@ -95,4 +95,10 @@ public class JobController {
 		list = JobService.findVJList(username);
 		return list;
 	}
+	
+	@RequestMapping("update_cv_job_status")
+	@ResponseBody
+	public void update_cv_job_status(Vitae_Job vj){
+		JobService.readED(vj);
+	}
 }

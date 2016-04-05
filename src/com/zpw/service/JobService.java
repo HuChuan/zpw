@@ -83,4 +83,9 @@ public class JobService {
 		List<Vitae_Job> list = j.qVJByUsername(username);
 		return list;
 	}
+	
+	public static void readED(Vitae_Job vj) {
+		JobDao j = DAOFactory.getJobDao();
+		j.updateStatus(vj);
+	}
 }
