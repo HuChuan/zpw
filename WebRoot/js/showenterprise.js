@@ -5,7 +5,6 @@ $(function() {
 	$.get("load_enterprise_info.do", {
 		id: id
 	}, function(data) {
-		data = data.enterprise;
 		$("head title").html(data.name + "的企业信息 - 招聘网");
 		$("#h_ep_name").text(data.name);
 		$("#ep_name").text(data.name);

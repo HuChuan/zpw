@@ -22,12 +22,12 @@ $("#upload_img")
 										username:$.cookie("username"),
 										img:$("#upload_view_img_v").attr("src")
 									},function(data){
+										layer.closeAll();
 										if(data.success == true){
 											$("#user_img").attr("src",data.src);
 										}else {
 											layer.alert("上传失败");
 										}
-										layer.closeAll();
 									},"json");
 								},
 								success : function() {

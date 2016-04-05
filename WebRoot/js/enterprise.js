@@ -119,15 +119,11 @@ $(function() {
 		$("#ep_f textarea")[0].readOnly = true;
 	});
 	// 检查是否存在企业信息
-	/*$.post("check_enterprise.do", {
-		username : $.cookie("username")
-	}, function(data) {
-		if (data.success == true) {
-			$("#c_ep").addClass("has");
-			// 加载企业信息
-			loadEPInfo();
-		}
-	}, "json");*/
+	/*
+	 * $.post("check_enterprise.do", { username : $.cookie("username") },
+	 * function(data) { if (data.success == true) { $("#c_ep").addClass("has"); //
+	 * 加载企业信息 loadEPInfo(); } }, "json");
+	 */
 	$("#c_ep").addClass("has");
 	// 加载企业信息
 	loadEPInfo();
@@ -147,6 +143,7 @@ $(function() {
 			$.post("update_enterprise.do", d, function(data) {
 				if (data.success == true) {
 					setLog("修改成功");
+					$("#ep_f").removeClass("change");
 				} else {
 					setLog("修改失败", false);
 				}
@@ -198,7 +195,7 @@ $(function() {
 					function(data) {
 						for (var i = 0; i < data.length; i++) {
 							var $li = $("<li class='ellipsis'></li>");
-							var $a = $("<a href='" + data[i].id + "'>"
+							var $a = $("<a href='showjob.jsp?id=" + data[i].id + "'>"
 									+ data[i].name + "</a>");
 							var $span1 = $("<span class='city'>" + data[i].city
 									+ "</span>");
@@ -233,7 +230,8 @@ $(function() {
 							var $span4 = $("<span>" + data[i].edu + "</span>");
 							var $span5 = $("<span>" + data[i].job + "</span>");
 							var $span6 = $("<span>" + data[i].time + "</span>");
-							var $input = $('<input type="button" class="mbutton" value="查看简历" hf="showvitae.jsp?username='+data[i].username+'" />');
+							var $input = $('<input type="button" class="mbutton" value="查看简历" hf="showvitae.jsp?username='
+									+ data[i].username + '" />');
 							$input.click(function() {
 								location.href = $(this).attr("hf");
 							});
@@ -252,6 +250,7 @@ $(function() {
 // 发布/修改信息窗口
 $(function() {
 	$("#close_window").click(function() {
+		$("body").removeClass("noscroll");
 		$("#_window").fadeOut(200);
 	});
 	// 发布职位
@@ -299,9 +298,12 @@ $(function() {
 			setLog("职位描述不能为空", false);
 		} else {
 			var d = $("#addJOB_f").serialize();
+			var _id = $("#delJOB_sub").attr("_id");
+			d = d + "&id=" + _id;
 			$.post("update_job_info.do", d, function(data) {
 				if (data.success == true) {
 					setLog("修改成功");
+					$("#_window").fadeOut(200);
 					$("#addJOB_sub input[type='text']").val("");
 					$("#addJOB_sub textarea").val("");
 				} else {
@@ -359,7 +361,7 @@ function loadUserInfo() {
 		f.pow.value = pow;
 		f.email.value = data.email;
 		f.phone.value = data.phone;
-		$("#user_img").attr("src",data.img);
+		$("#user_img").attr("src", data.img);
 		old_email = data.email;
 	}, "json");
 }
@@ -400,9 +402,10 @@ function addJOB(id) {
 			f.experience.value = data.experience;
 			f.money.value = data.money;
 			f.intro.value = data.intro;
-			/*f.id.value = data.id;*/
-			$("#delJOB_sub").attr("_id",data.id);
+			/* f.id.value = data.id; */
+			$("#delJOB_sub").attr("_id", data.id);
 		}, "json");
 	}
 	$("#_window").fadeIn(200);
+	$("body").addClass("noscroll");
 }

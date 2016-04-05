@@ -59,7 +59,7 @@ $(function() {
 				if (data.success == true) {
 					setLog("添加成功,正在转到个人中心");
 					setTimeout(function() {
-						/* location.href = "userspace.jsp"; */
+						location.href = "userspace.jsp";
 					}, 1990);
 				} else {
 					setLog("添加失败", false);
