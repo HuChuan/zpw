@@ -179,7 +179,6 @@ $(function() {
 				username : $.cookie("username")
 			},
 					function(data) {
-						data = data.list;
 						for (var i = 0; i < data.length; i++) {
 							var read = "";
 							var status = "未读"
@@ -189,13 +188,13 @@ $(function() {
 							}
 							var $li = $("<li class='ellipsis " + read
 									+ "'></li>");
-							var $a = $("<a href='" + data[i].job_id + "'>"
+							var $a = $("<a href='showjob.jsp?id=" + data[i].job_id + "'>"
 									+ data[i].job_name + "</a>");
 							var $span1 = $("<span class='epname'>"
-									+ data[i].epname + "</span>");
+									+ data[i].ep_username + "</span>");
 							var $span2 = $("<span class='status'>" + status
 									+ "</span>");
-							var $span3 = $("<span class='time'>" + data[i].time
+							var $span3 = $("<span class='time'>" + formatDate(data[i].time)
 									+ "</span>");
 							$li.append($a);
 							$li.append($span1);

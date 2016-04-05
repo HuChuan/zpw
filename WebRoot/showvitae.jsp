@@ -17,7 +17,7 @@
 	<div class="container">
 		<form id="vitae_f" class="">
 			<h2>简历</h2>
-			<div id="user_img"></div>
+			<div id="user_img"><img src="images/user_default.png" /></div>
 
 			<div>
 				<span class="tags">真实姓名：</span> <input type="text" name="name"
@@ -82,7 +82,7 @@
 			</div>
 			<div>
 				<span class="tags text">兴趣爱好：</span>
-				<div id="text" class="textarea"></div>
+				<div id="interest" class="textarea"></div>
 			</div>
 
 			<div>

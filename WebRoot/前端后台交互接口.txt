@@ -49,7 +49,7 @@
 	返回：success(boolean)
 	
 11.检查是否存在简历
-	URL：check_viate.do
+	URL：check_vitae.do
 	参数：username
 	返回：success(boolean)
 	
@@ -182,3 +182,8 @@
 	URL：upload_img.do
 	参数：username,img
 	返回：success(boolean),src
+	
+34.更新已投职位状态信息（表为已读）
+	URL：update_cv_job_status.do
+	参数：username,ep_username
+	返回：无

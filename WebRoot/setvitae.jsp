@@ -17,7 +17,7 @@
 		<div class="container">
 			<form id="vitae_f" class="">
 				<h2>添加简历</h2>
-				<div id="user_img"></div>
+				<div id="user_img"><img src="images/user_default.png" /></div>
 				
 				<div>
 					<span class="tags">真实姓名</span>
