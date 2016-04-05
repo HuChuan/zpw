@@ -185,5 +185,5 @@
 	
 34.更新已投职位状态信息（表为已读）
 	URL：update_cv_job_status.do
-	参数：username,ep_username
+	参数：id
 	返回：无

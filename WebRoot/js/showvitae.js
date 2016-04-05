@@ -20,7 +20,6 @@ $(function() {
 
 // 加载简历
 function loadCV() {
-	var _id;
 	$.post("load_vitae.do", {
 		username : _user
 	}, function(data) {
@@ -43,23 +42,8 @@ function loadCV() {
 		$("#interest").text(data.interest);
 		$("#personal_c").text(data.personal);
 		if (data.user_img == null || data.user_img.trim() != "") {
-			$img = $("<img src='" + data.user_img + "' />");
-			$("#user_img").append($img);
+			$("#user_img>img").attr("src",data.user_img);
 		}
-		_id = data.id;
-		// 更新hr查看简历状态
-		if ($.cookie("pow") == 2) {
-			$.post("check_apply_job.do", {
-				username : $.cookie("username"),
-				id : _id
-			}, function(data) {
-				if (data.success == true) {
-					$.get("update_cv_job_status.do", {
-						username : _user,
-						ep_username : $.cookie("username")
-					});
-				}
-			}, "json");
-		}
+		
 	}, "json");
 }

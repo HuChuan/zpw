@@ -195,8 +195,8 @@ $(function() {
 					function(data) {
 						for (var i = 0; i < data.length; i++) {
 							var $li = $("<li class='ellipsis'></li>");
-							var $a = $("<a href='showjob.jsp?id=" + data[i].id + "'>"
-									+ data[i].name + "</a>");
+							var $a = $("<a href='showjob.jsp?id=" + data[i].id
+									+ "'>" + data[i].name + "</a>");
 							var $span1 = $("<span class='city'>" + data[i].city
 									+ "</span>");
 							var $span2 = $("<span class='time'>"
@@ -223,6 +223,7 @@ $(function() {
 					},
 					function(data) {
 						for (var i = 0; i < data.length; i++) {
+							var _id = data[i].id;
 							var $li = $("<li class='ellipsis'></li>");
 							var $span1 = $("<span>" + data[i].name + "</span>");
 							var $span2 = $("<span>" + data[i].sex + "</span>");
@@ -233,7 +234,13 @@ $(function() {
 							var $input = $('<input type="button" class="mbutton" value="查看简历" hf="showvitae.jsp?username='
 									+ data[i].username + '" />');
 							$input.click(function() {
-								location.href = $(this).attr("hf");
+								var self = this;
+								// 更新hr查看简历状态
+								$.post("update_cv_job_status.do", {
+									id:_id
+								},function(){
+									location.href = $(self).attr("hf");
+								});
 							});
 							$li.append($input);
 							$li.append($span1);
