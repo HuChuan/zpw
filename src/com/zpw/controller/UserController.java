@@ -141,7 +141,7 @@ public class UserController {
 	public Map upload_img(User user, HttpServletRequest request){
 		Map map = new HashMap();
 		String name = MD5Util.MD5(user.getUsername()+new Date().toString())+".png";
-		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaa");
+		
 		String p = request.getSession().getServletContext().getRealPath("/images/upload")+"/";
 		if(SaveImage.saveImage(user.getImg(),p, name)){
 			user.setImg("images/upload/"+name);
