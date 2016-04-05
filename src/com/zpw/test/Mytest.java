@@ -7,13 +7,18 @@ import java.sql.Date;
 import org.apache.ibatis.session.SqlSession;
 
 import com.zpw.po.User;
+import com.zpw.service.UserService;
 import com.zpw.util.MyBatisUtil;
 
 public class Mytest {
 
 	public static void main(String[] args) {
 		
-		new Mytest().test();
+		//Date date= UserService.getUserByUsername("huchuan").getReg_time();
+		//System.out.println(date);
+		
+		Date date = new Date(System.currentTimeMillis());
+		System.out.println(date);
 	}
 	public void test(){
 		try {
