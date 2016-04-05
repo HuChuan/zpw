@@ -29,6 +29,7 @@ body {
 	text-align: center;
 	border-radius: 50%;
 	position: relative;
+	background:#f1f1f1;
 }
 
 #content_header .user_img:after {

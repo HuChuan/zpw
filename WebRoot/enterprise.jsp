@@ -173,10 +173,10 @@
 				</form>
 			</div>
 		</div>
-
-		<script src="js/enterprise.js"></script>
+		
 		<script src="layer/layer.js"></script>
 		<script src="js/cropper.min.js"></script>
+		<script src="js/enterprise.js"></script>
 		<script src="js/upload_img.js"></script>
 	</body>
 

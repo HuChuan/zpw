@@ -2,6 +2,10 @@ body {
 	background: #F1F4F6;
 }
 
+body.noscroll {
+	overflow: hidden;
+}
+
 .mbutton {
 	border: 0;
 	outline: none;
@@ -29,6 +33,7 @@ body {
 	text-align: center;
 	border-radius: 50%;
 	position: relative;
+	background:#f1f1f1;
 }
 
 #content_header .user_img:after {
@@ -438,7 +443,7 @@ body {
 }
 
 #_window {
-	position: absolute;
+	position: fixed;
 	z-index: 999;
 	top: 0;
 	left: 0;
