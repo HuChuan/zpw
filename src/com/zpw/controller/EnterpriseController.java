@@ -26,8 +26,8 @@ public class EnterpriseController {
 	}
 	@RequestMapping("load_enterprise_info")
 	@ResponseBody
-	public Enterprise load_enterprise_info(int ep_id){
+	public Enterprise load_enterprise_info(int id){
 		
-		return EnterpriseService.getEnterpriseById(ep_id);
+		return EnterpriseService.getEnterpriseById(id);
 	}
 }
