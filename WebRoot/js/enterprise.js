@@ -126,7 +126,10 @@ $(function() {
 	 */
 	$("#c_ep").addClass("has");
 	// 加载企业信息
-	loadEPInfo();
+	$("#nav_ep a").click(function() {
+		loadEPInfo();
+
+	});
 	// 修改信息
 	$("#change_ep_sub").click(function() {
 		var ep = $("#ep_f")[0];
@@ -186,72 +189,16 @@ $(function() {
 		addJOB();
 	});
 	// 加载发布的职位信息列表
-	$
-			.post(
-					"load_job_list.do",
-					{
-						username : $.cookie("username")
-					},
-					function(data) {
-						for (var i = 0; i < data.length; i++) {
-							var $li = $("<li class='ellipsis'></li>");
-							var $a = $("<a href='showjob.jsp?id=" + data[i].id
-									+ "'>" + data[i].name + "</a>");
-							var $span1 = $("<span class='city'>" + data[i].city
-									+ "</span>");
-							var $span2 = $("<span class='time'>"
-									+ formatDate(data[i].pub_time) + "</span>");
-							var $input = $('<input type="button" class="mbutton" onclick="addJOB('
-									+ data[i].id + ')" value="查看/修改" />');
-							var id = data
-							$li.append($input);
-							$li.append($a);
-							$li.append($span1);
-							$li.append($span2);
-							$("#job_list").append($li);
-						}
-					}, "json");
+	$("#nav_job a").click(function() {
+		loadPubJOB();
+	});
 });
 
 // 收到的简历
 $(function() {
-	$
-			.post(
-					"load_receive_vitae.do",
-					{
-						username : $.cookie("username")
-					},
-					function(data) {
-						for (var i = 0; i < data.length; i++) {
-							var _id = data[i].id;
-							var $li = $("<li class='ellipsis'></li>");
-							var $span1 = $("<span>" + data[i].name + "</span>");
-							var $span2 = $("<span>" + data[i].sex + "</span>");
-							var $span3 = $("<span>" + data[i].age + "</span>");
-							var $span4 = $("<span>" + data[i].edu + "</span>");
-							var $span5 = $("<span>" + data[i].job + "</span>");
-							var $span6 = $("<span>" + data[i].time + "</span>");
-							var $input = $('<input type="button" class="mbutton" value="查看简历" hf="showvitae.jsp?username='
-									+ data[i].username + '" />');
-							$input.click(function() {
-								var self = this;
-								// 更新hr查看简历状态
-								$.post("update_cv_job_status.do", {
-									id:_id
-								},function(){
-									location.href = $(self).attr("hf");
-								});
-							});
-							$li.append($input);
-							$li.append($span1);
-							$li.append($span2);
-							$li.append($span3);
-							$li.append($span4);
-							$li.append($span5);
-							$li.append($span6);
-							$("#vitae_list").append($li);
-						}
-					}, "json");
+	$("#nav_vitae a").click(function() {
+		loadRecCV();
+	});
 });
 
 // 发布/修改信息窗口
@@ -387,6 +334,82 @@ function loadEPInfo() {
 		f.slogan.value = data.slogan;
 		f.intro.value = data.intro;
 	}, "json");
+}
+
+// 加载发布的职位列表
+function loadPubJOB() {
+	$
+			.post(
+					"load_job_list.do",
+					{
+						username : $.cookie("username")
+					},
+					function(data) {
+						$("#job_list").html("");
+						for (var i = 0; i < data.length; i++) {
+							var $li = $("<li class='ellipsis'></li>");
+							var $a = $("<a href='showjob.jsp?id=" + data[i].id
+									+ "'>" + data[i].name + "</a>");
+							var $span1 = $("<span class='city'>" + data[i].city
+									+ "</span>");
+							var $span2 = $("<span class='time'>"
+									+ formatDate(data[i].pub_time) + "</span>");
+							var $input = $('<input type="button" class="mbutton" onclick="addJOB('
+									+ data[i].id + ')" value="查看/修改" />');
+							var id = data
+							$li.append($input);
+							$li.append($a);
+							$li.append($span1);
+							$li.append($span2);
+							$("#job_list").append($li);
+						}
+					}, "json");
+}
+
+// 加载收到的简历
+function loadRecCV() {
+	$
+			.post(
+					"load_receive_vitae.do",
+					{
+						username : $.cookie("username")
+					},
+					function(data) {
+						$("#vitae_list").html("");
+						for (var i = 0; i < data.length; i++) {
+							var _id = data[i].vj_id;
+							if (data[i].status == 1) {
+								var $li = $("<li class='ellipsis read'></li>");
+							} else {
+								var $li = $("<li class='ellipsis'></li>");
+							}
+							var $span1 = $("<span>" + data[i].name + "</span>");
+							var $span2 = $("<span>" + data[i].sex + "</span>");
+							var $span3 = $("<span>" + data[i].age + "</span>");
+							var $span4 = $("<span>" + data[i].edu + "</span>");
+							var $span5 = $("<span>" + data[i].job + "</span>");
+							var $span6 = $("<span>" + formatDate(data[i].vj_time) + "</span>");
+							var $input = $('<input type="button" class="mbutton" value="查看简历" hf="showvitae.jsp?username='
+									+ data[i].username + '" />');
+							$input.click(function() {
+								var self = this;
+								// 更新hr查看简历状态
+								$.post("update_cv_job_status.do", {
+									id : _id
+								}, function() {
+									location.href = $(self).attr("hf");
+								});
+							});
+							$li.append($input);
+							$li.append($span1);
+							$li.append($span2);
+							$li.append($span3);
+							$li.append($span4);
+							$li.append($span5);
+							$li.append($span6);
+							$("#vitae_list").append($li);
+						}
+					}, "json");
 }
 
 // 弹出添加/修改职位窗口

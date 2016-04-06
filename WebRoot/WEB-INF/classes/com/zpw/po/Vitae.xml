@@ -37,7 +37,7 @@
 	</update>
 
 	<select id="qByUsernameList" resultType="Vitae_Job">
-		select tb_vitae.*,tb_vitae_job.id vj_id  from
+		select tb_vitae.*,tb_vitae_job.id vj_id,tb_vitae_job.time vj_time,tb_vitae_job.status from
 		tb_vitae,tb_vitae_job
 		where tb_vitae_job.ep_username=#{username}
 		and

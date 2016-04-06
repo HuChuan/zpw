@@ -8,7 +8,7 @@ public class Vitae_Job extends Vitae{
 	private String ep_username;
 	private int job_id;
 	private String job_name;
-	private Date time;
+	private Date vj_time;
 	private int status;
 	
 	public int getVj_id() {
@@ -41,11 +41,12 @@ public class Vitae_Job extends Vitae{
 	public void setJob_name(String job_name) {
 		this.job_name = job_name;
 	}
-	public Date getTime() {
-		return time;
+	
+	public Date getVj_time() {
+		return vj_time;
 	}
-	public void setTime(Date time) {
-		this.time = time;
+	public void setVj_time(Date vj_time) {
+		this.vj_time = vj_time;
 	}
 	public int getStatus() {
 		return status;

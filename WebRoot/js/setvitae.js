@@ -55,6 +55,7 @@ $(function() {
 			setLog("期望职位不能为空",false);
 		} else {
 			var d = $("#vitae_f").serialize();
+			$("#addCV_sub")[0].disabled = true;
 			$.post("add_vitae.do", d, function(data) {
 				if (data.success == true) {
 					setLog("添加成功,正在转到个人中心");
@@ -63,6 +64,7 @@ $(function() {
 					}, 1990);
 				} else {
 					setLog("添加失败", false);
+					$("#addCV_sub")[0].disabled = false;
 				}
 			}, "json");
 		}

@@ -51,6 +51,7 @@ body.noscroll {
 
 #upload_user_img {
 	position: relative;
+	background:#f1f1f1;
 }
 
 #upload_user_img>label {
@@ -401,11 +402,15 @@ body.noscroll {
 
 #vitae_list li {
 	border: 1px solid #ccc;
-	background: #F1F1F1;
+	background: #D9F0FF;
 	margin-top: 5px;
 	padding: 10px;
 	color: #888;
 	font-size: 16px;
+}
+
+#vitae_list li.read {
+	background:#f1f1f1;
 }
 
 #vitae_list li span {

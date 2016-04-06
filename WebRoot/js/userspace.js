@@ -93,7 +93,6 @@ $(function() {
 
 // 个人简历
 $(function() {
-	loadVitae();
 	$("#nav_cv a").click(function() {
 		loadVitae();
 	});
@@ -132,31 +131,9 @@ $(function() {
 
 // 加载已投职位信息
 $(function() {
-	$.post("load_cv_job.do", {
-		username : $.cookie("username")
-	}, function(data) {
-		for (var i = 0; i < data.length; i++) {
-			var read = "";
-			var status = "未读"
-			if (data[i].status == 1) {
-				read = "read";
-				status = "已读";
-			}
-			var $li = $("<li class='ellipsis " + read + "'></li>");
-			var $a = $("<a href='showjob.jsp?id=" + data[i].job_id + "'>"
-					+ data[i].job_name + "</a>");
-			var $span1 = $("<span class='epname'>" + data[i].ep_username
-					+ "</span>");
-			var $span2 = $("<span class='status'>" + status + "</span>");
-			var $span3 = $("<span class='time'>" + formatDate(data[i].time)
-					+ "</span>");
-			$li.append($a);
-			$li.append($span1);
-			$li.append($span2);
-			$li.append($span3);
-			$("#vote_list").append($li);
-		}
-	}, "json");
+	$("#nav_job a").click(function() {
+		loadCVJOB();
+	});
 });
 
 // 设置header导航激活样式
@@ -244,4 +221,34 @@ function loadVitae() {
 			right : "-146px",
 		}, 100);
 	});
+}
+
+// 加载已投职位信息
+function loadCVJOB() {
+	$.post("load_cv_job.do", {
+		username : $.cookie("username")
+	}, function(data) {
+		$("#vote_list").html("");
+		for (var i = 0; i < data.length; i++) {
+			var read = "";
+			var status = "未读"
+			if (data[i].status == 1) {
+				read = "read";
+				status = "已读";
+			}
+			var $li = $("<li class='ellipsis " + read + "'></li>");
+			var $a = $("<a href='showjob.jsp?id=" + data[i].job_id + "'>"
+					+ data[i].job_name + "</a>");
+			var $span1 = $("<span class='epname'>" + data[i].ep_username
+					+ "</span>");
+			var $span2 = $("<span class='status'>" + status + "</span>");
+			var $span3 = $("<span class='time'>" + formatDate(data[i].time)
+					+ "</span>");
+			$li.append($a);
+			$li.append($span1);
+			$li.append($span2);
+			$li.append($span3);
+			$("#vote_list").append($li);
+		}
+	}, "json");
 }

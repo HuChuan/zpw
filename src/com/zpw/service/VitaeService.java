@@ -74,7 +74,7 @@ public class VitaeService {
 	public static boolean addAitaeJob(Vitae_Job vj){
 		IVitaeDao v = DAOFactory.getVitaeDao();
 		Date datatime = new Date(System.currentTimeMillis());
-		vj.setTime(datatime);
+		vj.setVj_time(datatime);
 		boolean flag = v.insertVitaeJob(vj);
 		
 		return flag;
