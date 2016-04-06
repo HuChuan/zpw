@@ -19,7 +19,7 @@ $(function() {
 
 	function play() {
 		//配置播放时间间隔、播放速度
-		var timeout = 2500;
+		var timeout = 3500;
 		var speed = 300;
 
 		var index = 0;
@@ -142,7 +142,6 @@ $(function() {
 $(function() {
 	//加载热门企业
 	$.get("load_hot_ep.do", {}, function(data) {
-		data = data.list;
 		for (var i = 0; i < data.length; i++) {
 			var $li = $("<li></li>");
 			var $a = $("<a href='showenterprise.jsp?id=" + data[i].id + "'></a>");
@@ -175,8 +174,7 @@ $(function() {
 //热门职位
 $(function() {
 	$.get("load_hot_job.do", {}, function(data) {
-		data = data.list;
-		for (var i = 0; i < datalength; i++) {
+		for (var i = 0; i < data.length; i++) {
 			var $li = $("<li></li>");
 			var $div = $("<div></div>");
 			var $p1 = $('<p><a class="job_name" href="showjob.jsp?id=' + data[i].id + '">' + data[i].name + '</a></p>');
