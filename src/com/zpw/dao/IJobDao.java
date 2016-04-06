@@ -32,5 +32,5 @@ public interface IJobDao {
 	
 	public void updateStatus(Vitae_Job vj);
 	
-	public List<JobCustom> qJ_v_vj();
+	public List<JobCustom> qJ_v_U_vj();
 }

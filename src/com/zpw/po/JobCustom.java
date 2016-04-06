@@ -8,9 +8,17 @@ public class JobCustom extends Job{
 	
 	private int ep_id;
 	private String ep_name;
+	private String img;
 	private String ep_img;
 	
 	
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public String getEp_name() {
 		return ep_name;
 	}

@@ -94,7 +94,7 @@ public class JobService {
 	
 	public static List<JobCustom> findHotJob() {
 		JobDao j = DAOFactory.getJobDao();
-		List<JobCustom> list = j.qJ_v_vj();
+		List<JobCustom> list = j.qJ_v_U_vj();
 		return list;
 	}
 }

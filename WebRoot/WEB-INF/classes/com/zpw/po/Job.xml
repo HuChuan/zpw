@@ -105,15 +105,15 @@
 		where id=#{id}
 	</update>
 
-	<select id="qJ_v_vj" resultType="JobCustom">
+	<select id="qJ_v_U_vj" resultType="JobCustom">
 		select top(10)tb_enterprise.id
 		ep_id,tb_enterprise.name
-		ep_name,tb_job.id,tb_job.name,tb_job.experience,tb_job.money,tb_job.city
-		from tb_vitae_job,tb_enterprise,tb_job
+		ep_name,tb_job.id,tb_job.name,tb_job.experience,tb_job.money,tb_job.city,tb_user.img
+		from tb_vitae_job,tb_enterprise,tb_job,tb_user
 		where tb_vitae_job.ep_username=tb_enterprise.username and
-		tb_vitae_job.job_id = tb_job.id
+		tb_vitae_job.job_id = tb_job.id and tb_job.username = tb_user.username
 		group by
-		tb_job.id,tb_enterprise.id,tb_job.name,tb_enterprise.name,tb_job.experience,tb_job.money,tb_job.city
+		tb_job.id,tb_enterprise.id,tb_job.name,tb_enterprise.name,tb_job.experience,tb_job.money,tb_job.city,tb_user.img
 		order by count(job_id) DESC
 	</select>
 

@@ -210,12 +210,12 @@ public class JobDao implements IJobDao {
 	}
 
 	@Override
-	public List<JobCustom> qJ_v_vj() {
+	public List<JobCustom> qJ_v_U_vj() {
 		SqlSession session = null;
 		List<JobCustom> list = null;
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(Job.class.getName() + ".qJ_v_vj");
+			list = session.selectList(Job.class.getName() + ".qJ_v_U_vj");
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

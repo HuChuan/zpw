@@ -54,12 +54,12 @@
 		FROM
 		(
 		SELECT
-		ROW_NUMBER() OVER (ORDER BY id) AS
-		RowNumber,* FROM tb_vitae
+		ROW_NUMBER() OVER (ORDER BY tb_vitae.id) AS
+		RowNumber,tb_vitae.*,tb_user.img user_img FROM tb_vitae,tb_user
 		<where>
 		 	1 = 1
 			<if test="kw != null">
-				and job like '%${kw}%'
+				and tb_vitae.job like '%${kw}%'
 			</if>
 			<if test="city != null">
 				and tb_vitae.city = #{city}
@@ -67,6 +67,7 @@
 			<if test="edu != null">
 				and tb_vitae.edu = #{edu}
 			</if>
+			and tb_user.username=tb_vitae.username
 		</where>
 		) as A
 		WHERE RowNumber > ${num}*(${page}-1)
