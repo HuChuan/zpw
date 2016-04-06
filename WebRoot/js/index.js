@@ -183,7 +183,7 @@ $(function() {
 			var $span1 = $('<span class="city">' + data[i].city + '</span>');
 			var $span2 = $('<span class="money">' + data[i].money + '</span>');
 			var $span3 = $('<span class="exp">' + data[i].experience + '</span>');
-			var $a = $('<a href="showenterprise.jsp?id=' + data[i].ep_id + '"><img src="' + data[i].ep_img + '" /></a>');
+			var $a = $('<a href="showenterprise.jsp?id=' + data[i].ep_id + '"><img src="' + data[i].img + '" /></a>');
 			$p3.append($span1);
 			$p3.append($span2);
 			$p3.append($span3);
