@@ -88,4 +88,10 @@ public class JobService {
 		JobDao j = DAOFactory.getJobDao();
 		j.updateStatus(vj);
 	}
+	
+	public static List<JobCustom> findHotJob() {
+		JobDao j = DAOFactory.getJobDao();
+		List<JobCustom> list = j.qJ_v_vj();
+		return list;
+	}
 }

@@ -31,4 +31,6 @@ public interface IJobDao {
 	public List<Vitae_Job> qVJByUsername(String username);
 	
 	public void updateStatus(Vitae_Job vj);
+	
+	public List<JobCustom> qJ_v_vj();
 }

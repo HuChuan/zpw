@@ -7,7 +7,16 @@ public class JobCustom extends Job{
 	private int num;
 	
 	private int ep_id;
+	private String ep_name;
 	private String ep_img;
+	
+	
+	public String getEp_name() {
+		return ep_name;
+	}
+	public void setEp_name(String ep_name) {
+		this.ep_name = ep_name;
+	}
 	public String getKw() {
 		return kw;
 	}

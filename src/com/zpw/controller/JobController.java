@@ -101,4 +101,11 @@ public class JobController {
 	public void update_cv_job_status(Vitae_Job vj){
 		JobService.readED(vj);
 	}
+	
+	@RequestMapping("load_hot_job")
+	@ResponseBody
+	public List<JobCustom> load_hot_job(){
+		List<JobCustom> list = JobService.findHotJob();
+		return list;
+	}
 }

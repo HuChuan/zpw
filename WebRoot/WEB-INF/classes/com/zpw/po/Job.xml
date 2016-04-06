@@ -49,7 +49,8 @@
 	</select>
 
 	<delete id="deleteJob" parameterType="Integer">
-		delete from tb_job where id = #{id}
+		delete from tb_job where id
+		= #{id}
 	</delete>
 
 	<select id="qByKwList" resultType="JobCustom">
@@ -83,22 +84,36 @@
 	<select id="qAllCount" resultType="Integer">
 		select count(*) from tb_job
 	</select>
-	
+
 	<select id="qByIdAndUsername" resultType="Vitae_Job">
 		select * from
 		tb_vitae_job where
 		job_id=#{id} and username=#{username}
 	</select>
-	
+
 	<select id="qVJByUsername" resultType="Vitae_Job">
 		select * from
-		tb_vitae_job where
+		tb_vitae_job
+		where
 		username=#{username}
 	</select>
-	
+
 	<update id="updateStatus" parameterType="Vitae_Job">
-		update tb_vitae_job set status = 1
+		update tb_vitae_job set
+		status = 1
 		where id=#{id}
 	</update>
-	
+
+	<select id="qJ_v_vj" resultType="JobCustom">
+		select top(10)tb_enterprise.id
+		ep_id,tb_enterprise.name
+		ep_name,tb_job.id,tb_job.name,tb_job.experience,tb_job.money,tb_job.city
+		from tb_vitae_job,tb_enterprise,tb_job
+		where tb_vitae_job.ep_username=tb_enterprise.username and
+		tb_vitae_job.job_id = tb_job.id
+		group by
+		tb_job.id,tb_enterprise.id,tb_job.name,tb_enterprise.name,tb_job.experience,tb_job.money,tb_job.city
+		order by count(job_id) DESC
+	</select>
+
 </mapper>
