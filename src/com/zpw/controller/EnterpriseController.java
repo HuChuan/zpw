@@ -35,6 +35,6 @@ public class EnterpriseController {
 	@RequestMapping("load_hot_job")
 	@ResponseBody
 	public List<Enterprise> load_hot_job(){
-		List list = new ArrayList<Enterprise>();
+		return EnterpriseService.getAllEnterprise();
 	}
 }
