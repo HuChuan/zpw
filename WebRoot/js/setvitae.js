@@ -143,6 +143,5 @@ function loadCV() {
 		f.experience.value = data.experience;
 		f.interest.value = data.interest;
 		f.personal.value = data.personal;
-		f.user_img.value = data.user_img;
 	}, "json");
 }
