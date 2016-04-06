@@ -19,8 +19,8 @@ $(function() {
 
 	function play() {
 		//配置播放时间间隔、播放速度
-		var timeout = 2000;
-		var speed = 50;
+		var timeout = 3500;
+		var speed = 300;
 
 		var index = 0;
 		var count = $("#carousel_img>a").length - 1;
