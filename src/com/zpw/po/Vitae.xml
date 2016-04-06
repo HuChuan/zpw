@@ -81,7 +81,7 @@
 		insert into
 		tb_vitae_job
 		(username,ep_username,job_id,job_name,time)
-		values(#{username},#{ep_username},#{id},#{job_name},#{vj_time})
+		values(#{username},#{ep_username},#{job_id},#{job_name},#{vj_time})
 	</insert>
 
 </mapper>

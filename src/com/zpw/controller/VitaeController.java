@@ -79,6 +79,7 @@ public class VitaeController {
 	@ResponseBody
 	public Map apply_job(Vitae_Job vj){
 		Map map = new HashMap();
+		vj.setJob_id(vj.getId());
 		boolean success = VitaeService.addAitaeJob(vj);
 		map.put("success", success);
 		

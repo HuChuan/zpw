@@ -3,7 +3,6 @@ package com.zpw.po;
 import java.util.Date;
 
 public class Vitae_Job extends Vitae{
-	private int id;
 	private int vj_id;
 	private String username;
 	private String ep_username;
@@ -15,12 +14,6 @@ public class Vitae_Job extends Vitae{
 	private int status;
 	
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public int getVj_id() {
 		return vj_id;
 	}
