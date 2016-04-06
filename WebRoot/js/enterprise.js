@@ -227,8 +227,8 @@ $(function() {
 			$.post("add_job_info.do", d, function(data) {
 				if (data.success == true) {
 					setLog("发布成功");
-					$("#addJOB_sub input[type='text']").val("");
-					$("#addJOB_sub textarea").val("");
+					$("#addJOB_f input[type='text']").val("");
+					$("#addJOB_f textarea").val("");
 				} else {
 					setLog("发布失败！请重试", false);
 				}
