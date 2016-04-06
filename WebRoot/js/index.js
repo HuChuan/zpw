@@ -21,7 +21,7 @@ $(function() {
 		//配置播放时间间隔、播放速度
 		var timeout = 2000;
 		var speed = 50;
-
+ 
 		var index = 0;
 		var count = $("#carousel_img>a").length - 1;
 		var index_count = $("#carousel_index>span");
