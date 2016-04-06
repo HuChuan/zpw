@@ -1,6 +1,8 @@
 package com.zpw.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -29,5 +31,10 @@ public class EnterpriseController {
 	public Enterprise load_enterprise_info(int id){
 		
 		return EnterpriseService.getEnterpriseById(id);
+	}
+	@RequestMapping("load_hot_job")
+	@ResponseBody
+	public List<Enterprise> load_hot_job(){
+		List list = new ArrayList<Enterprise>();
 	}
 }

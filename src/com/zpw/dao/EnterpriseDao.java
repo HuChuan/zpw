@@ -1,5 +1,8 @@
 package com.zpw.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.zpw.po.Enterprise;
@@ -93,7 +96,23 @@ public class EnterpriseDao implements IEnterpriseDao{
 		}
 		return isSuccess;
 	}
-
+	
+	@Override
+	public List<Enterprise> getAllEnterprise() {
+		SqlSession session = null;
+		List<Enterprise> list = null;
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(Enterprise.class.getName()+".getAllEnterprise");
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return list;
+	}
 	
 	
 }

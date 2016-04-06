@@ -30,7 +30,9 @@
   	<if test="intro!=null">,intro=#{intro}</if>
   	where username=#{username}
   </update>
-  
+  <select id="getAllEnterprise" resultType="Enterprise">
+  	select * from tb_enterprise
+  </select>
   
   
   
