@@ -23,6 +23,7 @@
   	<if test="username!=null">username=#{username}</if>
   	<if test="name!=null">,name=#{name}</if>
   	<if test="type!=null">,type=#{type} </if>
+  	<if test="img!=null">,img=#{img} </if>
   	<if test="web!=null">,web=#{web}</if>
   	<if test="address!=null">,address=#{address} </if>
   	<if test="scale!=null">,scale=#{scale}</if>

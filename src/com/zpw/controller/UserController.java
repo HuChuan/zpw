@@ -19,7 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.zpw.dao.DAOFactory;
 import com.zpw.dao.IUserDao;
 import com.zpw.dao.UserDao;
+import com.zpw.po.Enterprise;
 import com.zpw.po.User;
+import com.zpw.service.EnterpriseService;
 import com.zpw.service.UserService;
 import com.zpw.util.MD5Util;
 import com.zpw.util.SaveImage;
@@ -141,10 +143,18 @@ public class UserController {
 	public Map upload_img(User user, HttpServletRequest request){
 		Map map = new HashMap();
 		String name = MD5Util.MD5(user.getUsername()+new Date().toString())+".png";
-		
 		String p = request.getSession().getServletContext().getRealPath("/images/upload")+"/";
+		
 		if(SaveImage.saveImage(user.getImg(),p, name)){
 			user.setImg("images/upload/"+name);
+			if(UserService.getUserByUsername(user.getUsername()).getPow()==2){
+				Enterprise enterprise = new Enterprise();
+				enterprise.setUsername(user.getUsername());
+				enterprise.setImg(user.getImg());
+				
+				EnterpriseService.updateEnterprise(enterprise);
+			}
+			
 			map.put("success", UserService.updateUser(user));
 			map.put("src", user.getImg());
 		}else{
