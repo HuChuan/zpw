@@ -222,7 +222,7 @@
 }
 
 #hot_job_list>li>div>p {
-	line-height: 20px;
+	margin: 12px 0;
 	width: 380px;
 	white-space: nowrap;
 	overflow: hidden;
