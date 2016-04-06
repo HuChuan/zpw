@@ -52,6 +52,9 @@ public class JobService {
 	
 	public static Map findJobByKw(JobCustom jc){
 		jc.setNum(10);
+		if(jc.getKw() != null && jc.getKw().equals("")){
+			jc.setKw(null);
+		}
 		if(jc.getCity() != null && jc.getCity().equals("全国")){
 			jc.setCity(null);
 		}

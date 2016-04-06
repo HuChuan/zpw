@@ -63,6 +63,7 @@
 		tb_job.*,tb_enterprise.id ep_id,tb_enterprise.img ep_img
 		FROM tb_job,tb_enterprise
 		<where>
+		    1 = 1
 			<if test="kw != null">
 				and tb_job.name like '%${kw}%'
 			</if>
@@ -70,10 +71,10 @@
 				and tb_job.city = #{city}
 			</if>
 			<if test="edu != null">
-				tb_job.edu = #{edu}
+				and tb_job.edu = #{edu}
 			</if>
 			<if test="money != null">
-				tb_job.money = #{money}
+				and tb_job.money = #{money}
 			</if>
 			and tb_enterprise.username=tb_job.username
 		</where>

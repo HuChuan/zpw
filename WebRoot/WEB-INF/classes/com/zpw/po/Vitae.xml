@@ -57,6 +57,7 @@
 		ROW_NUMBER() OVER (ORDER BY id) AS
 		RowNumber,* FROM tb_vitae
 		<where>
+		 	1 = 1
 			<if test="kw != null">
 				and job like '%${kw}%'
 			</if>
@@ -64,7 +65,7 @@
 				and tb_vitae.city = #{city}
 			</if>
 			<if test="edu != null">
-				tb_vitae.edu = #{edu}
+				and tb_vitae.edu = #{edu}
 			</if>
 		</where>
 		) as A

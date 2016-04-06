@@ -60,6 +60,9 @@ public class VitaeService {
 	
 	public static Map findVitaeByKw(VitaeCustom vc){
 		vc.setNum(10);
+		if(vc.getKw() != null && vc.getKw().equals("")){
+			vc.setKw(null);
+		}
 		if(vc.getCity() != null && vc.getCity().equals("全国")){
 			vc.setCity(null);
 		}
