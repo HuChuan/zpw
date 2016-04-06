@@ -10,8 +10,9 @@
 	</insert>
 
 	<select id="qByUsername" resultType="Vitae">
-		select * from tb_vitae where
-		username=#{username}
+		select
+		tb_vitae.*,tb_user.img user_img from tb_vitae,tb_user where
+		tb_vitae.username= #{username} and tb_vitae.username = tb_user.username
 	</select>
 
 	<update id="updateVitae" parameterType="Vitae">
@@ -37,11 +38,15 @@
 	</update>
 
 	<select id="qByUsernameList" resultType="Vitae_Job">
-		select tb_vitae.*,tb_vitae_job.id vj_id,tb_vitae_job.time vj_time,tb_vitae_job.status from
+		select
+		tb_vitae.*,tb_vitae_job.id vj_id,tb_vitae_job.time
+		vj_time,tb_vitae_job.status from
 		tb_vitae,tb_vitae_job
-		where tb_vitae_job.ep_username=#{username}
+		where
+		tb_vitae_job.ep_username=#{username}
 		and
-		tb_vitae_job.username = tb_vitae.username
+		tb_vitae_job.username =
+		tb_vitae.username
 	</select>
 
 	<select id="qByKwList" resultType="Vitae">
@@ -69,9 +74,10 @@
 	<select id="qAllCount" resultType="Integer">
 		select count(*) from tb_vitae
 	</select>
-	
+
 	<insert id="insertVitaeJob" parameterType="Vitae_Job">
-		insert into tb_vitae_job
+		insert into
+		tb_vitae_job
 		(username,ep_username,job_id,job_name,time)
 		values(#{username},#{ep_username},#{id},#{job_name},#{time})
 	</insert>
