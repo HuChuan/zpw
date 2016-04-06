@@ -32,7 +32,7 @@ public class EnterpriseController {
 		
 		return EnterpriseService.getEnterpriseById(id);
 	}
-	@RequestMapping("load_hot_job")
+	@RequestMapping("load_hot_ep")
 	@ResponseBody
 	public List<Enterprise> load_hot_job(){
 		return EnterpriseService.getAllEnterprise();
