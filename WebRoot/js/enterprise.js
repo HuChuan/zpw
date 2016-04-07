@@ -258,8 +258,8 @@ $(function() {
 				if (data.success == true) {
 					setLog("修改成功");
 					$("#_window").fadeOut(200);
-					$("#addJOB_sub input[type='text']").val("");
-					$("#addJOB_sub textarea").val("");
+					$("#addJOB_f input[type='text']").val("");
+					$("#addJOB_f textarea").val("");
 				} else {
 					setLog("修改失败！请重试", false);
 				}

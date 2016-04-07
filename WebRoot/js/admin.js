@@ -133,12 +133,17 @@ $(function() {
 							} else if (data[i].pow == 3) {
 								pow = "管理员";
 							}
+							if(!data[i].phone){
+								var phone = "";
+							}else {
+								var phone = data[i].phone;
+							}
 							var $tr = $("<tr></tr>");
 							var $td1 = $('<td class="center"><img src="'
 									+ data[i].img + '"></td>');
 							var $td2 = $('<td>' + data[i].username + '</td>');
 							var $td3 = $('<td>' + data[i].email + '</td>');
-							var $td4 = $('<td>' + data[i].phone + '</td>');
+							var $td4 = $('<td>' + phone + '</td>');
 							var $td5 = $('<td class="center">' + pow + '</td>');
 							var $td6 = $('<td class="center">'
 									+ data[i].reg_time + '</td>');
