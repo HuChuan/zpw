@@ -122,7 +122,7 @@ public class UserService {
 		} else if(u.qByEmail(nameOrEmail)!=null) {
 			User user = new User();
 			user.setEmail(nameOrEmail);
-			user.setPassword(password);
+			user.setPassword(MD5Util.MD5(password));
 			if(u.loginByEmail(user)!=null){
 				flag = true;
 			}else{
